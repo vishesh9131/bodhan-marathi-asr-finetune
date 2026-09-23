@@ -42,3 +42,35 @@ About to: create conda env `bodhan-asr` (py3.10) and install `nemo_toolkit[asr]`
 + huggingface_hub, librosa, jiwer, soundfile, datasets. Runs in background; log at
 `outputs/env_build.log`. Reason for a separate env: NeMo pins its own torch and I
 won't risk downgrading torch in the shared `ml` env.
+
+### Done in P0 so far
+- Repo scaffolded, private, pushed: github.com/vishesh9131/bodhan-marathi-asr-finetune
+- `src/prepare_data.py` written: FLEURS `mr_in` -> 16kHz wav + NeMo multitask manifests
+  (fields: audio_filepath, duration, text, source_lang=target_lang=mr, pnc=yes).
+- Env `bodhan-asr` build running in background (NeMo + hf_hub + librosa + jiwer).
+
+### Waiting on
+- Env build to finish -> then run prepare_data.py + download model.
+- User to accept the Bodhan license + `huggingface-cli login` (model is gated:auto).
+  Needed both to download weights AND to read the model's shipped scripts
+  (`nemo/inference_nemo.py`, `indic_transcribe.py`) that define the exact
+  restore/fine-tune API — so `finetune.py` is deliberately not written yet
+  (won't guess the API and risk a wrong pipeline).
+
+### Model API confirmed (read the shipped scripts with the token)
+- Class: `nemo.collections.asr.models.EncDecMultiTaskModel` (Canary multitask).
+- Restore: repo's `nemo/load_nemo.py` registers a custom `CanaryMultilingualTokenizer`
+  then `EncDecMultiTaskModel.restore_from(nemo/indic_transcribe_flex.nemo)`.
+- Inference: `model.transcribe(files, source_lang, target_lang, pnc="yes")`.
+- Arch: FastConformer enc (32L) + Transformer dec (24L), d_model 1024, 128 mel bins,
+  8x subsampling, vocab 7152, trains on <=30s clips. README licenses fine-tuning
+  but ships no recipe.
+
+### Wrote finetune.py + infer.py against that real API
+- `finetune.py`: reuse `load_nemo_model`, freeze encoder by default (train decoder
+  only — safer on small data, lighter on disk), Lhotse manifests, bf16, DDP over
+  `--devices`, `--smoke` for a 10-step 1-GPU sanity run. Saves final `.nemo`.
+- `infer.py`: base-vs-finetuned WER on val + 3 qualitative examples (jiwer).
+- Download trimmed to `allow_patterns=["nemo/*"]` (~4.6GB, skips HF safetensors).
+
+### Now waiting on the env build (slow network) to run: prepare_data -> smoke -> real run.
