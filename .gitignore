@@ -1,0 +1,12 @@
+# data + training artifacts are shared via Google Drive, not git
+data/
+outputs/
+*.nemo
+*.ckpt
+*.wav
+*.flac
+*.mp3
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+# keep the brief images/pdf tracked (small, useful context) — do NOT ignore brief/
