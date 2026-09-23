@@ -85,3 +85,17 @@ won't risk downgrading torch in the shared `ml` env.
 - Downloads running in background: model `nemo/` (~4.6GB, ~370kB/s, ~3h) +
   FLEURS `mr_in`. Smoke run is gated on the model finishing.
 - Disk holding at ~72G free.
+
+## P2 — Fine-tune
+
+### Smoke run PASSED (1 GPU, 10 steps)
+Fixed two issues the smoke surfaced: (1) datasets>=5 audio decode needs torchcodec
+-> switched prepare_data to soundfile; (2) tokenizer needs per-utterance `lang`
+-> added `lang: mr` to manifests. After that: 10 steps trained, validation ran,
+WER computed, checkpoint saved to outputs/indic_transcribe_mr.nemo (4.6GB). Base
+model already transcribes Marathi cleanly (ref vs pred differ only by spacing),
+as expected — this run proves the loop closes, not that metrics improve.
+
+### Real run launched (2x A6000, 600 steps, batch 8)
+Encoder frozen (decoder-only), bf16, DDP with find_unused_parameters=True.
+CSV logger -> outputs/logs/.../metrics.csv for a loss curve artifact.

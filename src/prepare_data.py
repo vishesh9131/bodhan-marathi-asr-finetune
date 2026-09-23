@@ -56,6 +56,7 @@ def dump_split(ds, split_dir, manifest_path, limit):
                 "audio_filepath": os.path.abspath(fp),
                 "duration": round(duration, 3),
                 "text": text,
+                "lang": LANG,          # -> Lhotse supervision.language, used by the tokenizer
                 "source_lang": LANG,
                 "target_lang": LANG,
                 "pnc": "yes",

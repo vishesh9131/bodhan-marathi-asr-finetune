@@ -86,6 +86,7 @@ def main():
         args.devices, args.max_steps, args.batch_size = 1, 10, 2
 
     import lightning.pytorch as pl
+    from lightning.pytorch.loggers import CSVLogger
     from lightning.pytorch.strategies import DDPStrategy
 
     # only the nemo/ folder is needed for NeMo restore (skips the ~4.6GB HF-format
@@ -114,7 +115,7 @@ def main():
         limit_val_batches=20,
         log_every_n_steps=5,
         enable_checkpointing=False,   # we save the final .nemo ourselves
-        logger=False,
+        logger=CSVLogger(save_dir="outputs", name="logs"),  # -> outputs/logs/.../metrics.csv
     )
     model.set_trainer(trainer)
     trainer.fit(model)
