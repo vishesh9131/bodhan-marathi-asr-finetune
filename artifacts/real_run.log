@@ -1,0 +1,1648 @@
+Model dir: /home/vishesh/.cache/huggingface/hub/models--bodhan-ai--indic-transcribe-flex/snapshots/ecba9bac9013c0340fe814b336897ee51ed80be9
+OneLogger: Setting error_handling_strategy to DISABLE_QUIETLY_AND_REPORT_METRIC_ERROR for rank (rank=0) with OneLogger disabled. To override: explicitly set error_handling_strategy parameter.
+No exporters were provided. This means that no telemetry data will be collected.
+[NeMo I 2026-09-23 19:06:13 mixins:77] _setup_tokenizer: detected an aggregate tokenizer
+[NeMo I 2026-09-23 19:06:13 mixins:234] Tokenizer SentencePieceTokenizer initialized with 1152 tokens
+[NeMo I 2026-09-23 19:06:13 mixins:234] Tokenizer SentencePieceTokenizer initialized with 6000 tokens
+[NeMo I 2026-09-23 19:06:13 canary_tokenizer:46] Aggregate vocab size: 7152
+[NeMo W 2026-09-23 19:06:13 aed_multitask_models:152] If you intend to do training or fine-tuning, please call the ModelPT.setup_training_data() method and provide a valid configuration file to setup the train data loader.
+    Train config : 
+    use_lhotse: true
+    skip_missing_manifest_entries: true
+    tarred_audio_filepaths: null
+    manifest_filepath: null
+    sample_rate: 16000
+    shuffle: true
+    is_tarred: true
+    num_workers: 16
+    batch_size: 16
+    bucketing_strategy: synced_randomized
+    concat_sampling_technique: temperature
+    concat_sampling_temperature: 1.0
+    defer_setup: true
+    is_concat: true
+    max_duration: 30
+    min_duration: 0.025
+    pin_memory: true
+    shard_manifests: true
+    shuffle_n: 2048
+    text_field: text
+    lang_field: target_lang
+    
+[NeMo W 2026-09-23 19:06:13 aed_multitask_models:152] If you intend to do validation, please call the ModelPT.setup_validation_data() or ModelPT.setup_multiple_validation_data() method and provide a valid configuration file to setup the validation data loader(s). 
+    Validation config : 
+    use_lhotse: true
+    manifest_filepath: null
+    sample_rate: 16000
+    batch_size: 4
+    shuffle: false
+    num_workers: 4
+    pin_memory: true
+    use_start_end_token: true
+    use_bucketing: false
+    text_field: text
+    lang_field: target_lang
+    
+Error getting class at nemo.collections.asr.modules.transformer.get_nemo_transformer: Located non-class of type 'function' while loading 'nemo.collections.asr.modules.transformer.get_nemo_transformer'
+[NeMo I 2026-09-23 19:06:25 modelPT:489] Model EncDecMultiTaskModel was successfully restored from /home/vishesh/.cache/huggingface/hub/models--bodhan-ai--indic-transcribe-flex/snapshots/ecba9bac9013c0340fe814b336897ee51ed80be9/nemo/indic_transcribe_flex.nemo.
+Encoder frozen — training decoder + heads only.
+[NeMo I 2026-09-23 19:06:25 dataloader:309] We will be using a Lhotse DataLoader.
+[NeMo W 2026-09-23 19:06:25 dataloader:349] You are using a non-tarred dataset and requested tokenization during data sampling (pretokenize=True). This will cause the tokenization to happen in the main (GPU) process,possibly impacting the training speed if your tokenizer is very large.If the impact is noticable, set pretokenize=False in dataloader config.(note: that will disable token-per-second filtering and 2D bucketing features)
+[NeMo I 2026-09-23 19:06:25 dataloader:349] Creating a Lhotse DynamicCutSampler (bucketing is disabled, (max_batch_duration=None max_batch_size=8)
+[NeMo I 2026-09-23 19:06:25 dataloader:309] We will be using a Lhotse DataLoader.
+[NeMo W 2026-09-23 19:06:25 dataloader:349] You are using a non-tarred dataset and requested tokenization during data sampling (pretokenize=True). This will cause the tokenization to happen in the main (GPU) process,possibly impacting the training speed if your tokenizer is very large.If the impact is noticable, set pretokenize=False in dataloader config.(note: that will disable token-per-second filtering and 2D bucketing features)
+[NeMo I 2026-09-23 19:06:25 dataloader:349] Creating a Lhotse DynamicCutSampler (bucketing is disabled, (max_batch_duration=None max_batch_size=8)
+[NeMo W 2026-09-23 19:06:25 finetune:106] Trainer wasn't specified in model constructor. Make sure that you really wanted it.
+[NeMo I 2026-09-23 19:06:25 finetune:106] Optimizer config = AdamW (
+    Parameter Group 0
+        amsgrad: False
+        betas: (0.9, 0.98)
+        capturable: False
+        decoupled_weight_decay: True
+        differentiable: False
+        eps: 1e-08
+        foreach: None
+        fused: None
+        lr: 1e-05
+        maximize: False
+        weight_decay: 0.001
+    )
+[NeMo I 2026-09-23 19:06:25 modelPT:786] Scheduler "<nemo.core.optim.lr_scheduler.CosineAnnealing object at 0x76a32ac10250>" 
+    will be used during training (effective maximum steps = 600) - 
+    Parameters : 
+    (warmup_steps: 30
+    min_lr: 5.000000000000001e-07
+    max_steps: 600
+    )
+[NeMo W 2026-09-23 19:06:25 warnings:109] /home/vishesh/miniconda3/envs/bodhan-asr/lib/python3.10/site-packages/lightning/fabric/plugins/environments/slurm.py:204: The `srun` command is available on your system but is not used. HINT: If your intention is to run Lightning on SLURM, prepend your python command with `srun` like so: srun python src/finetune.py --data data/fleurs_mr --devices 2 -- ...
+    
+Using bfloat16 Automatic Mixed Precision (AMP)
+GPU available: True (cuda), used: True
+TPU available: False, using: 0 TPU cores
+HPU available: False, using: 0 HPUs
+You are using a CUDA device ('NVIDIA RTX A6000') that has Tensor Cores. To properly utilize them, you should set `torch.set_float32_matmul_precision('medium' | 'high')` which will trade-off precision for performance. For more details, read https://pytorch.org/docs/stable/generated/torch.set_float32_matmul_precision.html#torch.set_float32_matmul_precision
+Initializing distributed: GLOBAL_RANK: 0, MEMBER: 1/2
+OneLogger: Setting error_handling_strategy to DISABLE_QUIETLY_AND_REPORT_METRIC_ERROR for rank (rank=0) with OneLogger disabled. To override: explicitly set error_handling_strategy parameter.
+No exporters were provided. This means that no telemetry data will be collected.
+Error getting class at nemo.collections.asr.modules.transformer.get_nemo_transformer: Located non-class of type 'function' while loading 'nemo.collections.asr.modules.transformer.get_nemo_transformer'
+Initializing distributed: GLOBAL_RANK: 1, MEMBER: 2/2
+----------------------------------------------------------------------------------------------------
+distributed_backend=nccl
+All distributed processes registered. Starting with 2 processes
+----------------------------------------------------------------------------------------------------
+
+LOCAL_RANK: 0 - CUDA_VISIBLE_DEVICES: [0,1]
+LOCAL_RANK: 1 - CUDA_VISIBLE_DEVICES: [0,1]
+[NeMo I 2026-09-23 19:06:54 modelPT:864] Optimizer config = AdamW (
+    Parameter Group 0
+        amsgrad: False
+        betas: (0.9, 0.98)
+        capturable: False
+        decoupled_weight_decay: True
+        differentiable: False
+        eps: 1e-08
+        foreach: None
+        fused: None
+        lr: 1e-05
+        maximize: False
+        weight_decay: 0.001
+    )
+[NeMo I 2026-09-23 19:06:54 modelPT:786] Scheduler "<nemo.core.optim.lr_scheduler.CosineAnnealing object at 0x76a32ad809a0>" 
+    will be used during training (effective maximum steps = 600) - 
+    Parameters : 
+    (warmup_steps: 30
+    min_lr: 5.000000000000001e-07
+    max_steps: 600
+    )
+
+  | Name                 | Type                              | Params | Mode
+----------------------------------------------------------------------------------
+0 | preprocessor         | AudioToMelSpectrogramPreprocessor | 0      | eval
+1 | encoder              | ConformerEncoder                  | 810 M  | eval
+2 | encoder_decoder_proj | Identity                          | 0      | eval
+3 | transf_decoder       | TransformerDecoderNM              | 410 M  | eval
+4 | log_softmax          | TokenClassifier                   | 7.3 M  | eval
+5 | loss                 | SmoothedCrossEntropyLoss          | 0      | eval
+6 | spec_augmentation    | SpectrogramAugmentation           | 0      | eval
+7 | val_loss             | GlobalAverageLossMetric           | 0      | eval
+8 | wer                  | WER                               | 0      | eval
+9 | bleu                 | BLEU                              | 0      | eval
+----------------------------------------------------------------------------------
+410 M     Trainable params
+810 M     Non-trainable params
+1.2 B     Total params
+4,885.758 Total estimated model params size (MB)
+0         Modules in train mode
+1460      Modules in eval mode
+
+Encoder frozen — training decoder + heads only.
+
+    
+[NeMo I 2026-09-23 19:06:58 metric:549] WER reference: एखादी संस्था नाविन्यपूर्ण होण्यापूर्वी त्यातील प्रमुखांनी नाविन्यतेची एक संस्कृती निर्माण केली पाहिजे तसेच ज्ञानाची देवाण-घेवाण आणि संस्थात्मक अध्ययन केले पाहिजे
+[NeMo I 2026-09-23 19:06:58 metric:549] WER predicted: एखादी स संस्था नाविन्यपूर्ण होण्यापूर्वी त्यातील प्रामुख्याने नाविन्यतेची एक संस्कृती निर्माण केली पाहिजे तसेच ज्ञानाची देवाणघेवाण आणि संस्थात्मक अध्ययन केले पाहिजे
+
+    
+[NeMo I 2026-09-23 19:07:03 metric:549] WER reference: प्राचीन रोमन जेवणामध्ये अमेरिका किंवा आशिया तून नंतरच्या शतकामध्ये युरोप मध्ये आलेलं अन्न समाविष्ट करणे शक्य नव्हते
+[NeMo I 2026-09-23 19:07:03 metric:549] WER predicted: प्राचीन रोमन जेवणामध्ये अमेरिका किंवा आशियातून नंतरच्या शतकामध्ये युरोपमध्ये आलेलं अन्न समाविष्ट करणे शक्य नव्हते
+
+                                                                           
+
+[rank0]:[W923 19:07:06.179618693 reducer.cpp:1529] Warning: find_unused_parameters=True was specified in DDP constructor, but did not find any unused parameters in the forward pass. This flag results in an extra traversal of the autograd graph every iteration,  which can adversely affect performance. If your model indeed never has any unused parameters in the forward pass, consider turning this flag off. Note that this warning may be a false positive if your model has flow control causing later iterations to have unused parameters. (function operator())
+
+    
+[NeMo I 2026-09-23 19:07:10 metric:549] WER reference: पिट्टमॅनने असे सुचवले की कदाचित पुढच्या आठवड्यापर्यंत परिस्थिती सुधारणार नाही
+[NeMo I 2026-09-23 19:07:10 metric:549] WER predicted: पिटमॅनने असे सुचविले की कदाचित पुढच्या आठवड्यापर्यंत परिस्थिती सुधारणार नाही
+
+    
+[NeMo I 2026-09-23 19:07:16 metric:549] WER reference: अनेकदा या सर्विसेस करिता ऍक्सेस टोल-फ्री टेलिफोन नंबरद्वारे केला जातो ज्यास बहुतांश फोनवरून विना-शुल्क कॉल केला जाऊ शकतो
+[NeMo I 2026-09-23 19:07:16 metric:549] WER predicted: अनेकदा या सर्विसेसकरिता ॲक्सेस टोल फ्री टेलिफोन नंबरद्वारे केला जातो ज्यास बहुतांश फोनवरून विनाशुल्क कॉल केला जाऊ शकतो
+
+    
+[NeMo I 2026-09-23 19:07:23 metric:549] WER reference: जर तुम्हाला दक्षिण प्रशांत आणि दक्षिण अमेरिकेचा पश्चिम किनारा या ठिकाणी जायचे असेल केवळ  विमान हाच पर्याय नाही. खाली पहा
+[NeMo I 2026-09-23 19:07:23 metric:549] WER predicted: जर तुम्हाला दक्षिण प्रशांत आणि दक्षिण अमेरिकेचा पश्चिम किनारा या ठिकाणी जायचं असेल केवळ विमान हाच पर्याय नाही खाली पहा
+
+    
+[NeMo I 2026-09-23 19:07:29 metric:549] WER reference: तेव्हा पासून ब्राझिलियनने सर्व स्पर्धांमध्ये क्लबसाठी 53 सामन्यांत समावेश केला आहे आणि त्याने 24 लक्ष्य स्कोअर केले आहेत
+[NeMo I 2026-09-23 19:07:29 metric:549] WER predicted: तेव्हापासून ब्राझीलियनने सर्व स्पर्धांमध्ये क्लबसाठी त्रेपन्न सामन्याचा समावेश केला आहे आणि त्याने चोवीस लक्ष स्कोर केले आहेत
+
+    
+[NeMo I 2026-09-23 19:07:36 metric:549] WER reference: ते स्पष्ट झाल्यानंतर अनेक कुटुंबे बेकायदेशीर कारवाईसाठी लढा देण्यासाठी कायदेशीर मदतीची मागणी करत होते गृहनिर्माण घोटाळ्यातील पीडित व्यक्तींसाठी 20 मार्च रोजी पूर्व बे समुदाय कायदा केंद्र येथे एक बैठक आयोजित करण्यात आली होती
+[NeMo I 2026-09-23 19:07:36 metric:549] WER predicted: ते स्पष्ट झाल्यानंतर अनेक कुटुंबे बेकायदेशीर कारवाईसाठी लढा देण्यासाठी कायदेशीर मदतीची मागणी करत होते गृहनिर्माण घोटाळ्यातील पीडित व्यक्तींसाठी वीस मार्च रोजी पूर्व बे समुदाय कायदा केंद्र येथे एक बैठक आयोजित करण्यात आली होती
+
+    
+[NeMo I 2026-09-23 19:07:43 metric:549] WER reference: युरोपियन टर्की बाल्कन द्वीप कल्पामध्ये पूर्व थरेस किंवा रूमएलिया मध्ये देशाचा 3% भाग आहे
+[NeMo I 2026-09-23 19:07:43 metric:549] WER predicted: युरोपियन टर्की म्हणजेच बाल्कन द्वीपकल्पामध्ये पूर्व थरेस किंवा रूम एलियामध्ये देशाचा तीन टक्के भाग आहे
+
+    
+[NeMo I 2026-09-23 19:07:48 metric:549] WER reference: कॅप्सूल बरीचशी आकाशातून जाणाऱ्या उल्केप्रमाणे दिसेल
+[NeMo I 2026-09-23 19:07:48 metric:549] WER predicted: कॅप्सूल बरीचशी आकाशातून जाणाऱ्या उल्केप्रमाणे दिसेल
+
+    
+[NeMo I 2026-09-23 19:07:55 metric:549] WER reference: पुढील चित्र फोटॉन्स उत्सर्जित करणारे अणू दर्शविते वास्तविक पाहता प्रत्यक्षात फोटॉन्स हे चित्रात दाखविले आहेत त्यापेक्षा अतिशय लहान असतात
+[NeMo I 2026-09-23 19:07:55 metric:549] WER predicted: पुढील चित्र फोटोनस उत्सर्जित करणारे अणू दर्शविते वास्तविक पाहता प्रत्यक्षात फोटोन्स हे चित्रात दाखवले होत आहेत त्यापेक्षा अतिशय लहान असतात
+
+    
+[NeMo I 2026-09-23 19:08:01 metric:549] WER reference: 1819 मध्ये सापडलेल्या दक्षिण शेटलँड बेटांवर अनेक राष्ट्रांनी दावा केलेला आहे आणि तेथे 2020 मध्ये सक्रिय असलेल्या सोळा तळांसोबत अनेक तळ आहेत
+[NeMo I 2026-09-23 19:08:01 metric:549] WER predicted: अठराशे एकोणीसमध्ये सापडलेल्या दक्षिण शेटलँड बेटांवर अनेक राष्ट्रांनी दावा केलेला आहे आणि तेथे दोन हजार वीसमध्ये सक सक्रिय असलेल्या सोळा तळांसोबत अनेक तळ आहेत
+
+    
+[NeMo I 2026-09-23 19:08:07 metric:549] WER reference: बुधवार दुपारपर्यंत टाकीच्या आत कदाचित औष्णिक विस्तारामुळे टाकीचे व्हेंट्स अजूनही गळत होते
+[NeMo I 2026-09-23 19:08:07 metric:549] WER predicted: बुधवार दुपारपर्यंत टाकीच्या आत कदाचित औष्णिक विस्तारामुळे टाकीचे व्हेंट्स अजूनही गळत होते
+
+    
+[NeMo I 2026-09-23 19:08:14 metric:549] WER reference: तुर्कस्थान ला 3 बाजूनी समुद्रांनी वेढले आहे पश्चिमेस एजियन समुद्र उत्तरेस काळा समुद्र आणि भूमध्य सागर समुद्र दक्षिणेला
+[NeMo I 2026-09-23 19:08:14 metric:549] WER predicted: तुर्कस्तानला तीन बाजूंनी समुद्रांनी वेढले आहे पश्चिमेस एजियन समुद्र उत्तरेस काळा समुद्र आणि भूमध्यसागर समुद्र दक्षिणेला
+
+    
+[NeMo I 2026-09-23 19:08:20 metric:549] WER reference: मी आनंदी आहे की लोक मला पाठिंबा देण्यास उत्सुक आहेत
+[NeMo I 2026-09-23 19:08:20 metric:549] WER predicted: मी आनंदी आहे की लोक मला पाठिंबा देण्यास उत्सुक आहेत
+
+    
+[NeMo I 2026-09-23 19:08:27 metric:549] WER reference: प्युअरलँड ओरिगामी ही एका बंधनासह आहे की एका वेळी फक्त 1 घडी घालता येईल आणि उलट घडीसारख्या गुंतागुंतीच्या घड्याना परवानगी नाही आणि सर्व घड्या या सरळ सोट स्थानी असतील
+[NeMo I 2026-09-23 19:08:27 metric:549] WER predicted: प्युअरलँड ओरिगामी ही एका बंधनासह आहे की एका वेळी फक्त एक घडी घालता येईल आणि उलट घडीसारख्या गुंतागुंतीच्या घड्यांना परवानगी नाही आणि सर्व घड्या या सरळसोट स्थानी असतील
+
+    
+[NeMo I 2026-09-23 19:08:34 metric:549] WER reference: आवश्यकतेनुसार उत्पादने खरेदी करता येऊ शकतात परंतु बहुतेक जणांच्या कामगिरीवर फार थोडा किंवा प्रत्यक्ष परिणाम होणार नाही
+[NeMo I 2026-09-23 19:08:34 metric:549] WER predicted: आवश्यकतेनुसार उत्पादने खरेदी करता येऊ शकतात परंतु बहुतेक जणांचा कामगिर्वीवर वाढ थोडा किंवा प्रत्यक्ष परिणाम होणार नाही
+
+    
+[NeMo I 2026-09-23 19:08:39 metric:549] WER reference: तमाकी ड्राईव्ह समुद्रकिनारे हे वेटमाता बंदरावर आहेत मध्य ऑकलंड मधील मिशन बे आणि सेंट हेलीयर्स च्या वरच्या बाजारातील उपनगरा मध्ये आहेत
+[NeMo I 2026-09-23 19:08:39 metric:549] WER predicted: तमकी ड्राईव्ह समुद्रकिनारे हे वेटमाता बंदरावर आहेत मध्य ऑकलंडमधील मिशन बे आणि सेंट हेलियर्सच्या वरच्या बाजारातील उपनगरामध्ये आहेत
+
+    
+[NeMo I 2026-09-23 19:08:45 metric:549] WER reference: ते सोसाट्याचा वारा बहुतेक वेळा प्रती तास 100-200 मैल व्युत्पन्न करतात आणि जड वस्तू हवेत उंच उचलून चक्रीवादळाप्रमाणे त्यांना सोबत घेऊन जाऊ शकतात
+[NeMo I 2026-09-23 19:08:45 metric:549] WER predicted: ते सोसाट्याचा वारा बहुतेक वेळा प्रति तास <unk> शंभर-दोनशे मैल व्युत्पन्न करतात आणि जड वस्तू हवेत उंच उचलून चक्रीवादळाप्रमाणे त्यांना सोबत घेऊन जाऊ शकतात
+
+    
+[NeMo I 2026-09-23 19:08:57 metric:549] WER reference: बायनरी नंबर मध्ये 2 किमतीमधील केवळ 1 मूल्य असू शकते उदा 0 किंवा 1 आणि या क्रमांकांना बायनरी अंक असे संबोधले जाते किंवा बिट्स संगणक शब्द्जालामध्ये वापरण्यासाठी
+[NeMo I 2026-09-23 19:08:57 metric:549] WER predicted: बायनरी नंबरमध्ये दोन किमतीमधील केवळ एक मूल्य असू शकते उदा झिरो किंवा एक आणि या क्रमांकांना बायनरी अंक असे संबोधले जाते किंवा बिट्स संकणक शब्दजालामध्ये वापरण्यासाठी
+
+    
+[NeMo I 2026-09-23 19:09:07 metric:549] WER reference: गोमा हे काँगो लोकशाही प्रजासत्ताकमधील पर्यटन शहर आहे जे पूर्वेच्या टोकाला रवांडाजवळ आहे
+[NeMo I 2026-09-23 19:09:07 metric:549] WER predicted: गोमा हे काँगो लोकशाही प्रजासत्ताकमधील पर्यटन शहर आहे जे पूर्वेला पूर्वेच्या टोकाला रवांडाजवळ आहे
+
+    
+[NeMo I 2026-09-23 19:09:14 metric:549] WER reference: जेव्हा कॅप्सूल पृथ्वीवर पोहोचून वातावरणात प्रवेश करेल तेव्हा पाहाटे <unk> वाजण्याच्या सुमारास पूर्वेकडील वेळ कॅलिफोर्निया उत्तर कॅलिफोर्निया ओरेगॉन नेवाडा आणि उताहमधील लोकांना प्रकाशाचा उत्सव पाहता येईल अशी अपेक्षा आहे
+[NeMo I 2026-09-23 19:09:14 metric:549] WER predicted: जेव्हा कॅप्सूल पृथ्वीवर पोहोचून वातावरणात प्रवेश करेल तेव्हा पहाटे पाच वाजण्याच्या सुमारास पूर्वेकडील वेळ कॅलिफोर्निया उत्तर कॅलिफोर्निया ओरेगॉन नेवाडा आणि उताहमधील लोकांना प्रकाशाचा उत्सव पाहता येईल अशी अपेक्षा आहे
+
+    
+[NeMo I 2026-09-23 19:09:19 metric:549] WER reference: हे शाळा सोडलेल्यांमध्ये विशेष लोकप्रिय आहे शिक्षणाशी कोणतीही तडजोड न करता त्यांना विद्यापिठाच्या आधी एक वर्ष बाहेर पडता येते
+[NeMo I 2026-09-23 19:09:19 metric:549] WER predicted: हे शाळा सोडलेल्यांमध्ये विशेष लोकप्रिय आहे शिक्षणाशी कोणतीही तडजोड न करता त्यांना विद्यापीठाच्या हाती 1 वर्ष बाहेर पडता येते
+
+Epoch 1: |          | 0/? [00:00<?, ?it/s, v_num=1]
+Epoch 1: |          | 1/? [00:00<00:00,  1.01it/s, v_num=1]
+Epoch 1: |          | 1/? [00:00<00:00,  1.01it/s, v_num=1]
+Epoch 1: |          | 2/? [00:01<00:00,  1.52it/s, v_num=1]
+Epoch 1: |          | 2/? [00:01<00:00,  1.52it/s, v_num=1]
+Epoch 1: |          | 3/? [00:01<00:00,  1.80it/s, v_num=1]
+Epoch 1: |          | 3/? [00:01<00:00,  1.80it/s, v_num=1]
+Epoch 1: |          | 4/? [00:01<00:00,  2.02it/s, v_num=1]
+Epoch 1: |          | 4/? [00:01<00:00,  2.02it/s, v_num=1][NeMo I 2026-09-23 19:09:25 metric:549] 
+    
+[NeMo I 2026-09-23 19:09:25 metric:549] WER reference: """फोटॉन" नावाच्या प्रकाशाचा एक सूक्ष्म कण प्रकाशित करण्याद्वारे ते हे करतात.
+[NeMo I 2026-09-23 19:09:25 metric:549] WER predicted: फोटॉन नावाच्या प्रकाशाचा एक सूक्ष्म कण प्रकाशित करण्याद्वारे ते हे करतात
+
+Epoch 1: |          | 5/? [00:06<00:00,  0.72it/s, v_num=1]
+Epoch 1: |          | 5/? [00:06<00:00,  0.72it/s, v_num=1]
+Epoch 1: |          | 6/? [00:07<00:00,  0.82it/s, v_num=1]
+Epoch 1: |          | 6/? [00:07<00:00,  0.82it/s, v_num=1]
+Epoch 1: |          | 7/? [00:07<00:00,  0.92it/s, v_num=1]
+Epoch 1: |          | 7/? [00:07<00:00,  0.92it/s, v_num=1]
+Epoch 1: |          | 8/? [00:07<00:00,  1.00it/s, v_num=1]
+Epoch 1: |          | 8/? [00:07<00:00,  1.00it/s, v_num=1]
+Epoch 1: |          | 9/? [00:08<00:00,  1.08it/s, v_num=1]
+Epoch 1: |          | 9/? [00:08<00:00,  1.08it/s, v_num=1][NeMo I 2026-09-23 19:09:32 metric:549] 
+    
+[NeMo I 2026-09-23 19:09:32 metric:549] WER reference: तिसऱ्यांचे अत्यंत-कठोर आणि अनेकदा-उपहासात्मक नियम हे छायाचित्रामध्ये क्रमाचे मोजमाप ठेवताना गतिशीलता तयार करणारी सोपी मार्गदर्शक तत्त्वे आहेत
+[NeMo I 2026-09-23 19:09:32 metric:549] WER predicted: तिसऱ्यांचे अत्यंत कठोर आणि अनेकदा उपहासात्मक नियम हे छायाचित्रामध्ये क्रमाचे मोजमाप ठेवताना गतिशीलता तयार करणारी सोपी मार्गदर्शक तत्त्वे आहेत
+
+Epoch 1: |          | 10/? [00:13<00:00,  0.73it/s, v_num=1]
+Epoch 1: |          | 10/? [00:13<00:00,  0.73it/s, v_num=1]
+Epoch 1: |          | 11/? [00:14<00:00,  0.78it/s, v_num=1]
+Epoch 1: |          | 11/? [00:14<00:00,  0.78it/s, v_num=1]
+Epoch 1: |          | 12/? [00:14<00:00,  0.83it/s, v_num=1]
+Epoch 1: |          | 12/? [00:14<00:00,  0.83it/s, v_num=1]
+Epoch 1: |          | 13/? [00:14<00:00,  0.88it/s, v_num=1]
+Epoch 1: |          | 13/? [00:14<00:00,  0.88it/s, v_num=1]
+Epoch 1: |          | 14/? [00:15<00:00,  0.93it/s, v_num=1]
+Epoch 1: |          | 14/? [00:15<00:00,  0.93it/s, v_num=1][NeMo I 2026-09-23 19:09:39 metric:549] 
+    
+[NeMo I 2026-09-23 19:09:39 metric:549] WER reference: जर तुम्हाला दक्षिण प्रशांत आणि दक्षिण अमेरिकेचा पश्चिम किनारा या ठिकाणी जायचे असेल केवळ  विमान हाच पर्याय नाही. खाली पहा
+[NeMo I 2026-09-23 19:09:39 metric:549] WER predicted: जर तुम्हाला दक्षिण प्रशांत आणि दक्षिण अमेरिकेचा पश्चिम किनारा या ठिकाणी जायचं असेल केवळ विमान हाच पर्याय नाही खाली पहा
+
+Epoch 1: |          | 15/? [00:19<00:00,  0.76it/s, v_num=1]
+Epoch 1: |          | 15/? [00:19<00:00,  0.76it/s, v_num=1]
+Epoch 1: |          | 16/? [00:20<00:00,  0.80it/s, v_num=1]
+Epoch 1: |          | 16/? [00:20<00:00,  0.80it/s, v_num=1]
+Epoch 1: |          | 17/? [00:20<00:00,  0.83it/s, v_num=1]
+Epoch 1: |          | 17/? [00:20<00:00,  0.83it/s, v_num=1]
+Epoch 1: |          | 18/? [00:20<00:00,  0.87it/s, v_num=1]
+Epoch 1: |          | 18/? [00:20<00:00,  0.87it/s, v_num=1]
+Epoch 1: |          | 19/? [00:20<00:00,  0.91it/s, v_num=1]
+Epoch 1: |          | 19/? [00:20<00:00,  0.91it/s, v_num=1][NeMo I 2026-09-23 19:09:44 metric:549] 
+    
+[NeMo I 2026-09-23 19:09:44 metric:549] WER reference: "जपानमध्ये बेटांचे समूह/गट असल्यामुळे जपानला अनेकदा भौगोलिक दृष्टिकोनातून "द्विपसमूह" असे संबोधले जाते.
+[NeMo I 2026-09-23 19:09:44 metric:549] WER predicted: जपानमध्ये बेटांचे समूह किंवा गट असल्यामुळे जपानला अनेकदा भौगोलिक दृष्टिकोनातून द्वीपसमूह असे संबोधिले जाते
+
+Epoch 1: |          | 20/? [00:25<00:00,  0.78it/s, v_num=1]
+Epoch 1: |          | 20/? [00:25<00:00,  0.78it/s, v_num=1]
+Epoch 1: |          | 21/? [00:25<00:00,  0.81it/s, v_num=1]
+Epoch 1: |          | 21/? [00:25<00:00,  0.81it/s, v_num=1]
+Epoch 1: |          | 22/? [00:26<00:00,  0.84it/s, v_num=1]
+Epoch 1: |          | 22/? [00:26<00:00,  0.84it/s, v_num=1]
+Epoch 1: |          | 23/? [00:26<00:00,  0.87it/s, v_num=1]
+Epoch 1: |          | 23/? [00:26<00:00,  0.87it/s, v_num=1]
+Epoch 1: |          | 24/? [00:26<00:00,  0.89it/s, v_num=1]
+Epoch 1: |          | 24/? [00:26<00:00,  0.89it/s, v_num=1][NeMo I 2026-09-23 19:09:51 metric:549] 
+    
+[NeMo I 2026-09-23 19:09:51 metric:549] WER reference: ते स्पष्ट झाल्यानंतर अनेक कुटुंबे बेकायदेशीर कारवाईसाठी लढा देण्यासाठी कायदेशीर मदतीची मागणी करत होते गृहनिर्माण घोटाळ्यातील पीडित व्यक्तींसाठी 20 मार्च रोजी पूर्व बे समुदाय कायदा केंद्र येथे एक बैठक आयोजित करण्यात आली होती
+[NeMo I 2026-09-23 19:09:51 metric:549] WER predicted: ते स्पष्ट झाल्यानंतर अनेक कुटुंबे बेकायदेशीर कारवाईसाठी लढा देण्यासाठी कायदेशीर मदतीची मागणी करत होते गृहनिर्माण घोटाळ्यातील पीडित व्यक्तींसाठी 20 मार्च रोजी पूर्व बे समुदाय कायदा केंद्र येथे एक बैठक आयोजित करण्यात आली होती
+
+Epoch 1: |          | 25/? [00:32<00:00,  0.78it/s, v_num=1]
+Epoch 1: |          | 25/? [00:32<00:00,  0.78it/s, v_num=1]
+Epoch 1: |          | 26/? [00:32<00:00,  0.80it/s, v_num=1]
+Epoch 1: |          | 26/? [00:32<00:00,  0.80it/s, v_num=1]
+Epoch 1: |          | 27/? [00:32<00:00,  0.82it/s, v_num=1]
+Epoch 1: |          | 27/? [00:32<00:00,  0.82it/s, v_num=1]
+Epoch 1: |          | 28/? [00:33<00:00,  0.85it/s, v_num=1]
+Epoch 1: |          | 28/? [00:33<00:00,  0.85it/s, v_num=1]
+Epoch 1: |          | 29/? [00:33<00:00,  0.87it/s, v_num=1]
+Epoch 1: |          | 29/? [00:33<00:00,  0.87it/s, v_num=1][NeMo I 2026-09-23 19:09:57 metric:549] 
+    
+[NeMo I 2026-09-23 19:09:57 metric:549] WER reference: ही संकल्पना चीनमधून आली आहे जिथे प्लम ब्लॉसम हे एक आवडीचे फूल होते
+[NeMo I 2026-09-23 19:09:57 metric:549] WER predicted: ही संकल्पना चीनमधून आली आहे जिथे प्लम ब्लॉसम हे एक आवडीचे फूल होते
+
+Epoch 1: |          | 30/? [00:38<00:00,  0.78it/s, v_num=1]
+Epoch 1: |          | 30/? [00:38<00:00,  0.78it/s, v_num=1]
+Epoch 1: |          | 31/? [00:38<00:00,  0.80it/s, v_num=1]
+Epoch 1: |          | 31/? [00:38<00:00,  0.80it/s, v_num=1]
+Epoch 1: |          | 32/? [00:39<00:00,  0.82it/s, v_num=1]
+Epoch 1: |          | 32/? [00:39<00:00,  0.82it/s, v_num=1]
+Epoch 1: |          | 33/? [00:39<00:00,  0.84it/s, v_num=1]
+Epoch 1: |          | 33/? [00:39<00:00,  0.84it/s, v_num=1]
+Epoch 1: |          | 34/? [00:39<00:00,  0.86it/s, v_num=1]
+Epoch 1: |          | 34/? [00:39<00:00,  0.86it/s, v_num=1][NeMo I 2026-09-23 19:10:03 metric:549] 
+    
+[NeMo I 2026-09-23 19:10:03 metric:549] WER reference: कॅप्सूल बरीचशी आकाशातून जाणाऱ्या उल्केप्रमाणे दिसेल
+[NeMo I 2026-09-23 19:10:03 metric:549] WER predicted: कॅप्सूल बरीचशी आकाशातून जाणाऱ्या उल्केप्रमाणे दिसेल
+
+Epoch 1: |          | 35/? [00:43<00:00,  0.81it/s, v_num=1]
+Epoch 1: |          | 35/? [00:43<00:00,  0.81it/s, v_num=1]
+Epoch 1: |          | 36/? [00:43<00:00,  0.82it/s, v_num=1]
+Epoch 1: |          | 36/? [00:43<00:00,  0.82it/s, v_num=1]
+Epoch 1: |          | 37/? [00:44<00:00,  0.84it/s, v_num=1]
+Epoch 1: |          | 37/? [00:44<00:00,  0.84it/s, v_num=1]
+Epoch 1: |          | 38/? [00:44<00:00,  0.85it/s, v_num=1]
+Epoch 1: |          | 38/? [00:44<00:00,  0.85it/s, v_num=1]
+Epoch 1: |          | 39/? [00:44<00:00,  0.87it/s, v_num=1]
+Epoch 1: |          | 39/? [00:44<00:00,  0.87it/s, v_num=1][NeMo I 2026-09-23 19:10:09 metric:549] 
+    
+[NeMo I 2026-09-23 19:10:09 metric:549] WER reference: "मीडिया कंपन्या याच्या उद्देशाबाबत सतत खोट बोलतात "पायरसीला प्रतिबंध" करण्यासाठी असं असल्याचा दावा करतात.
+[NeMo I 2026-09-23 19:10:09 metric:549] WER predicted: मीडिया कंपन्या यांच्या उद्देशाबाबत सतत खोटे बोलतात पायरसीला प प्रतिबंध करण्यासाठी असं असल्याचा दावा करतात
+
+Epoch 1: |          | 40/? [00:50<00:00,  0.80it/s, v_num=1]
+Epoch 1: |          | 40/? [00:50<00:00,  0.80it/s, v_num=1]
+Epoch 1: |          | 41/? [00:50<00:00,  0.81it/s, v_num=1]
+Epoch 1: |          | 41/? [00:50<00:00,  0.81it/s, v_num=1]
+Epoch 1: |          | 42/? [00:51<00:00,  0.82it/s, v_num=1]
+Epoch 1: |          | 42/? [00:51<00:00,  0.82it/s, v_num=1]
+Epoch 1: |          | 43/? [00:51<00:00,  0.84it/s, v_num=1]
+Epoch 1: |          | 43/? [00:51<00:00,  0.84it/s, v_num=1]
+Epoch 1: |          | 44/? [00:51<00:00,  0.85it/s, v_num=1]
+Epoch 1: |          | 44/? [00:51<00:00,  0.85it/s, v_num=1][NeMo I 2026-09-23 19:10:15 metric:549] 
+    
+[NeMo I 2026-09-23 19:10:15 metric:549] WER reference: त्यांनी हे देखील सुचविले की मानवी वर्तनाचा अन्वयार्थ लावण्याच्या अशा क्षमता पाळीव कुत्र्यांसारख्या प्राण्यांमध्ये असू शकतात
+[NeMo I 2026-09-23 19:10:15 metric:549] WER predicted: त्यांनी हे देखील सुचवले की मानवी वर्तनाचा अन्वयार्थ लावण्याच्या अशा क्षमता पाळीव कुत्र्यांसारख्या प्राण्यांमध्ये असू शकतात
+
+Epoch 1: |          | 45/? [00:56<00:00,  0.80it/s, v_num=1]
+Epoch 1: |          | 45/? [00:56<00:00,  0.80it/s, v_num=1]
+Epoch 1: |          | 46/? [00:56<00:00,  0.81it/s, v_num=1]
+Epoch 1: |          | 46/? [00:56<00:00,  0.81it/s, v_num=1]
+Epoch 1: |          | 47/? [00:57<00:00,  0.82it/s, v_num=1]
+Epoch 1: |          | 47/? [00:57<00:00,  0.82it/s, v_num=1]
+Epoch 1: |          | 48/? [00:57<00:00,  0.84it/s, v_num=1]
+Epoch 1: |          | 48/? [00:57<00:00,  0.84it/s, v_num=1]
+Epoch 1: |          | 49/? [00:57<00:00,  0.85it/s, v_num=1]
+Epoch 1: |          | 49/? [00:57<00:00,  0.85it/s, v_num=1][NeMo I 2026-09-23 19:10:21 metric:549] 
+    
+[NeMo I 2026-09-23 19:10:21 metric:549] WER reference: बुधवार दुपारपर्यंत टाकीच्या आत कदाचित औष्णिक विस्तारामुळे टाकीचे व्हेंट्स अजूनही गळत होते
+[NeMo I 2026-09-23 19:10:21 metric:549] WER predicted: बुधवार दुपारपर्यंत टाकीच्या आत कदाचित औष्णिक विस्तारामुळे टाकीचे व्हेंट्स अजूनही गळत होते
+
+Epoch 1: |          | 50/? [01:02<00:00,  0.79it/s, v_num=1]
+Epoch 1: |          | 50/? [01:02<00:00,  0.79it/s, v_num=1]
+Epoch 1: |          | 51/? [01:03<00:00,  0.81it/s, v_num=1]
+Epoch 1: |          | 51/? [01:03<00:00,  0.81it/s, v_num=1]
+Epoch 1: |          | 52/? [01:03<00:00,  0.82it/s, v_num=1]
+Epoch 1: |          | 52/? [01:03<00:00,  0.82it/s, v_num=1]
+Epoch 1: |          | 53/? [01:03<00:00,  0.83it/s, v_num=1]
+Epoch 1: |          | 53/? [01:03<00:00,  0.83it/s, v_num=1]
+Epoch 1: |          | 54/? [01:04<00:00,  0.84it/s, v_num=1]
+Epoch 1: |          | 54/? [01:04<00:00,  0.84it/s, v_num=1][NeMo I 2026-09-23 19:10:28 metric:549] 
+    
+[NeMo I 2026-09-23 19:10:28 metric:549] WER reference: त्यांच्या पूर्वीच्या ऊर्जा पातळीवर पुन्हा येताना त्यांनी प्रकाशापासून प्राप्त होणार्<unk>या अतिरिक्त ऊर्जा टाकून देणे अत्यावश्यक असते
+[NeMo I 2026-09-23 19:10:28 metric:549] WER predicted: त्यांच्या पूर्वीच्या ऊर्जा पातळीवर पुन्हा येताना त्यांनी प्रकाशापासून प्राप्त होणाऱ्या अतिरिक्त ऊर्जा टाकून देणे अत्यावश्यक असते
+
+Epoch 1: |          | 55/? [01:08<00:00,  0.80it/s, v_num=1]
+Epoch 1: |          | 55/? [01:08<00:00,  0.80it/s, v_num=1]
+Epoch 1: |          | 56/? [01:08<00:00,  0.81it/s, v_num=1]
+Epoch 1: |          | 56/? [01:08<00:00,  0.81it/s, v_num=1]
+Epoch 1: |          | 57/? [01:09<00:00,  0.82it/s, v_num=1]
+Epoch 1: |          | 57/? [01:09<00:00,  0.82it/s, v_num=1]
+Epoch 1: |          | 58/? [01:09<00:00,  0.83it/s, v_num=1]
+Epoch 1: |          | 58/? [01:09<00:00,  0.83it/s, v_num=1]
+Epoch 1: |          | 59/? [01:09<00:00,  0.84it/s, v_num=1]
+Epoch 1: |          | 59/? [01:09<00:00,  0.84it/s, v_num=1][NeMo I 2026-09-23 19:10:33 metric:549] 
+    
+[NeMo I 2026-09-23 19:10:33 metric:549] WER reference: मी आनंदी आहे की लोक मला पाठिंबा देण्यास उत्सुक आहेत
+[NeMo I 2026-09-23 19:10:33 metric:549] WER predicted: मी आनंदी आहे की लोक मला पाठिंबा देण्यास उत्सुक आहेत
+
+Epoch 1: |          | 60/? [01:14<00:00,  0.80it/s, v_num=1]
+Epoch 1: |          | 60/? [01:14<00:00,  0.80it/s, v_num=1]
+Epoch 1: |          | 61/? [01:15<00:00,  0.81it/s, v_num=1]
+Epoch 1: |          | 61/? [01:15<00:00,  0.81it/s, v_num=1]
+Epoch 1: |          | 62/? [01:15<00:00,  0.82it/s, v_num=1]
+Epoch 1: |          | 62/? [01:15<00:00,  0.82it/s, v_num=1]
+Epoch 1: |          | 63/? [01:15<00:00,  0.83it/s, v_num=1]
+Epoch 1: |          | 63/? [01:15<00:00,  0.83it/s, v_num=1]
+Epoch 1: |          | 64/? [01:16<00:00,  0.84it/s, v_num=1]
+Epoch 1: |          | 64/? [01:16<00:00,  0.84it/s, v_num=1][NeMo I 2026-09-23 19:10:40 metric:549] 
+    
+[NeMo I 2026-09-23 19:10:40 metric:549] WER reference: इतर शास्त्रज्ञांचा असा तर्क आहे की ही झाडे अतिशय विषारी आहेत त्यामुळे कोणत्याही डायनासोरने ते खाल्लेच असण्याची शक्यता नाही असे असले तरी आज स्लॉथ तसेच पोपटासारखे  डायनासोरचा वंशज इतर प्राणी विषारी पाने किंवा फळ खाऊ शकतात
+[NeMo I 2026-09-23 19:10:40 metric:549] WER predicted: इतर शास्त्रज्ञांचा असा तर्क आहे की ही झाडे अतिशय विषारी आहेत त्यामुळे कोणत्याही डायनासोरने ते खाल्ले असण्याची शक्यता नाही असे असले तरी आज स्लॉथ तसेच पोपटासारखे डायनासोरचा वंशज इतर प्राणी विषारी पाने किंवा फळ खाऊ शकतात
+
+Epoch 1: |          | 65/? [01:21<00:00,  0.79it/s, v_num=1]
+Epoch 1: |          | 65/? [01:21<00:00,  0.79it/s, v_num=1]
+Epoch 1: |          | 66/? [01:22<00:00,  0.80it/s, v_num=1]
+Epoch 1: |          | 66/? [01:22<00:00,  0.80it/s, v_num=1]
+Epoch 1: |          | 67/? [01:22<00:00,  0.81it/s, v_num=1]
+Epoch 1: |          | 67/? [01:22<00:00,  0.81it/s, v_num=1]
+Epoch 1: |          | 68/? [01:22<00:00,  0.82it/s, v_num=1]
+Epoch 1: |          | 68/? [01:22<00:00,  0.82it/s, v_num=1]
+Epoch 1: |          | 69/? [01:23<00:00,  0.83it/s, v_num=1]
+Epoch 1: |          | 69/? [01:23<00:00,  0.83it/s, v_num=1][NeMo I 2026-09-23 19:10:47 metric:549] 
+    
+[NeMo I 2026-09-23 19:10:47 metric:549] WER reference: आवश्यकतेनुसार उत्पादने खरेदी करता येऊ शकतात परंतु बहुतेक जणांच्या कामगिरीवर फार थोडा किंवा प्रत्यक्ष परिणाम होणार नाही
+[NeMo I 2026-09-23 19:10:47 metric:549] WER predicted: आवश्यकतेनुसार उत्पादने खरेदी करता येऊ शकतात परंतु बहुतेक जणांचा कामगिरीवर वाढ थोडा किंवा प्रत्यक्ष परिणाम होणार नाही
+
+Epoch 1: |          | 70/? [01:28<00:00,  0.79it/s, v_num=1]
+Epoch 1: |          | 70/? [01:28<00:00,  0.79it/s, v_num=1]
+Epoch 1: |          | 71/? [01:29<00:00,  0.80it/s, v_num=1]
+Epoch 1: |          | 71/? [01:29<00:00,  0.80it/s, v_num=1]
+Epoch 1: |          | 72/? [01:29<00:00,  0.80it/s, v_num=1]
+Epoch 1: |          | 72/? [01:29<00:00,  0.80it/s, v_num=1]
+Epoch 1: |          | 73/? [01:29<00:00,  0.81it/s, v_num=1]
+Epoch 1: |          | 73/? [01:29<00:00,  0.81it/s, v_num=1]
+Epoch 1: |          | 74/? [01:30<00:00,  0.82it/s, v_num=1]
+Epoch 1: |          | 74/? [01:30<00:00,  0.82it/s, v_num=1][NeMo I 2026-09-23 19:10:54 metric:549] 
+    
+[NeMo I 2026-09-23 19:10:54 metric:549] WER reference: तमाकी ड्राईव्ह समुद्रकिनारे हे वेटमाता बंदरावर आहेत मध्य ऑकलंड मधील मिशन बे आणि सेंट हेलीयर्स च्या वरच्या बाजारातील उपनगरा मध्ये आहेत
+[NeMo I 2026-09-23 19:10:54 metric:549] WER predicted: तमकी ड्राईव्ह समुद्रकिनारे हे वेटमाता बंदरावर आहेत मध्य ऑकलंडमधील मिशन बे आणि सेंट हेलियर्सच्या वरच्या बाजारातील उपनगरामध्ये आहेत
+
+Epoch 1: |          | 75/? [01:34<00:00,  0.79it/s, v_num=1]
+Epoch 1: |          | 75/? [01:34<00:00,  0.79it/s, v_num=1]
+Epoch 1: |          | 76/? [01:35<00:00,  0.80it/s, v_num=1]
+Epoch 1: |          | 76/? [01:35<00:00,  0.80it/s, v_num=1]
+Epoch 1: |          | 77/? [01:35<00:00,  0.80it/s, v_num=1]
+Epoch 1: |          | 77/? [01:35<00:00,  0.80it/s, v_num=1]
+Epoch 1: |          | 78/? [01:36<00:00,  0.81it/s, v_num=1]
+Epoch 1: |          | 78/? [01:36<00:00,  0.81it/s, v_num=1]
+Epoch 1: |          | 79/? [01:36<00:00,  0.82it/s, v_num=1]
+Epoch 1: |          | 79/? [01:36<00:00,  0.82it/s, v_num=1][NeMo I 2026-09-23 19:11:01 metric:549] 
+    
+[NeMo I 2026-09-23 19:11:01 metric:549] WER reference: त्सुनामीचा कोणताही धोका नसतानाही रहिवासी घाबरू लागले तसेच त्यांनी त्यांचे व्यवसाय आणि घरे सोडण्यास सुरवात केली
+[NeMo I 2026-09-23 19:11:01 metric:549] WER predicted: सुनामीचा कोणताही धोका नसतानाही रहिवासी घाबरू लागले तसेच त्यांनी त्यांचे व्यवसाय आणि घरे सोडण्यास सुरुवात केली
+
+Epoch 1: |          | 80/? [01:43<00:00,  0.77it/s, v_num=1]
+Epoch 1: |          | 80/? [01:43<00:00,  0.77it/s, v_num=1]
+Epoch 1: |          | 81/? [01:43<00:00,  0.78it/s, v_num=1]
+Epoch 1: |          | 81/? [01:43<00:00,  0.78it/s, v_num=1]
+Epoch 1: |          | 82/? [01:44<00:00,  0.79it/s, v_num=1]
+Epoch 1: |          | 82/? [01:44<00:00,  0.79it/s, v_num=1]
+Epoch 1: |          | 83/? [01:44<00:00,  0.79it/s, v_num=1]
+Epoch 1: |          | 83/? [01:44<00:00,  0.79it/s, v_num=1]
+Epoch 1: |          | 84/? [01:44<00:00,  0.80it/s, v_num=1]
+Epoch 1: |          | 84/? [01:44<00:00,  0.80it/s, v_num=1][NeMo I 2026-09-23 19:11:08 metric:549] 
+    
+[NeMo I 2026-09-23 19:11:08 metric:549] WER reference: बायनरी नंबर मध्ये 2 किमतीमधील केवळ 1 मूल्य असू शकते उदा 0 किंवा 1 आणि या क्रमांकांना बायनरी अंक असे संबोधले जाते किंवा बिट्स संगणक शब्द्जालामध्ये वापरण्यासाठी
+[NeMo I 2026-09-23 19:11:08 metric:549] WER predicted: बायनरी नंबरमध्ये 2 किमतीमधील केवळ 1 मूल्य असू शकते उदाहरण 0 किंवा 1 आणि या क्रमांकांना बायनरी अंक असे संबोधले जाते किंवा बिट्स संकणक शब्दजालामध्ये वापरण्यासाठी
+
+Epoch 1: |          | 85/? [01:49<00:00,  0.78it/s, v_num=1]
+Epoch 1: |          | 85/? [01:49<00:00,  0.78it/s, v_num=1]
+Epoch 1: |          | 86/? [01:49<00:00,  0.78it/s, v_num=1]
+Epoch 1: |          | 86/? [01:49<00:00,  0.78it/s, v_num=1]
+Epoch 1: |          | 87/? [01:49<00:00,  0.79it/s, v_num=1]
+Epoch 1: |          | 87/? [01:49<00:00,  0.79it/s, v_num=1]
+Epoch 1: |          | 88/? [01:50<00:00,  0.80it/s, v_num=1]
+Epoch 1: |          | 88/? [01:50<00:00,  0.80it/s, v_num=1]
+Epoch 1: |          | 89/? [01:50<00:00,  0.80it/s, v_num=1]
+Epoch 1: |          | 89/? [01:50<00:00,  0.80it/s, v_num=1][NeMo I 2026-09-23 19:11:14 metric:549] 
+    
+[NeMo I 2026-09-23 19:11:14 metric:549] WER reference: गोमा हे काँगो लोकशाही प्रजासत्ताकमधील पर्यटन शहर आहे जे पूर्वेच्या टोकाला रवांडाजवळ आहे
+[NeMo I 2026-09-23 19:11:14 metric:549] WER predicted: गोमा हे काँगो लोकशाही प्रजासत्ताकमधील पर्यटन शहर आहे जे पूर्वेला पूर्वेच्या टोकाला रवांडाजवळ आहे
+
+Epoch 1: |          | 90/? [01:54<00:00,  0.79it/s, v_num=1]
+Epoch 1: |          | 90/? [01:54<00:00,  0.79it/s, v_num=1]
+Epoch 1: |          | 91/? [01:54<00:00,  0.79it/s, v_num=1]
+Epoch 1: |          | 91/? [01:54<00:00,  0.79it/s, v_num=1]
+Epoch 1: |          | 92/? [01:55<00:00,  0.80it/s, v_num=1]
+Epoch 1: |          | 92/? [01:55<00:00,  0.80it/s, v_num=1]
+Epoch 1: |          | 93/? [01:55<00:00,  0.81it/s, v_num=1]
+Epoch 1: |          | 93/? [01:55<00:00,  0.81it/s, v_num=1]
+Epoch 1: |          | 94/? [01:55<00:00,  0.81it/s, v_num=1]
+Epoch 1: |          | 94/? [01:55<00:00,  0.81it/s, v_num=1][NeMo I 2026-09-23 19:11:20 metric:549] 
+    
+[NeMo I 2026-09-23 19:11:20 metric:549] WER reference: जेव्हा कॅप्सूल पृथ्वीवर पोहोचून वातावरणात प्रवेश करेल तेव्हा पाहाटे <unk> वाजण्याच्या सुमारास पूर्वेकडील वेळ कॅलिफोर्निया उत्तर कॅलिफोर्निया ओरेगॉन नेवाडा आणि उताहमधील लोकांना प्रकाशाचा उत्सव पाहता येईल अशी अपेक्षा आहे
+[NeMo I 2026-09-23 19:11:20 metric:549] WER predicted: जेव्हा कॅप्सूल पृथ्वीवर पोहोचून वातावरणात प्रवेश करेल तेव्हा पहाटे 5:00 वाजण्याच्या सुमारास पूर्वेकडील वेळ कॅलिफोर्निया उत्तर कॅलिफोर्निया ओरेगॉन नेवाडा आणि उताहमधील लोकांना प्रकाशाचा उत्सव पाहता येईल अशी अपेक्षा आहे
+
+Epoch 1: |          | 95/? [02:01<00:00,  0.78it/s, v_num=1]
+Epoch 1: |          | 95/? [02:01<00:00,  0.78it/s, v_num=1]
+Epoch 1: |          | 96/? [02:01<00:00,  0.79it/s, v_num=1]
+Epoch 1: |          | 96/? [02:01<00:00,  0.79it/s, v_num=1]
+Epoch 1: |          | 97/? [02:02<00:00,  0.79it/s, v_num=1]
+Epoch 1: |          | 97/? [02:02<00:00,  0.79it/s, v_num=1]
+Epoch 1: |          | 98/? [02:02<00:00,  0.80it/s, v_num=1]
+Epoch 1: |          | 98/? [02:02<00:00,  0.80it/s, v_num=1]
+Epoch 1: |          | 99/? [02:02<00:00,  0.81it/s, v_num=1]
+Epoch 1: |          | 99/? [02:02<00:00,  0.81it/s, v_num=1][NeMo I 2026-09-23 19:11:25 metric:549] 
+    
+[NeMo I 2026-09-23 19:11:25 metric:549] WER reference: हे शाळा सोडलेल्यांमध्ये विशेष लोकप्रिय आहे शिक्षणाशी कोणतीही तडजोड न करता त्यांना विद्यापिठाच्या आधी एक वर्ष बाहेर पडता येते
+[NeMo I 2026-09-23 19:11:25 metric:549] WER predicted: हे शाळा सोडलेल्यांमध्ये विशेष लोकप्रिय आहे शिक्षणाशी कोणतीही तडजोड न करता त्यांना विद्यापीठाच्या आधी 1 वर्ष बाहेर पडता येते
+
+Epoch 1: |          | 100/? [02:08<00:00,  0.78it/s, v_num=1]
+Epoch 1: |          | 100/? [02:08<00:00,  0.78it/s, v_num=1]
+Epoch 1: |          | 100/? [02:08<00:00,  0.78it/s, v_num=1]
+Epoch 1: |          | 0/? [00:00<?, ?it/s, v_num=1]          
+Epoch 2: |          | 0/? [00:00<?, ?it/s, v_num=1]
+Epoch 2: |          | 1/? [00:01<00:00,  0.99it/s, v_num=1]
+Epoch 2: |          | 1/? [00:01<00:00,  0.99it/s, v_num=1]
+Epoch 2: |          | 2/? [00:01<00:00,  1.43it/s, v_num=1]
+Epoch 2: |          | 2/? [00:01<00:00,  1.43it/s, v_num=1]
+Epoch 2: |          | 3/? [00:01<00:00,  1.76it/s, v_num=1]
+Epoch 2: |          | 3/? [00:01<00:00,  1.76it/s, v_num=1]
+Epoch 2: |          | 4/? [00:01<00:00,  2.01it/s, v_num=1]
+Epoch 2: |          | 4/? [00:01<00:00,  2.01it/s, v_num=1][NeMo I 2026-09-23 19:11:34 metric:549] 
+    
+[NeMo I 2026-09-23 19:11:34 metric:549] WER reference: उत्तर आफ्रिकेमध्ये सुरुवातीपासूनच इटालियन लोकांसाठी परिस्थिती चांगली नव्हती. <unk> जून <unk> रोजी इटलीने युद्ध घोषित केल्यानंतर आठवड्याभरातच ब्रिटिशांच्या <unk> व्या हुस्सार रेजिमेंटने लिबियातील कापुझो किल्ला जिंकला
+[NeMo I 2026-09-23 19:11:34 metric:549] WER predicted: उत्तर आफ्रिकेमध्ये सुरुवातीपासूनच इटालियन लोकांसाठी परिस्थिती चांगली नव्हती <unk> जून <unk> रोजी इटलीने युद्ध घोषित केल्यानंतर आठवड्याभरातच ब्रिटिशांच्या <unk> व्या हुस्सार रेजिमेंटने लिबियातील कापुझो किल्ला जिंकला
+
+Epoch 2: |          | 5/? [00:07<00:00,  0.65it/s, v_num=1]
+Epoch 2: |          | 5/? [00:07<00:00,  0.65it/s, v_num=1]
+Epoch 2: |          | 6/? [00:08<00:00,  0.75it/s, v_num=1]
+Epoch 2: |          | 6/? [00:08<00:00,  0.75it/s, v_num=1]
+Epoch 2: |          | 7/? [00:08<00:00,  0.84it/s, v_num=1]
+Epoch 2: |          | 7/? [00:08<00:00,  0.84it/s, v_num=1]
+Epoch 2: |          | 8/? [00:08<00:00,  0.92it/s, v_num=1]
+Epoch 2: |          | 8/? [00:08<00:00,  0.92it/s, v_num=1]
+Epoch 2: |          | 9/? [00:09<00:00,  1.00it/s, v_num=1]
+Epoch 2: |          | 9/? [00:09<00:00,  1.00it/s, v_num=1][NeMo I 2026-09-23 19:11:42 metric:549] 
+    
+[NeMo I 2026-09-23 19:11:42 metric:549] WER reference: तुम्ही दर वीस किंवा तीस मिनिटांनी जागे होत असाल आणि टीव्ही पाहत असाल तर यामुळे थकवा येऊ शकतो
+[NeMo I 2026-09-23 19:11:42 metric:549] WER predicted: तुम्ही दर वीस किंवा तीस मिनिटांनी जागे होत असाल आणि टीव्ही पाहत असाल तर यामुळे थकवा येऊ शकतो
+
+Epoch 2: |          | 10/? [00:15<00:00,  0.63it/s, v_num=1]
+Epoch 2: |          | 10/? [00:15<00:00,  0.63it/s, v_num=1]
+Epoch 2: |          | 11/? [00:16<00:00,  0.68it/s, v_num=1]
+Epoch 2: |          | 11/? [00:16<00:00,  0.68it/s, v_num=1]
+Epoch 2: |          | 12/? [00:16<00:00,  0.72it/s, v_num=1]
+Epoch 2: |          | 12/? [00:16<00:00,  0.72it/s, v_num=1]
+Epoch 2: |          | 13/? [00:16<00:00,  0.77it/s, v_num=1]
+Epoch 2: |          | 13/? [00:16<00:00,  0.77it/s, v_num=1]
+Epoch 2: |          | 14/? [00:17<00:00,  0.81it/s, v_num=1]
+Epoch 2: |          | 14/? [00:17<00:00,  0.81it/s, v_num=1][NeMo I 2026-09-23 19:11:48 metric:549] 
+    
+[NeMo I 2026-09-23 19:11:48 metric:549] WER reference: जर तुम्हाला दक्षिण प्रशांत आणि दक्षिण अमेरिकेचा पश्चिम किनारा या ठिकाणी जायचे असेल केवळ  विमान हाच पर्याय नाही. खाली पहा
+[NeMo I 2026-09-23 19:11:48 metric:549] WER predicted: जर तुम्हाला दक्षिण प्रशांत आणि दक्षिण अमेरिकेचा पश्चिम किनारा या ठिकाणी जायचं असेल केवळ विमान हाच पर्याय नाही खाली पहा
+
+Epoch 2: |          | 15/? [00:21<00:00,  0.69it/s, v_num=1]
+Epoch 2: |          | 15/? [00:21<00:00,  0.69it/s, v_num=1]
+Epoch 2: |          | 16/? [00:22<00:00,  0.72it/s, v_num=1]
+Epoch 2: |          | 16/? [00:22<00:00,  0.72it/s, v_num=1]
+Epoch 2: |          | 17/? [00:22<00:00,  0.76it/s, v_num=1]
+Epoch 2: |          | 17/? [00:22<00:00,  0.76it/s, v_num=1]
+Epoch 2: |          | 18/? [00:22<00:00,  0.79it/s, v_num=1]
+Epoch 2: |          | 18/? [00:22<00:00,  0.79it/s, v_num=1]
+Epoch 2: |          | 19/? [00:23<00:00,  0.82it/s, v_num=1]
+Epoch 2: |          | 19/? [00:23<00:00,  0.82it/s, v_num=1][NeMo I 2026-09-23 19:11:55 metric:549] 
+    
+[NeMo I 2026-09-23 19:11:55 metric:549] WER reference: प्रक्रियेच्या प्रत्येक भागाचे साक्षीदार होण्यासाठी उमेदवार प्रतिनिधी पाठवू शकतात संध्याकाळी स्वयंसेवक कडक सुरक्षाव्यवस्थेत ठराविक प्रक्रियेचे पालन करत मतमोजणी करतात
+[NeMo I 2026-09-23 19:11:55 metric:549] WER predicted: प्रक्रियेच्या प्रत्येक भागाचे साक्षीदार होण्यासाठी उमेदवार प्रतिनिधी पाठवू शकतात संध्याकाळी स्वयंसेवक कडक सुरक्षा व्यवस्थेत ठराविक प्रक्रियेचे पालन करत मतमोजणी करतात
+
+Epoch 2: |          | 20/? [00:28<00:00,  0.71it/s, v_num=1]
+Epoch 2: |          | 20/? [00:28<00:00,  0.71it/s, v_num=1]
+Epoch 2: |          | 21/? [00:28<00:00,  0.74it/s, v_num=1]
+Epoch 2: |          | 21/? [00:28<00:00,  0.74it/s, v_num=1]
+Epoch 2: |          | 22/? [00:28<00:00,  0.76it/s, v_num=1]
+Epoch 2: |          | 22/? [00:28<00:00,  0.76it/s, v_num=1]
+Epoch 2: |          | 23/? [00:29<00:00,  0.79it/s, v_num=1]
+Epoch 2: |          | 23/? [00:29<00:00,  0.79it/s, v_num=1]
+Epoch 2: |          | 24/? [00:29<00:00,  0.81it/s, v_num=1]
+Epoch 2: |          | 24/? [00:29<00:00,  0.81it/s, v_num=1][NeMo I 2026-09-23 19:12:02 metric:549] 
+    
+[NeMo I 2026-09-23 19:12:02 metric:549] WER reference: गोथिक शैली 10 व्या - 11 व्या शतकादरम्यान आणि 14 व्या शतकात शीखरावर पोहोचली
+[NeMo I 2026-09-23 19:12:02 metric:549] WER predicted: गतिक शैली 10 व्या 11 व्या शतकादरम्यान आणि 14 व्या शतकात शिखरावर पोहोचली
+
+Epoch 2: |          | 25/? [00:34<00:00,  0.72it/s, v_num=1]
+Epoch 2: |          | 25/? [00:34<00:00,  0.72it/s, v_num=1]
+Epoch 2: |          | 26/? [00:34<00:00,  0.74it/s, v_num=1]
+Epoch 2: |          | 26/? [00:34<00:00,  0.74it/s, v_num=1]
+Epoch 2: |          | 27/? [00:35<00:00,  0.77it/s, v_num=1]
+Epoch 2: |          | 27/? [00:35<00:00,  0.77it/s, v_num=1]
+Epoch 2: |          | 28/? [00:35<00:00,  0.79it/s, v_num=1]
+Epoch 2: |          | 28/? [00:35<00:00,  0.79it/s, v_num=1]
+Epoch 2: |          | 29/? [00:35<00:00,  0.81it/s, v_num=1]
+Epoch 2: |          | 29/? [00:35<00:00,  0.81it/s, v_num=1][NeMo I 2026-09-23 19:12:08 metric:549] 
+    
+[NeMo I 2026-09-23 19:12:08 metric:549] WER reference: ओनेगा तलाव हा देखील वोल्गाशी जोडला गेलेला आहे म्हणून रशिया मधून कास्पियन समुद्र कडून येणे अद्याप ही शक्य आहे
+[NeMo I 2026-09-23 19:12:08 metric:549] WER predicted: अनगावा तलाव हा देखील वोल्गाशी जोडला गेलेला आहे म्हणून रशियामधून कास्पियन समुद्र कडून येणे अद्यापि शक्य आहे
+
+Epoch 2: |          | 30/? [00:40<00:00,  0.74it/s, v_num=1]
+Epoch 2: |          | 30/? [00:40<00:00,  0.74it/s, v_num=1]
+Epoch 2: |          | 31/? [00:40<00:00,  0.76it/s, v_num=1]
+Epoch 2: |          | 31/? [00:40<00:00,  0.76it/s, v_num=1]
+Epoch 2: |          | 32/? [00:41<00:00,  0.77it/s, v_num=1]
+Epoch 2: |          | 32/? [00:41<00:00,  0.77it/s, v_num=1]
+Epoch 2: |          | 33/? [00:41<00:00,  0.79it/s, v_num=1]
+Epoch 2: |          | 33/? [00:41<00:00,  0.79it/s, v_num=1]
+Epoch 2: |          | 34/? [00:42<00:00,  0.81it/s, v_num=1]
+Epoch 2: |          | 34/? [00:42<00:00,  0.81it/s, v_num=1][NeMo I 2026-09-23 19:12:15 metric:549] 
+    
+[NeMo I 2026-09-23 19:12:15 metric:549] WER reference: इतर शास्त्रज्ञांचा असा तर्क आहे की ही झाडे अतिशय विषारी आहेत त्यामुळे कोणत्याही डायनासोरने ते खाल्लेच असण्याची शक्यता नाही असे असले तरी आज स्लॉथ तसेच पोपटासारखे  डायनासोरचा वंशज इतर प्राणी विषारी पाने किंवा फळ खाऊ शकतात
+[NeMo I 2026-09-23 19:12:15 metric:549] WER predicted: इतर शास्त्रज्ञांचा असा तर्क आहे की ही झाडे अतिशय विषारी आहेत त्यामुळे कोणत्याही डायनासोरने ते खाल्ले असण्याची शक्यता नाही असे असले तरी आज स्लॉथ तसेच पोपटासारखे डायनासोरचा वंशज इतर प्राणी विषारी पाने किंवा फळ खाऊ शकतात
+
+Epoch 2: |          | 35/? [00:47<00:00,  0.73it/s, v_num=1]
+Epoch 2: |          | 35/? [00:47<00:00,  0.73it/s, v_num=1]
+Epoch 2: |          | 36/? [00:47<00:00,  0.75it/s, v_num=1]
+Epoch 2: |          | 36/? [00:47<00:00,  0.75it/s, v_num=1]
+Epoch 2: |          | 37/? [00:48<00:00,  0.77it/s, v_num=1]
+Epoch 2: |          | 37/? [00:48<00:00,  0.77it/s, v_num=1]
+Epoch 2: |          | 38/? [00:48<00:00,  0.78it/s, v_num=1]
+Epoch 2: |          | 38/? [00:48<00:00,  0.78it/s, v_num=1]
+Epoch 2: |          | 39/? [00:49<00:00,  0.80it/s, v_num=1]
+Epoch 2: |          | 39/? [00:49<00:00,  0.80it/s, v_num=1][NeMo I 2026-09-23 19:12:21 metric:549] 
+    
+[NeMo I 2026-09-23 19:12:21 metric:549] WER reference: कामाच्या ठिकाणी सुसंवाद साधणे अत्यंत अवघड आहे वैयक्तिक कामगिरीच्या कौतुकापेक्षा सामूहिक प्रयत्नांवर भर देणे गरजेचे आहे
+[NeMo I 2026-09-23 19:12:21 metric:549] WER predicted: कामाच्या ठिकाणी सुसंवाद साधणे अत्यंत अवघड आहे वैयक्तिक कामगिरीच्या कौतुकापेक्षा सामूहिक प्रयत्नांवर भर देणे गरजेचे आहे
+
+Epoch 2: |          | 40/? [00:54<00:00,  0.74it/s, v_num=1]
+Epoch 2: |          | 40/? [00:54<00:00,  0.74it/s, v_num=1]
+Epoch 2: |          | 41/? [00:54<00:00,  0.75it/s, v_num=1]
+Epoch 2: |          | 41/? [00:54<00:00,  0.75it/s, v_num=1]
+Epoch 2: |          | 42/? [00:55<00:00,  0.76it/s, v_num=1]
+Epoch 2: |          | 42/? [00:55<00:00,  0.76it/s, v_num=1]
+Epoch 2: |          | 43/? [00:55<00:00,  0.78it/s, v_num=1]
+Epoch 2: |          | 43/? [00:55<00:00,  0.78it/s, v_num=1]
+Epoch 2: |          | 44/? [00:55<00:00,  0.79it/s, v_num=1]
+Epoch 2: |          | 44/? [00:55<00:00,  0.79it/s, v_num=1][NeMo I 2026-09-23 19:12:27 metric:549] 
+    
+[NeMo I 2026-09-23 19:12:27 metric:549] WER reference: 1819 मध्ये सापडलेल्या दक्षिण शेटलँड बेटांवर अनेक राष्ट्रांनी दावा केलेला आहे आणि तेथे 2020 मध्ये सक्रिय असलेल्या सोळा तळांसोबत अनेक तळ आहेत
+[NeMo I 2026-09-23 19:12:27 metric:549] WER predicted: 1819 मध्ये सापडलेल्या दक्षिण शेटलँड बेटांवर अनेक राष्ट्रांनी दावा केलेला आहे आणि तेथे 2020 मध्ये सक्रिय असलेल्या 16 तळांसोबत अनेक तळ आहेत
+
+Epoch 2: |          | 45/? [00:59<00:00,  0.75it/s, v_num=1]
+Epoch 2: |          | 45/? [00:59<00:00,  0.75it/s, v_num=1]
+Epoch 2: |          | 46/? [01:00<00:00,  0.77it/s, v_num=1]
+Epoch 2: |          | 46/? [01:00<00:00,  0.77it/s, v_num=1]
+Epoch 2: |          | 47/? [01:00<00:00,  0.78it/s, v_num=1]
+Epoch 2: |          | 47/? [01:00<00:00,  0.78it/s, v_num=1]
+Epoch 2: |          | 48/? [01:00<00:00,  0.79it/s, v_num=1]
+Epoch 2: |          | 48/? [01:00<00:00,  0.79it/s, v_num=1]
+Epoch 2: |          | 49/? [01:01<00:00,  0.80it/s, v_num=1]
+Epoch 2: |          | 49/? [01:01<00:00,  0.80it/s, v_num=1][NeMo I 2026-09-23 19:12:33 metric:549] 
+    
+[NeMo I 2026-09-23 19:12:33 metric:549] WER reference: या विचारधारेतील सर्वात महत्वाचा घटक म्हणजेः अचूक उत्तर केवळ एकच असते आपण केवळ दोन उत्तरांचा विचार करता अनुक्रमे बरोबर किंवा चूक
+[NeMo I 2026-09-23 19:12:33 metric:549] WER predicted: या विचारधारेतील सर्वात महत्त्वाचा घटक म्हणजे अचूक उत्तर केवळ एकच असते आपण केवळ दोन उत्तरांचा विचार करता अनुक्रमे बरोबर किंवा चूक
+
+Epoch 2: |          | 50/? [01:05<00:00,  0.76it/s, v_num=1]
+Epoch 2: |          | 50/? [01:05<00:00,  0.76it/s, v_num=1]
+Epoch 2: |          | 51/? [01:06<00:00,  0.77it/s, v_num=1]
+Epoch 2: |          | 51/? [01:06<00:00,  0.77it/s, v_num=1]
+Epoch 2: |          | 52/? [01:06<00:00,  0.78it/s, v_num=1]
+Epoch 2: |          | 52/? [01:06<00:00,  0.78it/s, v_num=1]
+Epoch 2: |          | 53/? [01:07<00:00,  0.79it/s, v_num=1]
+Epoch 2: |          | 53/? [01:07<00:00,  0.79it/s, v_num=1]
+Epoch 2: |          | 54/? [01:07<00:00,  0.80it/s, v_num=1]
+Epoch 2: |          | 54/? [01:07<00:00,  0.80it/s, v_num=1][NeMo I 2026-09-23 19:12:39 metric:549] 
+    
+[NeMo I 2026-09-23 19:12:39 metric:549] WER reference: 1 जानेवारीला हा मुद्दा सुरू झाला जेव्हा डझनभर स्थानिक रहिवाशांनी ओबाणाझावा पोस्ट ऑफिसकडे तक्रार करण्यास सुरूवात केली की त्यांना त्यांची पारंपारिक आणि नियमित नवीन वर्षाची कार्डे मिळाली नाहीत
+[NeMo I 2026-09-23 19:12:39 metric:549] WER predicted: 1 जानेवारीला हा मुद्दा सुरू झाला जेव्हा डझनभर स्थानिक रहिवाशांनी ओबानाझावा पोस्ट ऑफिसकडे तक्रार करण्यास सुरुवात केली आणि त्यांना त्यांची पारंपारिक आणि नियमित नवीन वर्षाची कार्डे मिळाली नाहीत
+
+Epoch 2: |          | 55/? [01:11<00:00,  0.77it/s, v_num=1]
+Epoch 2: |          | 55/? [01:11<00:00,  0.77it/s, v_num=1]
+Epoch 2: |          | 56/? [01:12<00:00,  0.78it/s, v_num=1]
+Epoch 2: |          | 56/? [01:12<00:00,  0.78it/s, v_num=1]
+Epoch 2: |          | 57/? [01:12<00:00,  0.79it/s, v_num=1]
+Epoch 2: |          | 57/? [01:12<00:00,  0.79it/s, v_num=1]
+Epoch 2: |          | 58/? [01:12<00:00,  0.80it/s, v_num=1]
+Epoch 2: |          | 58/? [01:12<00:00,  0.80it/s, v_num=1]
+Epoch 2: |          | 59/? [01:13<00:00,  0.80it/s, v_num=1]
+Epoch 2: |          | 59/? [01:13<00:00,  0.80it/s, v_num=1][NeMo I 2026-09-23 19:12:45 metric:549] 
+    
+[NeMo I 2026-09-23 19:12:45 metric:549] WER reference: मी आनंदी आहे की लोक मला पाठिंबा देण्यास उत्सुक आहेत
+[NeMo I 2026-09-23 19:12:45 metric:549] WER predicted: मी आनंदी आहे की लोक मला पाठिंबा देण्यास उत्सुक आहेत
+
+Epoch 2: |          | 60/? [01:18<00:00,  0.77it/s, v_num=1]
+Epoch 2: |          | 60/? [01:18<00:00,  0.77it/s, v_num=1]
+Epoch 2: |          | 61/? [01:18<00:00,  0.78it/s, v_num=1]
+Epoch 2: |          | 61/? [01:18<00:00,  0.78it/s, v_num=1]
+Epoch 2: |          | 62/? [01:19<00:00,  0.78it/s, v_num=1]
+Epoch 2: |          | 62/? [01:19<00:00,  0.78it/s, v_num=1]
+Epoch 2: |          | 63/? [01:19<00:00,  0.79it/s, v_num=1]
+Epoch 2: |          | 63/? [01:19<00:00,  0.79it/s, v_num=1]
+Epoch 2: |          | 64/? [01:19<00:00,  0.80it/s, v_num=1]
+Epoch 2: |          | 64/? [01:19<00:00,  0.80it/s, v_num=1][NeMo I 2026-09-23 19:12:52 metric:549] 
+    
+[NeMo I 2026-09-23 19:12:52 metric:549] WER reference: यू.एस. संरक्षण विभाग कार्यालयाचे युनाइटेड स्टेट्स स्ट्रॅटेजिक कमांड ढिगाऱ्याचा माग घेत आहे
+[NeMo I 2026-09-23 19:12:52 metric:549] WER predicted: यूएस संरक्षण विभाग कार्यालयाचे युनायटेड स्टेट्स स्ट्रॅटेजिक कमांड ढिगाऱ्याचा माग घेत आहे
+
+Epoch 2: |          | 65/? [01:24<00:00,  0.77it/s, v_num=1]
+Epoch 2: |          | 65/? [01:24<00:00,  0.77it/s, v_num=1]
+Epoch 2: |          | 66/? [01:24<00:00,  0.78it/s, v_num=1]
+Epoch 2: |          | 66/? [01:24<00:00,  0.78it/s, v_num=1]
+Epoch 2: |          | 67/? [01:24<00:00,  0.79it/s, v_num=1]
+Epoch 2: |          | 67/? [01:24<00:00,  0.79it/s, v_num=1]
+Epoch 2: |          | 68/? [01:25<00:00,  0.80it/s, v_num=1]
+Epoch 2: |          | 68/? [01:25<00:00,  0.80it/s, v_num=1]
+Epoch 2: |          | 69/? [01:25<00:00,  0.81it/s, v_num=1]
+Epoch 2: |          | 69/? [01:25<00:00,  0.81it/s, v_num=1][NeMo I 2026-09-23 19:12:58 metric:549] 
+    
+[NeMo I 2026-09-23 19:12:58 metric:549] WER reference: आवश्यकतेनुसार उत्पादने खरेदी करता येऊ शकतात परंतु बहुतेक जणांच्या कामगिरीवर फार थोडा किंवा प्रत्यक्ष परिणाम होणार नाही
+[NeMo I 2026-09-23 19:12:58 metric:549] WER predicted: आवश्यकतेनुसार उत्पादने खरेदी करता येऊ शकतात परंतु बहुतेक जणांचा कामगिरीवर वाढ थोडा किंवा प्रत्यक्ष परिणाम होणार नाही
+
+Epoch 2: |          | 70/? [01:31<00:00,  0.77it/s, v_num=1]
+Epoch 2: |          | 70/? [01:31<00:00,  0.77it/s, v_num=1]
+Epoch 2: |          | 71/? [01:31<00:00,  0.77it/s, v_num=1]
+Epoch 2: |          | 71/? [01:31<00:00,  0.77it/s, v_num=1]
+Epoch 2: |          | 72/? [01:32<00:00,  0.78it/s, v_num=1]
+Epoch 2: |          | 72/? [01:32<00:00,  0.78it/s, v_num=1]
+Epoch 2: |          | 73/? [01:32<00:00,  0.79it/s, v_num=1]
+Epoch 2: |          | 73/? [01:32<00:00,  0.79it/s, v_num=1]
+Epoch 2: |          | 74/? [01:32<00:00,  0.80it/s, v_num=1]
+Epoch 2: |          | 74/? [01:32<00:00,  0.80it/s, v_num=1][NeMo I 2026-09-23 19:13:05 metric:549] 
+    
+[NeMo I 2026-09-23 19:13:05 metric:549] WER reference: तमाकी ड्राईव्ह समुद्रकिनारे हे वेटमाता बंदरावर आहेत मध्य ऑकलंड मधील मिशन बे आणि सेंट हेलीयर्स च्या वरच्या बाजारातील उपनगरा मध्ये आहेत
+[NeMo I 2026-09-23 19:13:05 metric:549] WER predicted: तमकी ड्राईव्ह समुद्रकिनारे हे वेटमाता बंदरावर आहेत मध्य ऑकलंडमधील मिशन बे आणि सेंट हेलियर्सच्या वरच्या बाजारातील उपनगरामध्ये आहेत
+
+Epoch 2: |          | 75/? [01:37<00:00,  0.77it/s, v_num=1]
+Epoch 2: |          | 75/? [01:37<00:00,  0.77it/s, v_num=1]
+Epoch 2: |          | 76/? [01:37<00:00,  0.78it/s, v_num=1]
+Epoch 2: |          | 76/? [01:37<00:00,  0.78it/s, v_num=1]
+Epoch 2: |          | 77/? [01:38<00:00,  0.78it/s, v_num=1]
+Epoch 2: |          | 77/? [01:38<00:00,  0.78it/s, v_num=1]
+Epoch 2: |          | 78/? [01:38<00:00,  0.79it/s, v_num=1]
+Epoch 2: |          | 78/? [01:38<00:00,  0.79it/s, v_num=1]
+Epoch 2: |          | 79/? [01:39<00:00,  0.80it/s, v_num=1]
+Epoch 2: |          | 79/? [01:39<00:00,  0.80it/s, v_num=1][NeMo I 2026-09-23 19:13:12 metric:549] 
+    
+[NeMo I 2026-09-23 19:13:12 metric:549] WER reference: गूढवाद म्हणजे अंतिम वास्तव देवत्व आध्यात्मिक सत्य किंवा देव यासोबत संवाद ओळख किंवा याची जाणीव जागरूकता होय
+[NeMo I 2026-09-23 19:13:12 metric:549] WER predicted: गूढवाद म्हणजे अंतिम वास्तव देवत्व आध्यात्मिक सत्य किंवा देव याबरोबर यासोबत संवाद ओळख किंवा याची जाणीव जागरूकता होय
+
+Epoch 2: |          | 80/? [01:45<00:00,  0.76it/s, v_num=1]
+Epoch 2: |          | 80/? [01:45<00:00,  0.76it/s, v_num=1]
+Epoch 2: |          | 81/? [01:45<00:00,  0.76it/s, v_num=1]
+Epoch 2: |          | 81/? [01:45<00:00,  0.76it/s, v_num=1]
+Epoch 2: |          | 82/? [01:46<00:00,  0.77it/s, v_num=1]
+Epoch 2: |          | 82/? [01:46<00:00,  0.77it/s, v_num=1]
+Epoch 2: |          | 83/? [01:46<00:00,  0.78it/s, v_num=1]
+Epoch 2: |          | 83/? [01:46<00:00,  0.78it/s, v_num=1]
+Epoch 2: |          | 84/? [01:46<00:00,  0.79it/s, v_num=1]
+Epoch 2: |          | 84/? [01:46<00:00,  0.79it/s, v_num=1][NeMo I 2026-09-23 19:13:19 metric:549] 
+    
+[NeMo I 2026-09-23 19:13:19 metric:549] WER reference: बायनरी नंबर मध्ये 2 किमतीमधील केवळ 1 मूल्य असू शकते उदा 0 किंवा 1 आणि या क्रमांकांना बायनरी अंक असे संबोधले जाते किंवा बिट्स संगणक शब्द्जालामध्ये वापरण्यासाठी
+[NeMo I 2026-09-23 19:13:19 metric:549] WER predicted: बायनरी नंबरमध्ये 2 किमतीमधील केवळ 1 मूल्य असू शकते उदाहरणार्थ 0 किंवा 1 आणि या क्रमांकांना बायनरी अंक असे संबोधले जाते किंवा बिट्स संकणक शब्दजालामध्ये वापरण्यासाठी
+
+Epoch 2: |          | 85/? [01:51<00:00,  0.76it/s, v_num=1]
+Epoch 2: |          | 85/? [01:51<00:00,  0.76it/s, v_num=1]
+Epoch 2: |          | 86/? [01:51<00:00,  0.77it/s, v_num=1]
+Epoch 2: |          | 86/? [01:51<00:00,  0.77it/s, v_num=1]
+Epoch 2: |          | 87/? [01:52<00:00,  0.78it/s, v_num=1]
+Epoch 2: |          | 87/? [01:52<00:00,  0.78it/s, v_num=1]
+Epoch 2: |          | 88/? [01:52<00:00,  0.78it/s, v_num=1]
+Epoch 2: |          | 88/? [01:52<00:00,  0.78it/s, v_num=1]
+Epoch 2: |          | 89/? [01:52<00:00,  0.79it/s, v_num=1]
+Epoch 2: |          | 89/? [01:52<00:00,  0.79it/s, v_num=1][NeMo I 2026-09-23 19:13:25 metric:549] 
+    
+[NeMo I 2026-09-23 19:13:25 metric:549] WER reference: गोमा हे काँगो लोकशाही प्रजासत्ताकमधील पर्यटन शहर आहे जे पूर्वेच्या टोकाला रवांडाजवळ आहे
+[NeMo I 2026-09-23 19:13:25 metric:549] WER predicted: गोमा हे काँगो लोकशाही प्रजासत्ताकमधील पर्यटन शहर आहे जे पूर्वेला पूर्वेच्या टोकाला रवांडाजवळ आहे
+
+Epoch 2: |          | 90/? [01:57<00:00,  0.77it/s, v_num=1]
+Epoch 2: |          | 90/? [01:57<00:00,  0.77it/s, v_num=1]
+Epoch 2: |          | 91/? [01:57<00:00,  0.77it/s, v_num=1]
+Epoch 2: |          | 91/? [01:57<00:00,  0.77it/s, v_num=1]
+Epoch 2: |          | 92/? [01:57<00:00,  0.78it/s, v_num=1]
+Epoch 2: |          | 92/? [01:57<00:00,  0.78it/s, v_num=1]
+Epoch 2: |          | 93/? [01:58<00:00,  0.79it/s, v_num=1]
+Epoch 2: |          | 93/? [01:58<00:00,  0.79it/s, v_num=1]
+Epoch 2: |          | 94/? [01:58<00:00,  0.79it/s, v_num=1]
+Epoch 2: |          | 94/? [01:58<00:00,  0.79it/s, v_num=1][NeMo I 2026-09-23 19:13:31 metric:549] 
+    
+[NeMo I 2026-09-23 19:13:31 metric:549] WER reference: जेव्हा कॅप्सूल पृथ्वीवर पोहोचून वातावरणात प्रवेश करेल तेव्हा पाहाटे <unk> वाजण्याच्या सुमारास पूर्वेकडील वेळ कॅलिफोर्निया उत्तर कॅलिफोर्निया ओरेगॉन नेवाडा आणि उताहमधील लोकांना प्रकाशाचा उत्सव पाहता येईल अशी अपेक्षा आहे
+[NeMo I 2026-09-23 19:13:31 metric:549] WER predicted: जेव्हा कॅप्सूल पृथ्वीवर पोहोचून वातावरणात प्रवेश करेल तेव्हा पहाटे <unk> वाजण्याच्या सुमारास पूर्वेकडील वेळ कॅलिफोर्निया उत्तर कॅलिफोर्निया ओरेगॉन नेवाडा आणि उताहमधील लोकांना प्रकाशाचा उत्सव पाहता येईल अशी अपेक्षा आहे
+
+Epoch 2: |          | 95/? [02:04<00:00,  0.77it/s, v_num=1]
+Epoch 2: |          | 95/? [02:04<00:00,  0.77it/s, v_num=1]
+Epoch 2: |          | 96/? [02:04<00:00,  0.77it/s, v_num=1]
+Epoch 2: |          | 96/? [02:04<00:00,  0.77it/s, v_num=1]
+Epoch 2: |          | 97/? [02:04<00:00,  0.78it/s, v_num=1]
+Epoch 2: |          | 97/? [02:04<00:00,  0.78it/s, v_num=1]
+Epoch 2: |          | 98/? [02:05<00:00,  0.78it/s, v_num=1]
+Epoch 2: |          | 98/? [02:05<00:00,  0.78it/s, v_num=1]
+Epoch 2: |          | 99/? [02:05<00:00,  0.79it/s, v_num=1]
+Epoch 2: |          | 99/? [02:05<00:00,  0.79it/s, v_num=1][NeMo I 2026-09-23 19:13:37 metric:549] 
+    
+[NeMo I 2026-09-23 19:13:37 metric:549] WER reference: हे शाळा सोडलेल्यांमध्ये विशेष लोकप्रिय आहे शिक्षणाशी कोणतीही तडजोड न करता त्यांना विद्यापिठाच्या आधी एक वर्ष बाहेर पडता येते
+[NeMo I 2026-09-23 19:13:37 metric:549] WER predicted: हे शाळा सोडलेल्यांमध्ये विशेष लोकप्रिय आहे शिक्षणाशी कोणतीही तडजोड न करता त्यांना विद्यापीठाच्या आधी एक वर्ष बाहेर पडता येते
+
+Epoch 2: |          | 100/? [02:08<00:00,  0.78it/s, v_num=1]
+Epoch 2: |          | 100/? [02:08<00:00,  0.78it/s, v_num=1]
+Epoch 2: |          | 100/? [02:08<00:00,  0.78it/s, v_num=1]
+Epoch 2: |          | 0/? [00:00<?, ?it/s, v_num=1]          
+Epoch 3: |          | 0/? [00:00<?, ?it/s, v_num=1]
+Epoch 3: |          | 1/? [00:01<00:00,  0.69it/s, v_num=1]
+Epoch 3: |          | 1/? [00:01<00:00,  0.69it/s, v_num=1]
+Epoch 3: |          | 2/? [00:01<00:00,  1.11it/s, v_num=1]
+Epoch 3: |          | 2/? [00:01<00:00,  1.11it/s, v_num=1]
+Epoch 3: |          | 3/? [00:02<00:00,  1.39it/s, v_num=1]
+Epoch 3: |          | 3/? [00:02<00:00,  1.39it/s, v_num=1]
+Epoch 3: |          | 4/? [00:02<00:00,  1.58it/s, v_num=1]
+Epoch 3: |          | 4/? [00:02<00:00,  1.58it/s, v_num=1][NeMo I 2026-09-23 19:13:44 metric:549] 
+    
+[NeMo I 2026-09-23 19:13:44 metric:549] WER reference: लिओनोव्ह यांना ''कॉस्मॉनॉट नंबर <unk>'' म्हणूनही ओळखले जाते ते सोव्हिएट युनियनच्या कॉस्मॉनॉटच्या मूळ गटाचा भाग होते
+[NeMo I 2026-09-23 19:13:44 metric:549] WER predicted: लियोनोव्ह यांना कॉस्मोनॉट नंबर 11 म्हणूनही ओळखले जाते ते सोव्हिएट युनियनच्या कॉस्मोनॉटच्या मूळ गटाचा भाग होते
+
+Epoch 3: |          | 5/? [00:09<00:00,  0.55it/s, v_num=1]
+Epoch 3: |          | 5/? [00:09<00:00,  0.55it/s, v_num=1]
+Epoch 3: |          | 6/? [00:09<00:00,  0.64it/s, v_num=1]
+Epoch 3: |          | 6/? [00:09<00:00,  0.64it/s, v_num=1]
+Epoch 3: |          | 7/? [00:09<00:00,  0.72it/s, v_num=1]
+Epoch 3: |          | 7/? [00:09<00:00,  0.72it/s, v_num=1]
+Epoch 3: |          | 8/? [00:10<00:00,  0.79it/s, v_num=1]
+Epoch 3: |          | 8/? [00:10<00:00,  0.79it/s, v_num=1]
+Epoch 3: |          | 9/? [00:10<00:00,  0.86it/s, v_num=1]
+Epoch 3: |          | 9/? [00:10<00:00,  0.86it/s, v_num=1][NeMo I 2026-09-23 19:13:51 metric:549] 
+    
+[NeMo I 2026-09-23 19:13:51 metric:549] WER reference: जर एखाद्या विकसनशील देशामध्ये पहिल्यान्दः प्रवास करीत असाल किंवा जगाच्या नवीन भागात तर सांस्कृतिक धक्का बसण्याच्या शक्यते ला नाकारू नका
+[NeMo I 2026-09-23 19:13:51 metric:549] WER predicted: जर एखाद्या विकसनशील देशामध्ये पहिल्यांदा प्रवास करीत असाल किंवा जगाच्या नवीन भागात तर सांस्कृतिक धक्का बसण्याच्या शक्यतेला नाकारू नका
+
+Epoch 3: |          | 10/? [00:14<00:00,  0.68it/s, v_num=1]
+Epoch 3: |          | 10/? [00:14<00:00,  0.68it/s, v_num=1]
+Epoch 3: |          | 11/? [00:15<00:00,  0.73it/s, v_num=1]
+Epoch 3: |          | 11/? [00:15<00:00,  0.73it/s, v_num=1]
+Epoch 3: |          | 12/? [00:15<00:00,  0.76it/s, v_num=1]
+Epoch 3: |          | 12/? [00:15<00:00,  0.76it/s, v_num=1]
+Epoch 3: |          | 13/? [00:16<00:00,  0.81it/s, v_num=1]
+Epoch 3: |          | 13/? [00:16<00:00,  0.81it/s, v_num=1]
+Epoch 3: |          | 14/? [00:16<00:00,  0.86it/s, v_num=1]
+Epoch 3: |          | 14/? [00:16<00:00,  0.86it/s, v_num=1][NeMo I 2026-09-23 19:13:56 metric:549] 
+    
+[NeMo I 2026-09-23 19:13:56 metric:549] WER reference: "जपानमध्ये बेटांचे समूह/गट असल्यामुळे जपानला अनेकदा भौगोलिक दृष्टिकोनातून "द्विपसमूह" असे संबोधले जाते.
+[NeMo I 2026-09-23 19:13:56 metric:549] WER predicted: जपानमध्ये बेटांचे समूह किंवा गट असल्यामुळे जपानला अनेकदा भौगोलिक दृष्टिकोनातून द्वीपसमूह असे संबोधले जाते
+
+Epoch 3: |          | 15/? [00:20<00:00,  0.74it/s, v_num=1]
+Epoch 3: |          | 15/? [00:20<00:00,  0.74it/s, v_num=1]
+Epoch 3: |          | 16/? [00:20<00:00,  0.78it/s, v_num=1]
+Epoch 3: |          | 16/? [00:20<00:00,  0.78it/s, v_num=1]
+Epoch 3: |          | 17/? [00:20<00:00,  0.81it/s, v_num=1]
+Epoch 3: |          | 17/? [00:20<00:00,  0.81it/s, v_num=1]
+Epoch 3: |          | 18/? [00:21<00:00,  0.85it/s, v_num=1]
+Epoch 3: |          | 18/? [00:21<00:00,  0.85it/s, v_num=1]
+Epoch 3: |          | 19/? [00:21<00:00,  0.88it/s, v_num=1]
+Epoch 3: |          | 19/? [00:21<00:00,  0.88it/s, v_num=1][NeMo I 2026-09-23 19:14:02 metric:549] 
+    
+[NeMo I 2026-09-23 19:14:02 metric:549] WER reference: प्रक्रियेच्या प्रत्येक भागाचे साक्षीदार होण्यासाठी उमेदवार प्रतिनिधी पाठवू शकतात संध्याकाळी स्वयंसेवक कडक सुरक्षाव्यवस्थेत ठराविक प्रक्रियेचे पालन करत मतमोजणी करतात
+[NeMo I 2026-09-23 19:14:02 metric:549] WER predicted: प्रक्रियेच्या प्रत्येक भागाचे साक्षीदार होण्यासाठी उमेदवार प्रतिनिधी पाठवू शकतात संध्याकाळी स्वयंसेवक कडक सुरक्षा व्यवस्थेत ठराविक प्रक्रियेचे पालन करत मतमोजणी करतात
+
+Epoch 3: |          | 20/? [00:26<00:00,  0.76it/s, v_num=1]
+Epoch 3: |          | 20/? [00:26<00:00,  0.76it/s, v_num=1]
+Epoch 3: |          | 21/? [00:26<00:00,  0.79it/s, v_num=1]
+Epoch 3: |          | 21/? [00:26<00:00,  0.79it/s, v_num=1]
+Epoch 3: |          | 22/? [00:26<00:00,  0.82it/s, v_num=1]
+Epoch 3: |          | 22/? [00:26<00:00,  0.82it/s, v_num=1]
+Epoch 3: |          | 23/? [00:27<00:00,  0.84it/s, v_num=1]
+Epoch 3: |          | 23/? [00:27<00:00,  0.84it/s, v_num=1]
+Epoch 3: |          | 24/? [00:27<00:00,  0.87it/s, v_num=1]
+Epoch 3: |          | 24/? [00:27<00:00,  0.87it/s, v_num=1][NeMo I 2026-09-23 19:14:09 metric:549] 
+    
+[NeMo I 2026-09-23 19:14:09 metric:549] WER reference: ते स्पष्ट झाल्यानंतर अनेक कुटुंबे बेकायदेशीर कारवाईसाठी लढा देण्यासाठी कायदेशीर मदतीची मागणी करत होते गृहनिर्माण घोटाळ्यातील पीडित व्यक्तींसाठी 20 मार्च रोजी पूर्व बे समुदाय कायदा केंद्र येथे एक बैठक आयोजित करण्यात आली होती
+[NeMo I 2026-09-23 19:14:09 metric:549] WER predicted: ते स्पष्ट झाल्यानंतर अनेक कुटुंबे बेकायदेशीर कारवाईसाठी लढा देण्यासाठी कायदेशीर मदतीची मागणी करत होते गृहनिर्माण घोटाळ्यातील पीडित व्यक्तींसाठी 20 मार्च रोजी पूर्व बे समुदाय कायदा केंद्र येथे एक बैठक आयोजित करण्यात आली होती
+
+Epoch 3: |          | 25/? [00:34<00:00,  0.73it/s, v_num=1]
+Epoch 3: |          | 25/? [00:34<00:00,  0.73it/s, v_num=1]
+Epoch 3: |          | 26/? [00:34<00:00,  0.75it/s, v_num=1]
+Epoch 3: |          | 26/? [00:34<00:00,  0.75it/s, v_num=1]
+Epoch 3: |          | 27/? [00:34<00:00,  0.77it/s, v_num=1]
+Epoch 3: |          | 27/? [00:34<00:00,  0.77it/s, v_num=1]
+Epoch 3: |          | 28/? [00:35<00:00,  0.79it/s, v_num=1]
+Epoch 3: |          | 28/? [00:35<00:00,  0.79it/s, v_num=1]
+Epoch 3: |          | 29/? [00:35<00:00,  0.81it/s, v_num=1]
+Epoch 3: |          | 29/? [00:35<00:00,  0.81it/s, v_num=1][NeMo I 2026-09-23 19:14:17 metric:549] 
+    
+[NeMo I 2026-09-23 19:14:17 metric:549] WER reference: <unk> मध्ये डच इस्ट इंडिया कंपनीने नैर्ऋत्य तैवानमध्ये तळ स्थापन केला आदिवासींच्या धान्य उत्पादन पद्धतीमध्ये बदल घडवून आणला आणि चीनच्या कामगारांना त्यावर तांदुळ आणि साखरेच्या लागवडीसाठी कामाला लावले
+[NeMo I 2026-09-23 19:14:17 metric:549] WER predicted: 1624 मध्ये डच ईस्ट इंडिया कंपनीने नैऋत्य तैवान मध्ये तळ स्थापन केला आदिवासींच्या धान्य उत्पादन पद्धतीमध्ये बदल घडवून आणला आणि चीनच्या कामगारांवर त्यावर तांदूळ आणि साखरेच्या लागवडीसाठी कामाला लावले
+
+Epoch 3: |          | 30/? [00:40<00:00,  0.73it/s, v_num=1]
+Epoch 3: |          | 30/? [00:40<00:00,  0.73it/s, v_num=1]
+Epoch 3: |          | 31/? [00:41<00:00,  0.75it/s, v_num=1]
+Epoch 3: |          | 31/? [00:41<00:00,  0.75it/s, v_num=1]
+Epoch 3: |          | 32/? [00:41<00:00,  0.77it/s, v_num=1]
+Epoch 3: |          | 32/? [00:41<00:00,  0.77it/s, v_num=1]
+Epoch 3: |          | 33/? [00:41<00:00,  0.79it/s, v_num=1]
+Epoch 3: |          | 33/? [00:41<00:00,  0.79it/s, v_num=1]
+Epoch 3: |          | 34/? [00:42<00:00,  0.81it/s, v_num=1]
+Epoch 3: |          | 34/? [00:42<00:00,  0.81it/s, v_num=1][NeMo I 2026-09-23 19:14:23 metric:549] 
+    
+[NeMo I 2026-09-23 19:14:23 metric:549] WER reference: कॅप्सूल बरीचशी आकाशातून जाणाऱ्या उल्केप्रमाणे दिसेल
+[NeMo I 2026-09-23 19:14:23 metric:549] WER predicted: कॅप्सूल बरीचशी आकाशातून जाणाऱ्या उल्केप्रमाणे दिसेल
+
+Epoch 3: |          | 35/? [00:47<00:00,  0.73it/s, v_num=1]
+Epoch 3: |          | 35/? [00:47<00:00,  0.73it/s, v_num=1]
+Epoch 3: |          | 36/? [00:48<00:00,  0.75it/s, v_num=1]
+Epoch 3: |          | 36/? [00:48<00:00,  0.75it/s, v_num=1]
+Epoch 3: |          | 37/? [00:48<00:00,  0.76it/s, v_num=1]
+Epoch 3: |          | 37/? [00:48<00:00,  0.76it/s, v_num=1]
+Epoch 3: |          | 38/? [00:48<00:00,  0.78it/s, v_num=1]
+Epoch 3: |          | 38/? [00:48<00:00,  0.78it/s, v_num=1]
+Epoch 3: |          | 39/? [00:49<00:00,  0.79it/s, v_num=1]
+Epoch 3: |          | 39/? [00:49<00:00,  0.79it/s, v_num=1][NeMo I 2026-09-23 19:14:30 metric:549] 
+    
+[NeMo I 2026-09-23 19:14:30 metric:549] WER reference: इटालियन लोकं आंतरराष्ट्रीय खेळ आणि ऑलिम्पिक स्पर्धांमध्ये भाग घेत असलेल्या उत्तरेकडील प्रदेशात हिवाळी खेळ सर्वाधिक लोकप्रिय आहेत
+[NeMo I 2026-09-23 19:14:30 metric:549] WER predicted: इटालियन लोक आंतरराष्ट्रीय खेळ आणि ऑलिम्पिक स्पर्धांमध्ये भाग घेत असलेल्या उत्तरेकडील प्रदेशात हिवाळी खेळ सर्वाधिक लोकप्रिय आहेत
+
+Epoch 3: |          | 40/? [00:54<00:00,  0.74it/s, v_num=1]
+Epoch 3: |          | 40/? [00:54<00:00,  0.74it/s, v_num=1]
+Epoch 3: |          | 41/? [00:54<00:00,  0.75it/s, v_num=1]
+Epoch 3: |          | 41/? [00:54<00:00,  0.75it/s, v_num=1]
+Epoch 3: |          | 42/? [00:55<00:00,  0.76it/s, v_num=1]
+Epoch 3: |          | 42/? [00:55<00:00,  0.76it/s, v_num=1]
+Epoch 3: |          | 43/? [00:55<00:00,  0.78it/s, v_num=1]
+Epoch 3: |          | 43/? [00:55<00:00,  0.78it/s, v_num=1]
+Epoch 3: |          | 44/? [00:55<00:00,  0.79it/s, v_num=1]
+Epoch 3: |          | 44/? [00:55<00:00,  0.79it/s, v_num=1][NeMo I 2026-09-23 19:14:36 metric:549] 
+    
+[NeMo I 2026-09-23 19:14:36 metric:549] WER reference: 1819 मध्ये सापडलेल्या दक्षिण शेटलँड बेटांवर अनेक राष्ट्रांनी दावा केलेला आहे आणि तेथे 2020 मध्ये सक्रिय असलेल्या सोळा तळांसोबत अनेक तळ आहेत
+[NeMo I 2026-09-23 19:14:36 metric:549] WER predicted: 1819 मध्ये सापडलेल्या दक्षिण शेटलँड बेटांवर अनेक राष्ट्रांनी दावा केलेला आहे आणि तेथे 2020 मध्ये सक्रिय असलेल्या 16 तळांसोबत अनेक तळ आहेत
+
+Epoch 3: |          | 45/? [00:59<00:00,  0.75it/s, v_num=1]
+Epoch 3: |          | 45/? [00:59<00:00,  0.75it/s, v_num=1]
+Epoch 3: |          | 46/? [00:59<00:00,  0.77it/s, v_num=1]
+Epoch 3: |          | 46/? [00:59<00:00,  0.77it/s, v_num=1]
+Epoch 3: |          | 47/? [01:00<00:00,  0.78it/s, v_num=1]
+Epoch 3: |          | 47/? [01:00<00:00,  0.78it/s, v_num=1]
+Epoch 3: |          | 48/? [01:00<00:00,  0.79it/s, v_num=1]
+Epoch 3: |          | 48/? [01:00<00:00,  0.79it/s, v_num=1]
+Epoch 3: |          | 49/? [01:00<00:00,  0.80it/s, v_num=1]
+Epoch 3: |          | 49/? [01:00<00:00,  0.80it/s, v_num=1][NeMo I 2026-09-23 19:14:41 metric:549] 
+    
+[NeMo I 2026-09-23 19:14:41 metric:549] WER reference: स्थानिक मीडियाने प्रतिक्रिया देताना विमानतळावरील अग्निशमन वाहनाला रोल केल्याची बातमी दिली
+[NeMo I 2026-09-23 19:14:41 metric:549] WER predicted: स्थानिक मीडियाने प्रतिक्रिया देताना विमानतळावरील अग्निशामक वाहनाला रोल केल्याची बातमी दिली
+
+Epoch 3: |          | 50/? [01:05<00:00,  0.77it/s, v_num=1]
+Epoch 3: |          | 50/? [01:05<00:00,  0.77it/s, v_num=1]
+Epoch 3: |          | 51/? [01:05<00:00,  0.78it/s, v_num=1]
+Epoch 3: |          | 51/? [01:05<00:00,  0.78it/s, v_num=1]
+Epoch 3: |          | 52/? [01:05<00:00,  0.79it/s, v_num=1]
+Epoch 3: |          | 52/? [01:05<00:00,  0.79it/s, v_num=1]
+Epoch 3: |          | 53/? [01:06<00:00,  0.80it/s, v_num=1]
+Epoch 3: |          | 53/? [01:06<00:00,  0.80it/s, v_num=1]
+Epoch 3: |          | 54/? [01:06<00:00,  0.81it/s, v_num=1]
+Epoch 3: |          | 54/? [01:06<00:00,  0.81it/s, v_num=1][NeMo I 2026-09-23 19:14:48 metric:549] 
+    
+[NeMo I 2026-09-23 19:14:48 metric:549] WER reference: 1 जानेवारीला हा मुद्दा सुरू झाला जेव्हा डझनभर स्थानिक रहिवाशांनी ओबाणाझावा पोस्ट ऑफिसकडे तक्रार करण्यास सुरूवात केली की त्यांना त्यांची पारंपारिक आणि नियमित नवीन वर्षाची कार्डे मिळाली नाहीत
+[NeMo I 2026-09-23 19:14:48 metric:549] WER predicted: 1 जानेवारीला हा मुद्दा सुरू झाला जेव्हा डझनभर स्थानिक रहिवाशांनी ओबानाझावा पोस्ट ऑफिसकडे तक्रार करण्यास सुरुवात केली आणि त्यांना त्यांची पारंपारिक आणि नियमित नवीन वर्षाची कार्डे मिळाली नाहीत
+
+Epoch 3: |          | 55/? [01:11<00:00,  0.76it/s, v_num=1]
+Epoch 3: |          | 55/? [01:11<00:00,  0.76it/s, v_num=1]
+Epoch 3: |          | 56/? [01:12<00:00,  0.77it/s, v_num=1]
+Epoch 3: |          | 56/? [01:12<00:00,  0.77it/s, v_num=1]
+Epoch 3: |          | 57/? [01:12<00:00,  0.79it/s, v_num=1]
+Epoch 3: |          | 57/? [01:12<00:00,  0.79it/s, v_num=1]
+Epoch 3: |          | 58/? [01:12<00:00,  0.80it/s, v_num=1]
+Epoch 3: |          | 58/? [01:12<00:00,  0.80it/s, v_num=1]
+Epoch 3: |          | 59/? [01:13<00:00,  0.81it/s, v_num=1]
+Epoch 3: |          | 59/? [01:13<00:00,  0.81it/s, v_num=1][NeMo I 2026-09-23 19:14:53 metric:549] 
+    
+[NeMo I 2026-09-23 19:14:53 metric:549] WER reference: मी आनंदी आहे की लोक मला पाठिंबा देण्यास उत्सुक आहेत
+[NeMo I 2026-09-23 19:14:53 metric:549] WER predicted: मी आनंदी आहे की लोक मला पाठिंबा देण्यास उत्सुक आहेत
+
+Epoch 3: |          | 60/? [01:17<00:00,  0.77it/s, v_num=1]
+Epoch 3: |          | 60/? [01:17<00:00,  0.77it/s, v_num=1]
+Epoch 3: |          | 61/? [01:18<00:00,  0.78it/s, v_num=1]
+Epoch 3: |          | 61/? [01:18<00:00,  0.78it/s, v_num=1]
+Epoch 3: |          | 62/? [01:18<00:00,  0.79it/s, v_num=1]
+Epoch 3: |          | 62/? [01:18<00:00,  0.79it/s, v_num=1]
+Epoch 3: |          | 63/? [01:18<00:00,  0.80it/s, v_num=1]
+Epoch 3: |          | 63/? [01:18<00:00,  0.80it/s, v_num=1]
+Epoch 3: |          | 64/? [01:19<00:00,  0.81it/s, v_num=1]
+Epoch 3: |          | 64/? [01:19<00:00,  0.81it/s, v_num=1][NeMo I 2026-09-23 19:15:00 metric:549] 
+    
+[NeMo I 2026-09-23 19:15:00 metric:549] WER reference: प्युअरलँड ओरिगामी ही एका बंधनासह आहे की एका वेळी फक्त 1 घडी घालता येईल आणि उलट घडीसारख्या गुंतागुंतीच्या घड्याना परवानगी नाही आणि सर्व घड्या या सरळ सोट स्थानी असतील
+[NeMo I 2026-09-23 19:15:00 metric:549] WER predicted: प्युअरलँड ओरिगामी ही एका बंधनासह आहे की एका वेळी फक्त एक घडी घालता येईल आणि उलट घडीसारख्या गुंतागुंतीच्या घड्यांना परवानगी नाही आणि सर्व घड्या या सरळ सोट स्थानी असतील
+
+Epoch 3: |          | 65/? [01:23<00:00,  0.77it/s, v_num=1]
+Epoch 3: |          | 65/? [01:23<00:00,  0.77it/s, v_num=1]
+Epoch 3: |          | 66/? [01:24<00:00,  0.78it/s, v_num=1]
+Epoch 3: |          | 66/? [01:24<00:00,  0.78it/s, v_num=1]
+Epoch 3: |          | 67/? [01:24<00:00,  0.79it/s, v_num=1]
+Epoch 3: |          | 67/? [01:24<00:00,  0.79it/s, v_num=1]
+Epoch 3: |          | 68/? [01:25<00:00,  0.80it/s, v_num=1]
+Epoch 3: |          | 68/? [01:25<00:00,  0.80it/s, v_num=1]
+Epoch 3: |          | 69/? [01:25<00:00,  0.81it/s, v_num=1]
+Epoch 3: |          | 69/? [01:25<00:00,  0.81it/s, v_num=1][NeMo I 2026-09-23 19:15:06 metric:549] 
+    
+[NeMo I 2026-09-23 19:15:06 metric:549] WER reference: स्थानिक नळाचे पाणी पिण्यासाठी पूर्णपणे सुरक्षित आहे परंतु तुम्हाला सुरक्षेच्या बाबतीत शंका असल्यास बाटलीबंद पाणी शोधणे देखील सोपे आहे
+[NeMo I 2026-09-23 19:15:06 metric:549] WER predicted: स्थानिक नळाचे पाणी पिण्यासाठी पूर्णपणे सुरक्षित आहे परंतु तुम्हाला सुरक्षेच्या बाबतीत शंका असल्यास बाटलीबंद पाणी शोधणे देखील सोपे आहे
+
+Epoch 3: |          | 70/? [01:30<00:00,  0.78it/s, v_num=1]
+Epoch 3: |          | 70/? [01:30<00:00,  0.78it/s, v_num=1]
+Epoch 3: |          | 71/? [01:30<00:00,  0.78it/s, v_num=1]
+Epoch 3: |          | 71/? [01:30<00:00,  0.78it/s, v_num=1]
+Epoch 3: |          | 72/? [01:30<00:00,  0.79it/s, v_num=1]
+Epoch 3: |          | 72/? [01:30<00:00,  0.79it/s, v_num=1]
+Epoch 3: |          | 73/? [01:31<00:00,  0.80it/s, v_num=1]
+Epoch 3: |          | 73/? [01:31<00:00,  0.80it/s, v_num=1]
+Epoch 3: |          | 74/? [01:31<00:00,  0.81it/s, v_num=1]
+Epoch 3: |          | 74/? [01:31<00:00,  0.81it/s, v_num=1][NeMo I 2026-09-23 19:15:13 metric:549] 
+    
+[NeMo I 2026-09-23 19:15:13 metric:549] WER reference: तमाकी ड्राईव्ह समुद्रकिनारे हे वेटमाता बंदरावर आहेत मध्य ऑकलंड मधील मिशन बे आणि सेंट हेलीयर्स च्या वरच्या बाजारातील उपनगरा मध्ये आहेत
+[NeMo I 2026-09-23 19:15:13 metric:549] WER predicted: तमाकी ड्राईव्ह समुद्रकिनारे हे वेटमाता बंदरावर आहेत मध्य ऑकलंडमधील मिशन बे आणि सेंट हेलियर्स च्या वरच्या बाजारातील उपनगरांमध्ये आहेत
+
+Epoch 3: |          | 75/? [01:36<00:00,  0.77it/s, v_num=1]
+Epoch 3: |          | 75/? [01:36<00:00,  0.77it/s, v_num=1]
+Epoch 3: |          | 76/? [01:37<00:00,  0.78it/s, v_num=1]
+Epoch 3: |          | 76/? [01:37<00:00,  0.78it/s, v_num=1]
+Epoch 3: |          | 77/? [01:37<00:00,  0.79it/s, v_num=1]
+Epoch 3: |          | 77/? [01:37<00:00,  0.79it/s, v_num=1]
+Epoch 3: |          | 78/? [01:37<00:00,  0.80it/s, v_num=1]
+Epoch 3: |          | 78/? [01:37<00:00,  0.80it/s, v_num=1]
+Epoch 3: |          | 79/? [01:38<00:00,  0.80it/s, v_num=1]
+Epoch 3: |          | 79/? [01:38<00:00,  0.80it/s, v_num=1][NeMo I 2026-09-23 19:15:20 metric:549] 
+    
+[NeMo I 2026-09-23 19:15:20 metric:549] WER reference: सॅन फ्रान्सिस्कोची अर्थव्यवस्था जागतिक स्तरावरील पर्यटकांचे एक आकर्षण यांच्याशी जोडलेली आहे तरीही त्याची अर्थव्यवस्था वैविध्यपूर्ण आहे
+[NeMo I 2026-09-23 19:15:20 metric:549] WER predicted: सॅन फ्रान्सिस्कोची अर्थव्यवस्था जागतिक स्तरावरील पर्यटकांचे एक आकर्षण यांच्याशी जोडलेली आहे तरीही त्याची अर्थव्यवस्था वैविध्यपूर्ण आहे
+
+Epoch 3: |          | 80/? [01:44<00:00,  0.76it/s, v_num=1]
+Epoch 3: |          | 80/? [01:44<00:00,  0.76it/s, v_num=1]
+Epoch 3: |          | 81/? [01:45<00:00,  0.77it/s, v_num=1]
+Epoch 3: |          | 81/? [01:45<00:00,  0.77it/s, v_num=1]
+Epoch 3: |          | 82/? [01:45<00:00,  0.78it/s, v_num=1]
+Epoch 3: |          | 82/? [01:45<00:00,  0.78it/s, v_num=1]
+Epoch 3: |          | 83/? [01:45<00:00,  0.78it/s, v_num=1]
+Epoch 3: |          | 83/? [01:45<00:00,  0.78it/s, v_num=1]
+Epoch 3: |          | 84/? [01:46<00:00,  0.79it/s, v_num=1]
+Epoch 3: |          | 84/? [01:46<00:00,  0.79it/s, v_num=1][NeMo I 2026-09-23 19:15:27 metric:549] 
+    
+[NeMo I 2026-09-23 19:15:27 metric:549] WER reference: बायनरी नंबर मध्ये 2 किमतीमधील केवळ 1 मूल्य असू शकते उदा 0 किंवा 1 आणि या क्रमांकांना बायनरी अंक असे संबोधले जाते किंवा बिट्स संगणक शब्द्जालामध्ये वापरण्यासाठी
+[NeMo I 2026-09-23 19:15:27 metric:549] WER predicted: बायनरी नंबरमध्ये 2 किमतीमधील केवळ 1 मूल्य असू शकते उदा 0 किंवा 1 आणि या क्रमांकांना बायनरी अंक असे संबोधले जाते किंवा बिट्स संकणक शब्दजालामध्ये वापरण्यासाठी
+
+Epoch 3: |          | 85/? [01:51<00:00,  0.76it/s, v_num=1]
+Epoch 3: |          | 85/? [01:51<00:00,  0.76it/s, v_num=1]
+Epoch 3: |          | 86/? [01:51<00:00,  0.77it/s, v_num=1]
+Epoch 3: |          | 86/? [01:51<00:00,  0.77it/s, v_num=1]
+Epoch 3: |          | 87/? [01:51<00:00,  0.78it/s, v_num=1]
+Epoch 3: |          | 87/? [01:51<00:00,  0.78it/s, v_num=1]
+Epoch 3: |          | 88/? [01:52<00:00,  0.78it/s, v_num=1]
+Epoch 3: |          | 88/? [01:52<00:00,  0.78it/s, v_num=1]
+Epoch 3: |          | 89/? [01:52<00:00,  0.79it/s, v_num=1]
+Epoch 3: |          | 89/? [01:52<00:00,  0.79it/s, v_num=1][NeMo I 2026-09-23 19:15:33 metric:549] 
+    
+[NeMo I 2026-09-23 19:15:33 metric:549] WER reference: गोमा हे काँगो लोकशाही प्रजासत्ताकमधील पर्यटन शहर आहे जे पूर्वेच्या टोकाला रवांडाजवळ आहे
+[NeMo I 2026-09-23 19:15:33 metric:549] WER predicted: गोमा हे काँगो लोकशाही प्रजासत्ताकमधील पर्यटन शहर आहे जे पूर्वेला पूर्वेच्या टोकाला रवांडाजवळ आहे
+
+Epoch 3: |          | 90/? [01:56<00:00,  0.77it/s, v_num=1]
+Epoch 3: |          | 90/? [01:56<00:00,  0.77it/s, v_num=1]
+Epoch 3: |          | 91/? [01:56<00:00,  0.78it/s, v_num=1]
+Epoch 3: |          | 91/? [01:56<00:00,  0.78it/s, v_num=1]
+Epoch 3: |          | 92/? [01:56<00:00,  0.79it/s, v_num=1]
+Epoch 3: |          | 92/? [01:56<00:00,  0.79it/s, v_num=1]
+Epoch 3: |          | 93/? [01:57<00:00,  0.79it/s, v_num=1]
+Epoch 3: |          | 93/? [01:57<00:00,  0.79it/s, v_num=1]
+Epoch 3: |          | 94/? [01:57<00:00,  0.80it/s, v_num=1]
+Epoch 3: |          | 94/? [01:57<00:00,  0.80it/s, v_num=1][NeMo I 2026-09-23 19:15:39 metric:549] 
+    
+[NeMo I 2026-09-23 19:15:39 metric:549] WER reference: जेव्हा कॅप्सूल पृथ्वीवर पोहोचून वातावरणात प्रवेश करेल तेव्हा पाहाटे <unk> वाजण्याच्या सुमारास पूर्वेकडील वेळ कॅलिफोर्निया उत्तर कॅलिफोर्निया ओरेगॉन नेवाडा आणि उताहमधील लोकांना प्रकाशाचा उत्सव पाहता येईल अशी अपेक्षा आहे
+[NeMo I 2026-09-23 19:15:39 metric:549] WER predicted: जेव्हा कॅप्सूल पृथ्वीवर पोहोचून वातावरणात प्रवेश करेल तेव्हा पहाटे <unk> वाजण्याच्या सुमारास पूर्वेकडील वेळ कॅलिफोर्निया उत्तर कॅलिफोर्निया ओरेगॉन नेवाडा आणि उताहमधील लोकांना प्रकाशाचा उत्सव पाहता येईल अशी अपेक्षा आहे
+
+Epoch 3: |          | 95/? [02:03<00:00,  0.77it/s, v_num=1]
+Epoch 3: |          | 95/? [02:03<00:00,  0.77it/s, v_num=1]
+Epoch 3: |          | 96/? [02:03<00:00,  0.78it/s, v_num=1]
+Epoch 3: |          | 96/? [02:03<00:00,  0.78it/s, v_num=1]
+Epoch 3: |          | 97/? [02:03<00:00,  0.78it/s, v_num=1]
+Epoch 3: |          | 97/? [02:03<00:00,  0.78it/s, v_num=1]
+Epoch 3: |          | 98/? [02:04<00:00,  0.79it/s, v_num=1]
+Epoch 3: |          | 98/? [02:04<00:00,  0.79it/s, v_num=1]
+Epoch 3: |          | 99/? [02:04<00:00,  0.80it/s, v_num=1]
+Epoch 3: |          | 99/? [02:04<00:00,  0.80it/s, v_num=1][NeMo I 2026-09-23 19:15:44 metric:549] 
+    
+[NeMo I 2026-09-23 19:15:44 metric:549] WER reference: हे शाळा सोडलेल्यांमध्ये विशेष लोकप्रिय आहे शिक्षणाशी कोणतीही तडजोड न करता त्यांना विद्यापिठाच्या आधी एक वर्ष बाहेर पडता येते
+[NeMo I 2026-09-23 19:15:44 metric:549] WER predicted: हे शाळा सोडलेल्यांमध्ये विशेष लोकप्रिय आहे शिक्षणाशी कोणतीही तडजोड न करता त्यांना विद्यापीठाच्या आधी एक वर्ष बाहेर पडता येते
+
+Epoch 3: |          | 100/? [02:07<00:00,  0.78it/s, v_num=1]
+Epoch 3: |          | 100/? [02:07<00:00,  0.78it/s, v_num=1]
+Epoch 3: |          | 100/? [02:07<00:00,  0.78it/s, v_num=1]
+Epoch 3: |          | 0/? [00:00<?, ?it/s, v_num=1]          
+Epoch 4: |          | 0/? [00:00<?, ?it/s, v_num=1]
+Epoch 4: |          | 1/? [00:01<00:00,  0.98it/s, v_num=1]
+Epoch 4: |          | 1/? [00:01<00:00,  0.98it/s, v_num=1]
+Epoch 4: |          | 2/? [00:01<00:00,  1.41it/s, v_num=1]
+Epoch 4: |          | 2/? [00:01<00:00,  1.41it/s, v_num=1]
+Epoch 4: |          | 3/? [00:01<00:00,  1.72it/s, v_num=1]
+Epoch 4: |          | 3/? [00:01<00:00,  1.72it/s, v_num=1]
+Epoch 4: |          | 4/? [00:02<00:00,  1.94it/s, v_num=1]
+Epoch 4: |          | 4/? [00:02<00:00,  1.94it/s, v_num=1][NeMo I 2026-09-23 19:15:50 metric:549] 
+    
+[NeMo I 2026-09-23 19:15:50 metric:549] WER reference: ebay च्या इतिहासातील हे सर्वात मोठे अधिग्रहण आहे
+[NeMo I 2026-09-23 19:15:50 metric:549] WER predicted: इबेच्या इतिहासातील हे सर्वात मोठे अधिग्रहण आहे
+
+Epoch 4: |          | 5/? [00:06<00:00,  0.77it/s, v_num=1]
+Epoch 4: |          | 5/? [00:06<00:00,  0.77it/s, v_num=1]
+Epoch 4: |          | 6/? [00:06<00:00,  0.88it/s, v_num=1]
+Epoch 4: |          | 6/? [00:06<00:00,  0.88it/s, v_num=1]
+Epoch 4: |          | 7/? [00:07<00:00,  0.99it/s, v_num=1]
+Epoch 4: |          | 7/? [00:07<00:00,  0.99it/s, v_num=1]
+Epoch 4: |          | 8/? [00:07<00:00,  1.07it/s, v_num=1]
+Epoch 4: |          | 8/? [00:07<00:00,  1.07it/s, v_num=1]
+Epoch 4: |          | 9/? [00:07<00:00,  1.16it/s, v_num=1]
+Epoch 4: |          | 9/? [00:07<00:00,  1.16it/s, v_num=1][NeMo I 2026-09-23 19:15:56 metric:549] 
+    
+[NeMo I 2026-09-23 19:15:56 metric:549] WER reference: <unk>व्या शतकात कंबोडियाला आपण थायलंड आणि व्हिएतनाम या दोन शक्तिशाली शेजाऱ्यांमध्ये चेंगरले जात असल्याची जाणीव झाली
+[NeMo I 2026-09-23 19:15:56 metric:549] WER predicted: <unk>व्या शतकात कंबोडियाला आपण थायलंड आणि व्हिएतनाम या 2 शक्तिशाली शेजाऱ्यांमध्ये चेंगरले जात असल्याची जाणीव झाली
+
+Epoch 4: |          | 10/? [00:12<00:00,  0.81it/s, v_num=1]
+Epoch 4: |          | 10/? [00:12<00:00,  0.81it/s, v_num=1]
+Epoch 4: |          | 11/? [00:12<00:00,  0.86it/s, v_num=1]
+Epoch 4: |          | 11/? [00:12<00:00,  0.86it/s, v_num=1]
+Epoch 4: |          | 12/? [00:13<00:00,  0.92it/s, v_num=1]
+Epoch 4: |          | 12/? [00:13<00:00,  0.92it/s, v_num=1]
+Epoch 4: |          | 13/? [00:13<00:00,  0.97it/s, v_num=1]
+Epoch 4: |          | 13/? [00:13<00:00,  0.97it/s, v_num=1]
+Epoch 4: |          | 14/? [00:13<00:00,  1.02it/s, v_num=1]
+Epoch 4: |          | 14/? [00:13<00:00,  1.02it/s, v_num=1][NeMo I 2026-09-23 19:16:01 metric:549] 
+    
+[NeMo I 2026-09-23 19:16:01 metric:549] WER reference: जर तुम्हाला दक्षिण प्रशांत आणि दक्षिण अमेरिकेचा पश्चिम किनारा या ठिकाणी जायचे असेल केवळ  विमान हाच पर्याय नाही. खाली पहा
+[NeMo I 2026-09-23 19:16:01 metric:549] WER predicted: जर तुम्हाला दक्षिण प्रशांत आणि दक्षिण अमेरिकेचा पश्चिम किनारा या ठिकाणी जायचे असेल केवळ विमान हाच पर्याय नाही खाली पहा
+
+Epoch 4: |          | 15/? [00:18<00:00,  0.82it/s, v_num=1]
+Epoch 4: |          | 15/? [00:18<00:00,  0.82it/s, v_num=1]
+Epoch 4: |          | 16/? [00:18<00:00,  0.86it/s, v_num=1]
+Epoch 4: |          | 16/? [00:18<00:00,  0.86it/s, v_num=1]
+Epoch 4: |          | 17/? [00:18<00:00,  0.90it/s, v_num=1]
+Epoch 4: |          | 17/? [00:18<00:00,  0.90it/s, v_num=1]
+Epoch 4: |          | 18/? [00:19<00:00,  0.93it/s, v_num=1]
+Epoch 4: |          | 18/? [00:19<00:00,  0.93it/s, v_num=1]
+Epoch 4: |          | 19/? [00:19<00:00,  0.97it/s, v_num=1]
+Epoch 4: |          | 19/? [00:19<00:00,  0.97it/s, v_num=1][NeMo I 2026-09-23 19:16:08 metric:549] 
+    
+[NeMo I 2026-09-23 19:16:08 metric:549] WER reference: यामुळे एक महत्त्वाचा बदल घडून आला युरोपियन सामर्थ्याला फक्त धर्मयुद्धांचा संबंध राहिला नाही म्हणून तीसवर्षीय युद्ध हे धर्मयुद्ध म्हणून संबोधले गेलेले शेवटचे युद्ध ठरले
+[NeMo I 2026-09-23 19:16:08 metric:549] WER predicted: यामुळे एका महत्त्वाचा बदल घडून आला युरोपियन सामर्थ्याला फक्त धर्मयुद्ध संबधी राहिलं नाही म्हणून तीस वर्ष युद्ध हे धर्मयुद्ध म्हणून संबोधले गेले शेवटी युद्ध ठरले
+
+Epoch 4: |          | 20/? [00:24<00:00,  0.81it/s, v_num=1]
+Epoch 4: |          | 20/? [00:24<00:00,  0.81it/s, v_num=1]
+Epoch 4: |          | 21/? [00:25<00:00,  0.84it/s, v_num=1]
+Epoch 4: |          | 21/? [00:25<00:00,  0.84it/s, v_num=1]
+Epoch 4: |          | 22/? [00:25<00:00,  0.87it/s, v_num=1]
+Epoch 4: |          | 22/? [00:25<00:00,  0.87it/s, v_num=1]
+Epoch 4: |          | 23/? [00:25<00:00,  0.89it/s, v_num=1]
+Epoch 4: |          | 23/? [00:25<00:00,  0.89it/s, v_num=1]
+Epoch 4: |          | 24/? [00:26<00:00,  0.92it/s, v_num=1]
+Epoch 4: |          | 24/? [00:26<00:00,  0.92it/s, v_num=1][NeMo I 2026-09-23 19:16:15 metric:549] 
+    
+[NeMo I 2026-09-23 19:16:15 metric:549] WER reference: ते स्पष्ट झाल्यानंतर अनेक कुटुंबे बेकायदेशीर कारवाईसाठी लढा देण्यासाठी कायदेशीर मदतीची मागणी करत होते गृहनिर्माण घोटाळ्यातील पीडित व्यक्तींसाठी 20 मार्च रोजी पूर्व बे समुदाय कायदा केंद्र येथे एक बैठक आयोजित करण्यात आली होती
+[NeMo I 2026-09-23 19:16:15 metric:549] WER predicted: ते स्पष्ट झाल्यानंतर अनेक कुटुंबे बेकायदेशीर कारवाईसाठी लढा देण्यासाठी कायदेशीर मदतीची मागणी करत होते गृहनिर्माण घोटाळ्यातील पीडित व्यक्तींसाठी 20 मार्च रोजी पूर्व बे समुदाय कायदा केंद्र येथे एक बैठक आयोजित करण्यात आली होती
+
+Epoch 4: |          | 25/? [00:31<00:00,  0.79it/s, v_num=1]
+Epoch 4: |          | 25/? [00:31<00:00,  0.79it/s, v_num=1]
+Epoch 4: |          | 26/? [00:31<00:00,  0.82it/s, v_num=1]
+Epoch 4: |          | 26/? [00:31<00:00,  0.82it/s, v_num=1]
+Epoch 4: |          | 27/? [00:32<00:00,  0.84it/s, v_num=1]
+Epoch 4: |          | 27/? [00:32<00:00,  0.84it/s, v_num=1]
+Epoch 4: |          | 28/? [00:32<00:00,  0.86it/s, v_num=1]
+Epoch 4: |          | 28/? [00:32<00:00,  0.86it/s, v_num=1]
+Epoch 4: |          | 29/? [00:32<00:00,  0.89it/s, v_num=1]
+Epoch 4: |          | 29/? [00:32<00:00,  0.89it/s, v_num=1][NeMo I 2026-09-23 19:16:22 metric:549] 
+    
+[NeMo I 2026-09-23 19:16:22 metric:549] WER reference: त्या रात्री नवशिक्या निकोलस बॅकस्ट्रोमला विजयी गोल करण्यात ओव्हकिनचे प्रथम सहाय्य मिळाले
+[NeMo I 2026-09-23 19:16:22 metric:549] WER predicted: त्या रात्री नवशिक्या निकोलस बॅकस्ट्रोमला विजयी गोल करण्यात ओवकिनचे प्रथम सहाय्य मिळाले
+
+Epoch 4: |          | 30/? [00:39<00:00,  0.76it/s, v_num=1]
+Epoch 4: |          | 30/? [00:39<00:00,  0.76it/s, v_num=1]
+Epoch 4: |          | 31/? [00:39<00:00,  0.78it/s, v_num=1]
+Epoch 4: |          | 31/? [00:39<00:00,  0.78it/s, v_num=1]
+Epoch 4: |          | 32/? [00:40<00:00,  0.80it/s, v_num=1]
+Epoch 4: |          | 32/? [00:40<00:00,  0.79it/s, v_num=1]
+Epoch 4: |          | 33/? [00:40<00:00,  0.81it/s, v_num=1]
+Epoch 4: |          | 33/? [00:40<00:00,  0.81it/s, v_num=1]
+Epoch 4: |          | 34/? [00:40<00:00,  0.83it/s, v_num=1]
+Epoch 4: |          | 34/? [00:40<00:00,  0.83it/s, v_num=1][NeMo I 2026-09-23 19:16:29 metric:549] 
+    
+[NeMo I 2026-09-23 19:16:29 metric:549] WER reference: कॅप्सूल बरीचशी आकाशातून जाणाऱ्या उल्केप्रमाणे दिसेल
+[NeMo I 2026-09-23 19:16:29 metric:549] WER predicted: कॅप्सूल बरीचशी आकाशातून जाणाऱ्या उल्केप्रमाणे दिसेल
+
+Epoch 4: |          | 35/? [00:45<00:00,  0.76it/s, v_num=1]
+Epoch 4: |          | 35/? [00:45<00:00,  0.76it/s, v_num=1]
+Epoch 4: |          | 36/? [00:46<00:00,  0.78it/s, v_num=1]
+Epoch 4: |          | 36/? [00:46<00:00,  0.78it/s, v_num=1]
+Epoch 4: |          | 37/? [00:46<00:00,  0.79it/s, v_num=1]
+Epoch 4: |          | 37/? [00:46<00:00,  0.79it/s, v_num=1]
+Epoch 4: |          | 38/? [00:46<00:00,  0.81it/s, v_num=1]
+Epoch 4: |          | 38/? [00:46<00:00,  0.81it/s, v_num=1]
+Epoch 4: |          | 39/? [00:47<00:00,  0.83it/s, v_num=1]
+Epoch 4: |          | 39/? [00:47<00:00,  0.83it/s, v_num=1][NeMo I 2026-09-23 19:16:36 metric:549] 
+    
+[NeMo I 2026-09-23 19:16:36 metric:549] WER reference: "मीडिया कंपन्या याच्या उद्देशाबाबत सतत खोट बोलतात "पायरसीला प्रतिबंध" करण्यासाठी असं असल्याचा दावा करतात.
+[NeMo I 2026-09-23 19:16:36 metric:549] WER predicted: मीडिया कंपन्या यांच्या उद्देशाबाबत सतत खोट बोलतात पायरसीला प्रतिबंध करण्यासाठी असं असल्याचा दावा करतात
+
+Epoch 4: |          | 40/? [00:52<00:00,  0.76it/s, v_num=1]
+Epoch 4: |          | 40/? [00:52<00:00,  0.76it/s, v_num=1]
+Epoch 4: |          | 41/? [00:52<00:00,  0.77it/s, v_num=1]
+Epoch 4: |          | 41/? [00:52<00:00,  0.77it/s, v_num=1]
+Epoch 4: |          | 42/? [00:53<00:00,  0.79it/s, v_num=1]
+Epoch 4: |          | 42/? [00:53<00:00,  0.79it/s, v_num=1]
+Epoch 4: |          | 43/? [00:53<00:00,  0.80it/s, v_num=1]
+Epoch 4: |          | 43/? [00:53<00:00,  0.80it/s, v_num=1]
+Epoch 4: |          | 44/? [00:53<00:00,  0.82it/s, v_num=1]
+Epoch 4: |          | 44/? [00:53<00:00,  0.82it/s, v_num=1][NeMo I 2026-09-23 19:16:42 metric:549] 
+    
+[NeMo I 2026-09-23 19:16:42 metric:549] WER reference: 1819 मध्ये सापडलेल्या दक्षिण शेटलँड बेटांवर अनेक राष्ट्रांनी दावा केलेला आहे आणि तेथे 2020 मध्ये सक्रिय असलेल्या सोळा तळांसोबत अनेक तळ आहेत
+[NeMo I 2026-09-23 19:16:42 metric:549] WER predicted: <unk> मध्ये सापडलेल्या दक्षिण शेटलँड बेटांवर अनेक राष्ट्रांनी दावा केलेला आहे आणि तेथे <unk> मध्ये सक्रिय असलेल्या <unk> तळांसोबत अनेक तळ आहेत
+
+Epoch 4: |          | 45/? [00:58<00:00,  0.77it/s, v_num=1]
+Epoch 4: |          | 45/? [00:58<00:00,  0.77it/s, v_num=1]
+Epoch 4: |          | 46/? [00:58<00:00,  0.79it/s, v_num=1]
+Epoch 4: |          | 46/? [00:58<00:00,  0.79it/s, v_num=1]
+Epoch 4: |          | 47/? [00:58<00:00,  0.80it/s, v_num=1]
+Epoch 4: |          | 47/? [00:58<00:00,  0.80it/s, v_num=1]
+Epoch 4: |          | 48/? [00:59<00:00,  0.81it/s, v_num=1]
+Epoch 4: |          | 48/? [00:59<00:00,  0.81it/s, v_num=1]
+Epoch 4: |          | 49/? [00:59<00:00,  0.82it/s, v_num=1]
+Epoch 4: |          | 49/? [00:59<00:00,  0.82it/s, v_num=1][NeMo I 2026-09-23 19:16:48 metric:549] 
+    
+[NeMo I 2026-09-23 19:16:48 metric:549] WER reference: बुधवार दुपारपर्यंत टाकीच्या आत कदाचित औष्णिक विस्तारामुळे टाकीचे व्हेंट्स अजूनही गळत होते
+[NeMo I 2026-09-23 19:16:48 metric:549] WER predicted: बुधवार दुपारपर्यंत टाकीच्या आत कदाचित औष्णिक विस्तारामुळे टाकीचे व्हेंट्स अजूनही गळत होते
+
+Epoch 4: |          | 50/? [01:04<00:00,  0.77it/s, v_num=1]
+Epoch 4: |          | 50/? [01:04<00:00,  0.77it/s, v_num=1]
+Epoch 4: |          | 51/? [01:05<00:00,  0.78it/s, v_num=1]
+Epoch 4: |          | 51/? [01:05<00:00,  0.78it/s, v_num=1]
+Epoch 4: |          | 52/? [01:05<00:00,  0.79it/s, v_num=1]
+Epoch 4: |          | 52/? [01:05<00:00,  0.79it/s, v_num=1]
+Epoch 4: |          | 53/? [01:05<00:00,  0.81it/s, v_num=1]
+Epoch 4: |          | 53/? [01:05<00:00,  0.81it/s, v_num=1]
+Epoch 4: |          | 54/? [01:06<00:00,  0.82it/s, v_num=1]
+Epoch 4: |          | 54/? [01:06<00:00,  0.82it/s, v_num=1][NeMo I 2026-09-23 19:16:54 metric:549] 
+    
+[NeMo I 2026-09-23 19:16:54 metric:549] WER reference: टोकियो हे 2 ग्रीष्मकालीन ऑलिम्पिक खेळांचे आयोजन करणारे एकमेव आशियाई शहर असेल 1964 मध्ये खेळांचे आयोजन केले होते
+[NeMo I 2026-09-23 19:16:54 metric:549] WER predicted: टोकियो हे 2 ग्रीष्मकालीन ऑलिम्पिक खेळांचे आयोजन करणारे एकमेव आशियाई शहर असेल <unk> मध्ये खेळांचे आयोजन केले होते
+
+Epoch 4: |          | 55/? [01:10<00:00,  0.78it/s, v_num=1]
+Epoch 4: |          | 55/? [01:10<00:00,  0.78it/s, v_num=1]
+Epoch 4: |          | 56/? [01:11<00:00,  0.79it/s, v_num=1]
+Epoch 4: |          | 56/? [01:11<00:00,  0.79it/s, v_num=1]
+Epoch 4: |          | 57/? [01:11<00:00,  0.80it/s, v_num=1]
+Epoch 4: |          | 57/? [01:11<00:00,  0.80it/s, v_num=1]
+Epoch 4: |          | 58/? [01:11<00:00,  0.81it/s, v_num=1]
+Epoch 4: |          | 58/? [01:11<00:00,  0.81it/s, v_num=1]
+Epoch 4: |          | 59/? [01:11<00:00,  0.82it/s, v_num=1]
+Epoch 4: |          | 59/? [01:11<00:00,  0.82it/s, v_num=1][NeMo I 2026-09-23 19:17:00 metric:549] 
+    
+[NeMo I 2026-09-23 19:17:00 metric:549] WER reference: मी आनंदी आहे की लोक मला पाठिंबा देण्यास उत्सुक आहेत
+[NeMo I 2026-09-23 19:17:00 metric:549] WER predicted: मी आनंदी आहे की लोक मला पाठिंबा देण्यास उत्सुक आहेत
+
+Epoch 4: |          | 60/? [01:18<00:00,  0.76it/s, v_num=1]
+Epoch 4: |          | 60/? [01:18<00:00,  0.76it/s, v_num=1]
+Epoch 4: |          | 61/? [01:19<00:00,  0.77it/s, v_num=1]
+Epoch 4: |          | 61/? [01:19<00:00,  0.77it/s, v_num=1]
+Epoch 4: |          | 62/? [01:19<00:00,  0.78it/s, v_num=1]
+Epoch 4: |          | 62/? [01:19<00:00,  0.78it/s, v_num=1]
+Epoch 4: |          | 63/? [01:19<00:00,  0.79it/s, v_num=1]
+Epoch 4: |          | 63/? [01:19<00:00,  0.79it/s, v_num=1]
+Epoch 4: |          | 64/? [01:19<00:00,  0.80it/s, v_num=1]
+Epoch 4: |          | 64/? [01:19<00:00,  0.80it/s, v_num=1][NeMo I 2026-09-23 19:17:08 metric:549] 
+    
+[NeMo I 2026-09-23 19:17:08 metric:549] WER reference: प्युअरलँड ओरिगामी ही एका बंधनासह आहे की एका वेळी फक्त 1 घडी घालता येईल आणि उलट घडीसारख्या गुंतागुंतीच्या घड्याना परवानगी नाही आणि सर्व घड्या या सरळ सोट स्थानी असतील
+[NeMo I 2026-09-23 19:17:08 metric:549] WER predicted: प्युअरलँड ओरिगामी ही एका बंधनासह आहे की एका वेळी फक्त एक घडी घालता येईल आणि उलट घडीसारख्या गुंतागुंतीच्या घड्याना परवानगी नाही आणि सर्व घड्या या सरळ सोट स्थानी असतील
+
+Epoch 4: |          | 65/? [01:24<00:00,  0.77it/s, v_num=1]
+Epoch 4: |          | 65/? [01:24<00:00,  0.77it/s, v_num=1]
+Epoch 4: |          | 66/? [01:24<00:00,  0.78it/s, v_num=1]
+Epoch 4: |          | 66/? [01:24<00:00,  0.78it/s, v_num=1]
+Epoch 4: |          | 67/? [01:25<00:00,  0.79it/s, v_num=1]
+Epoch 4: |          | 67/? [01:25<00:00,  0.79it/s, v_num=1]
+Epoch 4: |          | 68/? [01:25<00:00,  0.80it/s, v_num=1]
+Epoch 4: |          | 68/? [01:25<00:00,  0.80it/s, v_num=1]
+Epoch 4: |          | 69/? [01:25<00:00,  0.80it/s, v_num=1]
+Epoch 4: |          | 69/? [01:25<00:00,  0.80it/s, v_num=1][NeMo I 2026-09-23 19:17:14 metric:549] 
+    
+[NeMo I 2026-09-23 19:17:14 metric:549] WER reference: आवश्यकतेनुसार उत्पादने खरेदी करता येऊ शकतात परंतु बहुतेक जणांच्या कामगिरीवर फार थोडा किंवा प्रत्यक्ष परिणाम होणार नाही
+[NeMo I 2026-09-23 19:17:14 metric:549] WER predicted: आवश्यकतेनुसार उत्पादने खरेदी करता येऊ शकतात परंतु बहुतेक जणांचा कामगिरीवर फार थोडा किंवा प्रत्यक्ष परिणाम होणार नाही
+
+Epoch 4: |          | 70/? [01:30<00:00,  0.78it/s, v_num=1]
+Epoch 4: |          | 70/? [01:30<00:00,  0.78it/s, v_num=1]
+Epoch 4: |          | 71/? [01:30<00:00,  0.78it/s, v_num=1]
+Epoch 4: |          | 71/? [01:30<00:00,  0.78it/s, v_num=1]
+Epoch 4: |          | 72/? [01:30<00:00,  0.79it/s, v_num=1]
+Epoch 4: |          | 72/? [01:30<00:00,  0.79it/s, v_num=1]
+Epoch 4: |          | 73/? [01:31<00:00,  0.80it/s, v_num=1]
+Epoch 4: |          | 73/? [01:31<00:00,  0.80it/s, v_num=1]
+Epoch 4: |          | 74/? [01:31<00:00,  0.81it/s, v_num=1]
+Epoch 4: |          | 74/? [01:31<00:00,  0.81it/s, v_num=1][NeMo I 2026-09-23 19:17:20 metric:549] 
+    
+[NeMo I 2026-09-23 19:17:20 metric:549] WER reference: तमाकी ड्राईव्ह समुद्रकिनारे हे वेटमाता बंदरावर आहेत मध्य ऑकलंड मधील मिशन बे आणि सेंट हेलीयर्स च्या वरच्या बाजारातील उपनगरा मध्ये आहेत
+[NeMo I 2026-09-23 19:17:20 metric:549] WER predicted: तमाकी ड्राईव्ह समुद्रकिनारे हे वेटमाता बंदरावर आहेत मध्य ऑकलंडमधील मिशन बे आणि सेंट हेलियर्स च्या वरच्या बाजारातील उपनगरांमध्ये आहेत
+
+Epoch 4: |          | 75/? [01:48<00:00,  0.69it/s, v_num=1]
+Epoch 4: |          | 75/? [01:48<00:00,  0.69it/s, v_num=1]
+Epoch 4: |          | 76/? [01:49<00:00,  0.70it/s, v_num=1]
+Epoch 4: |          | 76/? [01:49<00:00,  0.70it/s, v_num=1]
+Epoch 4: |          | 77/? [01:49<00:00,  0.70it/s, v_num=1]
+Epoch 4: |          | 77/? [01:49<00:00,  0.70it/s, v_num=1]
+Epoch 4: |          | 78/? [01:49<00:00,  0.71it/s, v_num=1]
+Epoch 4: |          | 78/? [01:49<00:00,  0.71it/s, v_num=1]
+Epoch 4: |          | 79/? [01:50<00:00,  0.72it/s, v_num=1]
+Epoch 4: |          | 79/? [01:50<00:00,  0.72it/s, v_num=1][NeMo I 2026-09-23 19:17:39 metric:549] 
+    
+[NeMo I 2026-09-23 19:17:39 metric:549] WER reference: त्सुनामीचा कोणताही धोका नसतानाही रहिवासी घाबरू लागले तसेच त्यांनी त्यांचे व्यवसाय आणि घरे सोडण्यास सुरवात केली
+[NeMo I 2026-09-23 19:17:39 metric:549] WER predicted: सुनामीचा कोणताही धोका नसतानाही रहिवासी घाबरू लागले तसेच त्यांनी त्यांचे व्यवसाय आणि घरे सोडण्यास सुरवात केली
+
+Epoch 4: |          | 80/? [01:56<00:00,  0.69it/s, v_num=1]
+Epoch 4: |          | 80/? [01:56<00:00,  0.69it/s, v_num=1]
+Epoch 4: |          | 81/? [01:56<00:00,  0.69it/s, v_num=1]
+Epoch 4: |          | 81/? [01:56<00:00,  0.69it/s, v_num=1]
+Epoch 4: |          | 82/? [01:57<00:00,  0.70it/s, v_num=1]
+Epoch 4: |          | 82/? [01:57<00:00,  0.70it/s, v_num=1]
+Epoch 4: |          | 83/? [01:57<00:00,  0.71it/s, v_num=1]
+Epoch 4: |          | 83/? [01:57<00:00,  0.71it/s, v_num=1]
+Epoch 4: |          | 84/? [01:57<00:00,  0.71it/s, v_num=1]
+Epoch 4: |          | 84/? [01:57<00:00,  0.71it/s, v_num=1][NeMo I 2026-09-23 19:17:46 metric:549] 
+    
+[NeMo I 2026-09-23 19:17:46 metric:549] WER reference: बायनरी नंबर मध्ये 2 किमतीमधील केवळ 1 मूल्य असू शकते उदा 0 किंवा 1 आणि या क्रमांकांना बायनरी अंक असे संबोधले जाते किंवा बिट्स संगणक शब्द्जालामध्ये वापरण्यासाठी
+[NeMo I 2026-09-23 19:17:46 metric:549] WER predicted: बायनरी नंबरमध्ये दोन किमतीमधील केवळ एक मूल्य असू शकते उदा 0 किंवा 1 आणि या क्रमांकांना बायनरी अंक असे संबोधले जाते किंवा बिट्स संकणक शब्दजालामध्ये वापरण्यासाठी
+
+Epoch 4: |          | 85/? [02:02<00:00,  0.69it/s, v_num=1]
+Epoch 4: |          | 85/? [02:02<00:00,  0.69it/s, v_num=1]
+Epoch 4: |          | 86/? [02:03<00:00,  0.70it/s, v_num=1]
+Epoch 4: |          | 86/? [02:03<00:00,  0.70it/s, v_num=1]
+Epoch 4: |          | 87/? [02:03<00:00,  0.70it/s, v_num=1]
+Epoch 4: |          | 87/? [02:03<00:00,  0.70it/s, v_num=1]
+Epoch 4: |          | 88/? [02:03<00:00,  0.71it/s, v_num=1]
+Epoch 4: |          | 88/? [02:03<00:00,  0.71it/s, v_num=1]
+Epoch 4: |          | 89/? [02:04<00:00,  0.72it/s, v_num=1]
+Epoch 4: |          | 89/? [02:04<00:00,  0.72it/s, v_num=1][NeMo I 2026-09-23 19:17:52 metric:549] 
+    
+[NeMo I 2026-09-23 19:17:52 metric:549] WER reference: गोमा हे काँगो लोकशाही प्रजासत्ताकमधील पर्यटन शहर आहे जे पूर्वेच्या टोकाला रवांडाजवळ आहे
+[NeMo I 2026-09-23 19:17:52 metric:549] WER predicted: गोमा हे काँगो लोकशाही प्रजासत्ताकमधील पर्यटन शहर आहे जे पूर्वेला पूर्वेच्या टोकाला रवांडाजवळ आहे
+
+Epoch 4: |          | 90/? [02:08<00:00,  0.70it/s, v_num=1]
+Epoch 4: |          | 90/? [02:08<00:00,  0.70it/s, v_num=1]
+Epoch 4: |          | 91/? [02:09<00:00,  0.70it/s, v_num=1]
+Epoch 4: |          | 91/? [02:09<00:00,  0.70it/s, v_num=1]
+Epoch 4: |          | 92/? [02:09<00:00,  0.71it/s, v_num=1]
+Epoch 4: |          | 92/? [02:09<00:00,  0.71it/s, v_num=1]
+Epoch 4: |          | 93/? [02:09<00:00,  0.72it/s, v_num=1]
+Epoch 4: |          | 93/? [02:09<00:00,  0.72it/s, v_num=1]
+Epoch 4: |          | 94/? [02:10<00:00,  0.72it/s, v_num=1]
+Epoch 4: |          | 94/? [02:10<00:00,  0.72it/s, v_num=1][NeMo I 2026-09-23 19:17:59 metric:549] 
+    
+[NeMo I 2026-09-23 19:17:59 metric:549] WER reference: जेव्हा कॅप्सूल पृथ्वीवर पोहोचून वातावरणात प्रवेश करेल तेव्हा पाहाटे <unk> वाजण्याच्या सुमारास पूर्वेकडील वेळ कॅलिफोर्निया उत्तर कॅलिफोर्निया ओरेगॉन नेवाडा आणि उताहमधील लोकांना प्रकाशाचा उत्सव पाहता येईल अशी अपेक्षा आहे
+[NeMo I 2026-09-23 19:17:59 metric:549] WER predicted: जेव्हा कॅप्सूल पृथ्वीवर पोहोचून वातावरणात प्रवेश करेल तेव्हा पहाटे <unk> वाजण्याच्या सुमारास पूर्वेकडील वेळ कॅलिफोर्निया उत्तर कॅलिफोर्निया ओरेगॉन नेवाडा आणि उताहमधील लोकांना प्रकाशाचा उत्सव पाहता येईल अशी अपेक्षा आहे
+
+Epoch 4: |          | 95/? [02:15<00:00,  0.70it/s, v_num=1]
+Epoch 4: |          | 95/? [02:15<00:00,  0.70it/s, v_num=1]
+Epoch 4: |          | 96/? [02:16<00:00,  0.71it/s, v_num=1]
+Epoch 4: |          | 96/? [02:16<00:00,  0.71it/s, v_num=1]
+Epoch 4: |          | 97/? [02:16<00:00,  0.71it/s, v_num=1]
+Epoch 4: |          | 97/? [02:16<00:00,  0.71it/s, v_num=1]
+Epoch 4: |          | 98/? [02:16<00:00,  0.72it/s, v_num=1]
+Epoch 4: |          | 98/? [02:16<00:00,  0.72it/s, v_num=1]
+Epoch 4: |          | 99/? [02:17<00:00,  0.72it/s, v_num=1]
+Epoch 4: |          | 99/? [02:17<00:00,  0.72it/s, v_num=1][NeMo I 2026-09-23 19:18:04 metric:549] 
+    
+[NeMo I 2026-09-23 19:18:04 metric:549] WER reference: हे शाळा सोडलेल्यांमध्ये विशेष लोकप्रिय आहे शिक्षणाशी कोणतीही तडजोड न करता त्यांना विद्यापिठाच्या आधी एक वर्ष बाहेर पडता येते
+[NeMo I 2026-09-23 19:18:04 metric:549] WER predicted: हे शाळा सोडलेल्यांमध्ये विशेष लोकप्रिय आहे शिक्षणाशी कोणतीही तडजोड न करता त्यांना विद्यापिठाच्या आधी एक वर्ष बाहेर पडता येते
+
+Epoch 4: |          | 100/? [02:20<00:00,  0.71it/s, v_num=1]
+Epoch 4: |          | 100/? [02:20<00:00,  0.71it/s, v_num=1]
+Epoch 4: |          | 100/? [02:20<00:00,  0.71it/s, v_num=1]
+Epoch 4: |          | 0/? [00:00<?, ?it/s, v_num=1]          
+Epoch 5: |          | 0/? [00:00<?, ?it/s, v_num=1]
+Epoch 5: |          | 1/? [00:01<00:00,  0.97it/s, v_num=1]
+Epoch 5: |          | 1/? [00:01<00:00,  0.96it/s, v_num=1]
+Epoch 5: |          | 2/? [00:01<00:00,  1.48it/s, v_num=1]
+Epoch 5: |          | 2/? [00:01<00:00,  1.48it/s, v_num=1]
+Epoch 5: |          | 3/? [00:01<00:00,  1.78it/s, v_num=1]
+Epoch 5: |          | 3/? [00:01<00:00,  1.78it/s, v_num=1]
+Epoch 5: |          | 4/? [00:01<00:00,  2.03it/s, v_num=1]
+Epoch 5: |          | 4/? [00:01<00:00,  2.03it/s, v_num=1][NeMo I 2026-09-23 19:18:10 metric:549] 
+    
+[NeMo I 2026-09-23 19:18:10 metric:549] WER reference: परंपरेने सत्तेचा वारस शालेय शिक्षण संपल्यानंतर थेट लष्करात जाईल
+[NeMo I 2026-09-23 19:18:10 metric:549] WER predicted: परंपरेने सत्तेचा वारस शालेय शिक्षण संपल्यानंतर थेट लष्करात जाईल
+
+Epoch 5: |          | 5/? [00:05<00:00,  0.90it/s, v_num=1]
+Epoch 5: |          | 5/? [00:05<00:00,  0.90it/s, v_num=1]
+Epoch 5: |          | 6/? [00:05<00:00,  1.01it/s, v_num=1]
+Epoch 5: |          | 6/? [00:05<00:00,  1.01it/s, v_num=1]
+Epoch 5: |          | 7/? [00:06<00:00,  1.11it/s, v_num=1]
+Epoch 5: |          | 7/? [00:06<00:00,  1.11it/s, v_num=1]
+Epoch 5: |          | 8/? [00:06<00:00,  1.20it/s, v_num=1]
+Epoch 5: |          | 8/? [00:06<00:00,  1.20it/s, v_num=1]
+Epoch 5: |          | 9/? [00:07<00:00,  1.28it/s, v_num=1]
+Epoch 5: |          | 9/? [00:07<00:00,  1.28it/s, v_num=1][NeMo I 2026-09-23 19:18:15 metric:549] 
+    
+[NeMo I 2026-09-23 19:18:15 metric:549] WER reference: अनेकदा या सर्विसेस करिता ऍक्सेस टोल-फ्री टेलिफोन नंबरद्वारे केला जातो ज्यास बहुतांश फोनवरून विना-शुल्क कॉल केला जाऊ शकतो
+[NeMo I 2026-09-23 19:18:15 metric:549] WER predicted: अनेकदा या सर्विसेस करिता ॲक्सेस टोल-फ्री टेलिफोन नंबरद्वारे केला जातो ज्यास बहुतांश फोनवरून विना-शुल्क कॉल केला जाऊ शकतो
+
+Epoch 5: |          | 10/? [00:10<00:00,  0.91it/s, v_num=1]
+Epoch 5: |          | 10/? [00:10<00:00,  0.91it/s, v_num=1]
+Epoch 5: |          | 11/? [00:11<00:00,  0.97it/s, v_num=1]
+Epoch 5: |          | 11/? [00:11<00:00,  0.97it/s, v_num=1]
+Epoch 5: |          | 12/? [00:11<00:00,  1.03it/s, v_num=1]
+Epoch 5: |          | 12/? [00:11<00:00,  1.03it/s, v_num=1]
+Epoch 5: |          | 13/? [00:12<00:00,  1.08it/s, v_num=1]
+Epoch 5: |          | 13/? [00:12<00:00,  1.08it/s, v_num=1]
+Epoch 5: |          | 14/? [00:12<00:00,  1.13it/s, v_num=1]
+Epoch 5: |          | 14/? [00:12<00:00,  1.13it/s, v_num=1][NeMo I 2026-09-23 19:18:21 metric:549] 
+    
+[NeMo I 2026-09-23 19:18:21 metric:549] WER reference: जर तुम्हाला दक्षिण प्रशांत आणि दक्षिण अमेरिकेचा पश्चिम किनारा या ठिकाणी जायचे असेल केवळ  विमान हाच पर्याय नाही. खाली पहा
+[NeMo I 2026-09-23 19:18:21 metric:549] WER predicted: जर तुम्हाला दक्षिण प्रशांत आणि दक्षिण अमेरिकेचा पश्चिम किनारा या ठिकाणी जायचे असेल केवळ विमान हाच पर्याय नाही खाली पहा
+
+Epoch 5: |          | 15/? [00:17<00:00,  0.85it/s, v_num=1]
+Epoch 5: |          | 15/? [00:17<00:00,  0.85it/s, v_num=1]
+Epoch 5: |          | 16/? [00:17<00:00,  0.89it/s, v_num=1]
+Epoch 5: |          | 16/? [00:17<00:00,  0.89it/s, v_num=1]
+Epoch 5: |          | 17/? [00:18<00:00,  0.93it/s, v_num=1]
+Epoch 5: |          | 17/? [00:18<00:00,  0.93it/s, v_num=1]
+Epoch 5: |          | 18/? [00:18<00:00,  0.97it/s, v_num=1]
+Epoch 5: |          | 18/? [00:18<00:00,  0.97it/s, v_num=1]
+Epoch 5: |          | 19/? [00:18<00:00,  1.01it/s, v_num=1]
+Epoch 5: |          | 19/? [00:18<00:00,  1.01it/s, v_num=1][NeMo I 2026-09-23 19:18:28 metric:549] 
+    
+[NeMo I 2026-09-23 19:18:28 metric:549] WER reference: ओनेगा तलाव हा देखील वोल्गाशी जोडला गेलेला आहे म्हणून रशिया मधून कास्पियन समुद्र कडून येणे अद्याप ही शक्य आहे
+[NeMo I 2026-09-23 19:18:28 metric:549] WER predicted: "अनगावा तलाव हा देखील वोल्गाशी जोडला गेलेला आहे म्हणून रशियामधून कास्पियन समुद्र कडून येणे अद्यापही शक्य आहे."
+
+Epoch 5: |          | 20/? [00:24<00:00,  0.81it/s, v_num=1]
+Epoch 5: |          | 20/? [00:24<00:00,  0.81it/s, v_num=1]
+Epoch 5: |          | 21/? [00:25<00:00,  0.84it/s, v_num=1]
+Epoch 5: |          | 21/? [00:25<00:00,  0.84it/s, v_num=1]
+Epoch 5: |          | 22/? [00:25<00:00,  0.86it/s, v_num=1]
+Epoch 5: |          | 22/? [00:25<00:00,  0.86it/s, v_num=1]
+Epoch 5: |          | 23/? [00:25<00:00,  0.89it/s, v_num=1]
+Epoch 5: |          | 23/? [00:25<00:00,  0.89it/s, v_num=1]
+Epoch 5: |          | 24/? [00:26<00:00,  0.92it/s, v_num=1]
+Epoch 5: |          | 24/? [00:26<00:00,  0.92it/s, v_num=1][NeMo I 2026-09-23 19:18:35 metric:549] 
+    
+[NeMo I 2026-09-23 19:18:35 metric:549] WER reference: ते स्पष्ट झाल्यानंतर अनेक कुटुंबे बेकायदेशीर कारवाईसाठी लढा देण्यासाठी कायदेशीर मदतीची मागणी करत होते गृहनिर्माण घोटाळ्यातील पीडित व्यक्तींसाठी 20 मार्च रोजी पूर्व बे समुदाय कायदा केंद्र येथे एक बैठक आयोजित करण्यात आली होती
+[NeMo I 2026-09-23 19:18:35 metric:549] WER predicted: ते स्पष्ट झाल्यानंतर अनेक कुटुंबे बेकायदेशीर कारवाईसाठी लढा देण्यासाठी कायदेशीर मदतीची मागणी करत होते गृहनिर्माण घोटाळ्यातील पीडित व्यक्तींसाठी 20 मार्च रोजी पूर्व बे समुदाय कायदा केंद्र येथे एक बैठक आयोजित करण्यात आली होती
+
+Epoch 5: |          | 25/? [00:31<00:00,  0.80it/s, v_num=1]
+Epoch 5: |          | 25/? [00:31<00:00,  0.80it/s, v_num=1]
+Epoch 5: |          | 26/? [00:31<00:00,  0.82it/s, v_num=1]
+Epoch 5: |          | 26/? [00:31<00:00,  0.82it/s, v_num=1]
+Epoch 5: |          | 27/? [00:32<00:00,  0.84it/s, v_num=1]
+Epoch 5: |          | 27/? [00:32<00:00,  0.84it/s, v_num=1]
+Epoch 5: |          | 28/? [00:32<00:00,  0.86it/s, v_num=1]
+Epoch 5: |          | 28/? [00:32<00:00,  0.86it/s, v_num=1]
+Epoch 5: |          | 29/? [00:32<00:00,  0.88it/s, v_num=1]
+Epoch 5: |          | 29/? [00:32<00:00,  0.88it/s, v_num=1][NeMo I 2026-09-23 19:18:41 metric:549] 
+    
+[NeMo I 2026-09-23 19:18:41 metric:549] WER reference: जगात 5,000 हून अधिक विविध भाषा आहेत ज्यामध्ये वीस पेक्षा जास्त भाषा 50 दशलक्ष किंवा अधिक भाषिक बोलतात
+[NeMo I 2026-09-23 19:18:41 metric:549] WER predicted: जगात 5,000 हून अधिक विविध भाषा आहेत ज्यामध्ये 20 पेक्षा जास्त भाषा 50 दशलक्ष किंवा अधिक भाषिक बोलतात
+
+Epoch 5: |          | 30/? [00:36<00:00,  0.82it/s, v_num=1]
+Epoch 5: |          | 30/? [00:36<00:00,  0.82it/s, v_num=1]
+Epoch 5: |          | 31/? [00:37<00:00,  0.84it/s, v_num=1]
+Epoch 5: |          | 31/? [00:37<00:00,  0.84it/s, v_num=1]
+Epoch 5: |          | 32/? [00:37<00:00,  0.85it/s, v_num=1]
+Epoch 5: |          | 32/? [00:37<00:00,  0.85it/s, v_num=1]
+Epoch 5: |          | 33/? [00:37<00:00,  0.87it/s, v_num=1]
+Epoch 5: |          | 33/? [00:37<00:00,  0.87it/s, v_num=1]
+Epoch 5: |          | 34/? [00:38<00:00,  0.89it/s, v_num=1]
+Epoch 5: |          | 34/? [00:38<00:00,  0.89it/s, v_num=1][NeMo I 2026-09-23 19:18:47 metric:549] 
+    
+[NeMo I 2026-09-23 19:18:47 metric:549] WER reference: कॅप्सूल बरीचशी आकाशातून जाणाऱ्या उल्केप्रमाणे दिसेल
+[NeMo I 2026-09-23 19:18:47 metric:549] WER predicted: कॅप्सूल बरीचशी आकाशातून जाणाऱ्या उल्केप्रमाणे दिसेल
+
+Epoch 5: |          | 35/? [00:42<00:00,  0.82it/s, v_num=1]
+Epoch 5: |          | 35/? [00:42<00:00,  0.82it/s, v_num=1]
+Epoch 5: |          | 36/? [00:42<00:00,  0.84it/s, v_num=1]
+Epoch 5: |          | 36/? [00:42<00:00,  0.84it/s, v_num=1]
+Epoch 5: |          | 37/? [00:43<00:00,  0.86it/s, v_num=1]
+Epoch 5: |          | 37/? [00:43<00:00,  0.86it/s, v_num=1]
+Epoch 5: |          | 38/? [00:43<00:00,  0.87it/s, v_num=1]
+Epoch 5: |          | 38/? [00:43<00:00,  0.87it/s, v_num=1]
+Epoch 5: |          | 39/? [00:43<00:00,  0.89it/s, v_num=1]
+Epoch 5: |          | 39/? [00:43<00:00,  0.89it/s, v_num=1][NeMo I 2026-09-23 19:18:52 metric:549] 
+    
+[NeMo I 2026-09-23 19:18:52 metric:549] WER reference: "मीडिया कंपन्या याच्या उद्देशाबाबत सतत खोट बोलतात "पायरसीला प्रतिबंध" करण्यासाठी असं असल्याचा दावा करतात.
+[NeMo I 2026-09-23 19:18:52 metric:549] WER predicted: मीडिया कंपन्या यांच्या उद्देशाबाबत सतत खोट बोलतात पायरसीला प्रतिबंध करण्यासाठी असं असल्याचा दावा करतात
+
+Epoch 5: |          | 40/? [00:49<00:00,  0.81it/s, v_num=1]
+Epoch 5: |          | 40/? [00:49<00:00,  0.81it/s, v_num=1]
+Epoch 5: |          | 41/? [00:49<00:00,  0.83it/s, v_num=1]
+Epoch 5: |          | 41/? [00:49<00:00,  0.83it/s, v_num=1]
+Epoch 5: |          | 42/? [00:49<00:00,  0.85it/s, v_num=1]
+Epoch 5: |          | 42/? [00:49<00:00,  0.85it/s, v_num=1]
+Epoch 5: |          | 43/? [00:49<00:00,  0.86it/s, v_num=1]
+Epoch 5: |          | 43/? [00:49<00:00,  0.86it/s, v_num=1]
+Epoch 5: |          | 44/? [00:50<00:00,  0.87it/s, v_num=1]
+Epoch 5: |          | 44/? [00:50<00:00,  0.87it/s, v_num=1][NeMo I 2026-09-23 19:18:59 metric:549] 
+    
+[NeMo I 2026-09-23 19:18:59 metric:549] WER reference: 1819 मध्ये सापडलेल्या दक्षिण शेटलँड बेटांवर अनेक राष्ट्रांनी दावा केलेला आहे आणि तेथे 2020 मध्ये सक्रिय असलेल्या सोळा तळांसोबत अनेक तळ आहेत
+[NeMo I 2026-09-23 19:18:59 metric:549] WER predicted: 1819 मध्ये सापडलेल्या दक्षिण शेटलँड बेटांवर अनेक राष्ट्रांनी दावा केलेला आहे आणि तेथे 2020 मध्ये सक्रिय असलेल्या 16 तळांसोबत अनेक तळ आहेत
+
+Epoch 5: |          | 45/? [00:55<00:00,  0.82it/s, v_num=1]
+Epoch 5: |          | 45/? [00:55<00:00,  0.82it/s, v_num=1]
+Epoch 5: |          | 46/? [00:55<00:00,  0.83it/s, v_num=1]
+Epoch 5: |          | 46/? [00:55<00:00,  0.83it/s, v_num=1]
+Epoch 5: |          | 47/? [00:55<00:00,  0.84it/s, v_num=1]
+Epoch 5: |          | 47/? [00:55<00:00,  0.84it/s, v_num=1]
+Epoch 5: |          | 48/? [00:56<00:00,  0.86it/s, v_num=1]
+Epoch 5: |          | 48/? [00:56<00:00,  0.86it/s, v_num=1]
+Epoch 5: |          | 49/? [00:56<00:00,  0.87it/s, v_num=1]
+Epoch 5: |          | 49/? [00:56<00:00,  0.87it/s, v_num=1][NeMo I 2026-09-23 19:19:05 metric:549] 
+    
+[NeMo I 2026-09-23 19:19:05 metric:549] WER reference: बुधवार दुपारपर्यंत टाकीच्या आत कदाचित औष्णिक विस्तारामुळे टाकीचे व्हेंट्स अजूनही गळत होते
+[NeMo I 2026-09-23 19:19:05 metric:549] WER predicted: बुधवार दुपारपर्यंत टाकीच्या आत कदाचित औष्णिक विस्तारामुळे टाकीचे व्हेंट्स अजूनही गळत होते
+
+Epoch 5: |          | 50/? [01:00<00:00,  0.82it/s, v_num=1]
+Epoch 5: |          | 50/? [01:00<00:00,  0.82it/s, v_num=1]
+Epoch 5: |          | 51/? [01:00<00:00,  0.84it/s, v_num=1]
+Epoch 5: |          | 51/? [01:00<00:00,  0.84it/s, v_num=1]
+Epoch 5: |          | 52/? [01:01<00:00,  0.85it/s, v_num=1]
+Epoch 5: |          | 52/? [01:01<00:00,  0.85it/s, v_num=1]
+Epoch 5: |          | 53/? [01:01<00:00,  0.86it/s, v_num=1]
+Epoch 5: |          | 53/? [01:01<00:00,  0.86it/s, v_num=1]
+Epoch 5: |          | 54/? [01:01<00:00,  0.87it/s, v_num=1]
+Epoch 5: |          | 54/? [01:01<00:00,  0.87it/s, v_num=1][NeMo I 2026-09-23 19:19:11 metric:549] 
+    
+[NeMo I 2026-09-23 19:19:11 metric:549] WER reference: 1 जानेवारीला हा मुद्दा सुरू झाला जेव्हा डझनभर स्थानिक रहिवाशांनी ओबाणाझावा पोस्ट ऑफिसकडे तक्रार करण्यास सुरूवात केली की त्यांना त्यांची पारंपारिक आणि नियमित नवीन वर्षाची कार्डे मिळाली नाहीत
+[NeMo I 2026-09-23 19:19:11 metric:549] WER predicted: 1 जानेवारीला हा मुद्दा सुरू झाला जेव्हा डझनभर स्थानिक रहिवाशांनी ओबानाझावा पोस्ट ऑफिसकडे तक्रार करण्यास सुरुवात केली आणि त्यांना त्यांची पारंपारिक आणि नियमित नवीन वर्षाची कार्डे मिळाली नाहीत
+
+Epoch 5: |          | 55/? [01:06<00:00,  0.82it/s, v_num=1]
+Epoch 5: |          | 55/? [01:06<00:00,  0.82it/s, v_num=1]
+Epoch 5: |          | 56/? [01:07<00:00,  0.83it/s, v_num=1]
+Epoch 5: |          | 56/? [01:07<00:00,  0.83it/s, v_num=1]
+Epoch 5: |          | 57/? [01:07<00:00,  0.84it/s, v_num=1]
+Epoch 5: |          | 57/? [01:07<00:00,  0.84it/s, v_num=1]
+Epoch 5: |          | 58/? [01:08<00:00,  0.85it/s, v_num=1]
+Epoch 5: |          | 58/? [01:08<00:00,  0.85it/s, v_num=1]
+Epoch 5: |          | 59/? [01:08<00:00,  0.86it/s, v_num=1]
+Epoch 5: |          | 59/? [01:08<00:00,  0.86it/s, v_num=1][NeMo I 2026-09-23 19:19:23 metric:549] 
+    
+[NeMo I 2026-09-23 19:19:23 metric:549] WER reference: त्यांच्याकडे पारंपरिक टीममधील सदस्यांपेक्षा अधिक स्वायत्तता असते कारण त्यांची टीम वेगवेगळ्या टाईम झोननुसार भेटू शकते हे कदाचित त्यांच्या स्थानिक व्यवस्थापनाला समजू शकणार नाही
+[NeMo I 2026-09-23 19:19:23 metric:549] WER predicted: त्यांच्याकडे पारंपारिक टीममधील सदस्यांपेक्षा अधिक स्वायत्तता असते कारण त्यांची टीम वेगवेगळ्या टाईम झोननुसार भेटू शकते हे कदाचित त्यांच्या स्थानिक व्यवस्थापनाला समजू शकणार नाही
+
+Epoch 5: |          | 60/? [01:25<00:00,  0.70it/s, v_num=1]
+Epoch 5: |          | 60/? [01:25<00:00,  0.70it/s, v_num=1]
+Epoch 5: |          | 61/? [01:26<00:00,  0.71it/s, v_num=1]
+Epoch 5: |          | 61/? [01:26<00:00,  0.71it/s, v_num=1]
+Epoch 5: |          | 62/? [01:26<00:00,  0.72it/s, v_num=1]
+Epoch 5: |          | 62/? [01:26<00:00,  0.72it/s, v_num=1]
+Epoch 5: |          | 63/? [01:26<00:00,  0.73it/s, v_num=1]
+Epoch 5: |          | 63/? [01:26<00:00,  0.73it/s, v_num=1]
+Epoch 5: |          | 64/? [01:27<00:00,  0.73it/s, v_num=1]
+Epoch 5: |          | 64/? [01:27<00:00,  0.73it/s, v_num=1][NeMo I 2026-09-23 19:19:36 metric:549] 
+    
+[NeMo I 2026-09-23 19:19:36 metric:549] WER reference: प्युअरलँड ओरिगामी ही एका बंधनासह आहे की एका वेळी फक्त 1 घडी घालता येईल आणि उलट घडीसारख्या गुंतागुंतीच्या घड्याना परवानगी नाही आणि सर्व घड्या या सरळ सोट स्थानी असतील
+[NeMo I 2026-09-23 19:19:36 metric:549] WER predicted: प्युअरलँड ओरिगामी ही एका बंधनासह आहे की एका वेळी फक्त एक घडी घालता येईल आणि उलट घडीसारख्या गुंतागुंतीच्या घड्याना परवानगी नाही आणि सर्व घड्या या सरळ सोट स्थानी असतील
+
+Epoch 5: |          | 65/? [01:32<00:00,  0.70it/s, v_num=1]
+Epoch 5: |          | 65/? [01:32<00:00,  0.70it/s, v_num=1]
+Epoch 5: |          | 66/? [01:32<00:00,  0.71it/s, v_num=1]
+Epoch 5: |          | 66/? [01:32<00:00,  0.71it/s, v_num=1]
+Epoch 5: |          | 67/? [01:32<00:00,  0.72it/s, v_num=1]
+Epoch 5: |          | 67/? [01:32<00:00,  0.72it/s, v_num=1]
+Epoch 5: |          | 68/? [01:33<00:00,  0.73it/s, v_num=1]
+Epoch 5: |          | 68/? [01:33<00:00,  0.73it/s, v_num=1]
+Epoch 5: |          | 69/? [01:33<00:00,  0.74it/s, v_num=1]
+Epoch 5: |          | 69/? [01:33<00:00,  0.74it/s, v_num=1][NeMo I 2026-09-23 19:19:42 metric:549] 
+    
+[NeMo I 2026-09-23 19:19:42 metric:549] WER reference: आवश्यकतेनुसार उत्पादने खरेदी करता येऊ शकतात परंतु बहुतेक जणांच्या कामगिरीवर फार थोडा किंवा प्रत्यक्ष परिणाम होणार नाही
+[NeMo I 2026-09-23 19:19:42 metric:549] WER predicted: आवश्यकतेनुसार उत्पादने खरेदी करता येऊ शकतात परंतु बहुतेक जणांचा कामगिरीवर फार थोडा किंवा प्रत्यक्ष परिणाम होणार नाही
+
+Epoch 5: |          | 70/? [01:37<00:00,  0.72it/s, v_num=1]
+Epoch 5: |          | 70/? [01:37<00:00,  0.72it/s, v_num=1]
+Epoch 5: |          | 71/? [01:37<00:00,  0.73it/s, v_num=1]
+Epoch 5: |          | 71/? [01:37<00:00,  0.73it/s, v_num=1]
+Epoch 5: |          | 72/? [01:38<00:00,  0.73it/s, v_num=1]
+Epoch 5: |          | 72/? [01:38<00:00,  0.73it/s, v_num=1]
+Epoch 5: |          | 73/? [01:38<00:00,  0.74it/s, v_num=1]
+Epoch 5: |          | 73/? [01:38<00:00,  0.74it/s, v_num=1]
+Epoch 5: |          | 74/? [01:38<00:00,  0.75it/s, v_num=1]
+Epoch 5: |          | 74/? [01:38<00:00,  0.75it/s, v_num=1][NeMo I 2026-09-23 19:19:48 metric:549] 
+    
+[NeMo I 2026-09-23 19:19:48 metric:549] WER reference: तमाकी ड्राईव्ह समुद्रकिनारे हे वेटमाता बंदरावर आहेत मध्य ऑकलंड मधील मिशन बे आणि सेंट हेलीयर्स च्या वरच्या बाजारातील उपनगरा मध्ये आहेत
+[NeMo I 2026-09-23 19:19:48 metric:549] WER predicted: तमाकी ड्राईव्ह समुद्रकिनारे हे वेटमाता बंदरावर आहेत मध्य ऑकलंडमधील मिशन बे आणि सेंट हेलियर्स च्या वरच्या बाजारातील उपनगरा मध्ये आहेत
+
+Epoch 5: |          | 75/? [01:44<00:00,  0.72it/s, v_num=1]
+Epoch 5: |          | 75/? [01:44<00:00,  0.72it/s, v_num=1]
+Epoch 5: |          | 76/? [01:44<00:00,  0.73it/s, v_num=1]
+Epoch 5: |          | 76/? [01:44<00:00,  0.73it/s, v_num=1]
+Epoch 5: |          | 77/? [01:44<00:00,  0.73it/s, v_num=1]
+Epoch 5: |          | 77/? [01:44<00:00,  0.73it/s, v_num=1]
+Epoch 5: |          | 78/? [01:45<00:00,  0.74it/s, v_num=1]
+Epoch 5: |          | 78/? [01:45<00:00,  0.74it/s, v_num=1]
+Epoch 5: |          | 79/? [01:45<00:00,  0.75it/s, v_num=1]
+Epoch 5: |          | 79/? [01:45<00:00,  0.75it/s, v_num=1][NeMo I 2026-09-23 19:19:55 metric:549] 
+    
+[NeMo I 2026-09-23 19:19:55 metric:549] WER reference: त्सुनामीचा कोणताही धोका नसतानाही रहिवासी घाबरू लागले तसेच त्यांनी त्यांचे व्यवसाय आणि घरे सोडण्यास सुरवात केली
+[NeMo I 2026-09-23 19:19:55 metric:549] WER predicted: सुनामीचा कोणताही धोका नसतानाही रहिवासी घाबरू लागले तसेच त्यांनी त्यांचे व्यवसाय आणि घरे सोडण्यास सुरवात केली
+
+Epoch 5: |          | 80/? [01:51<00:00,  0.71it/s, v_num=1]
+Epoch 5: |          | 80/? [01:51<00:00,  0.71it/s, v_num=1]
+Epoch 5: |          | 81/? [01:52<00:00,  0.72it/s, v_num=1]
+Epoch 5: |          | 81/? [01:52<00:00,  0.72it/s, v_num=1]
+Epoch 5: |          | 82/? [01:52<00:00,  0.73it/s, v_num=1]
+Epoch 5: |          | 82/? [01:52<00:00,  0.73it/s, v_num=1]
+Epoch 5: |          | 83/? [01:52<00:00,  0.74it/s, v_num=1]
+Epoch 5: |          | 83/? [01:52<00:00,  0.74it/s, v_num=1]
+Epoch 5: |          | 84/? [01:53<00:00,  0.74it/s, v_num=1]
+Epoch 5: |          | 84/? [01:53<00:00,  0.74it/s, v_num=1][NeMo I 2026-09-23 19:20:02 metric:549] 
+    
+[NeMo I 2026-09-23 19:20:02 metric:549] WER reference: बायनरी नंबर मध्ये 2 किमतीमधील केवळ 1 मूल्य असू शकते उदा 0 किंवा 1 आणि या क्रमांकांना बायनरी अंक असे संबोधले जाते किंवा बिट्स संगणक शब्द्जालामध्ये वापरण्यासाठी
+[NeMo I 2026-09-23 19:20:02 metric:549] WER predicted: बायनरी नंबरमध्ये दोन किमतीमधील केवळ एक मूल्य असू शकते उदा 0 किंवा 1 आणि या क्रमांकांना बायनरी अंक असे संबोधले जाते किंवा बिट्स संकणक शब्दजालामध्ये वापरण्यासाठी
+
+Epoch 5: |          | 85/? [01:57<00:00,  0.72it/s, v_num=1]
+Epoch 5: |          | 85/? [01:57<00:00,  0.72it/s, v_num=1]
+Epoch 5: |          | 86/? [01:58<00:00,  0.73it/s, v_num=1]
+Epoch 5: |          | 86/? [01:58<00:00,  0.73it/s, v_num=1]
+Epoch 5: |          | 87/? [01:58<00:00,  0.73it/s, v_num=1]
+Epoch 5: |          | 87/? [01:58<00:00,  0.73it/s, v_num=1]
+Epoch 5: |          | 88/? [01:58<00:00,  0.74it/s, v_num=1]
+Epoch 5: |          | 88/? [01:58<00:00,  0.74it/s, v_num=1]
+Epoch 5: |          | 89/? [01:59<00:00,  0.75it/s, v_num=1]
+Epoch 5: |          | 89/? [01:59<00:00,  0.75it/s, v_num=1][NeMo I 2026-09-23 19:20:07 metric:549] 
+    
+[NeMo I 2026-09-23 19:20:07 metric:549] WER reference: गोमा हे काँगो लोकशाही प्रजासत्ताकमधील पर्यटन शहर आहे जे पूर्वेच्या टोकाला रवांडाजवळ आहे
+[NeMo I 2026-09-23 19:20:07 metric:549] WER predicted: गोमा हे काँगो लोकशाही प्रजासत्ताकमधील पर्यटन शहर आहे जे पूर्वेला पूर्वेच्या टोकाला रवांडाजवळ आहे
+
+Epoch 5: |          | 90/? [02:03<00:00,  0.73it/s, v_num=1]
+Epoch 5: |          | 90/? [02:03<00:00,  0.73it/s, v_num=1]
+Epoch 5: |          | 91/? [02:03<00:00,  0.74it/s, v_num=1]
+Epoch 5: |          | 91/? [02:03<00:00,  0.74it/s, v_num=1]
+Epoch 5: |          | 92/? [02:03<00:00,  0.74it/s, v_num=1]
+Epoch 5: |          | 92/? [02:03<00:00,  0.74it/s, v_num=1]
+Epoch 5: |          | 93/? [02:04<00:00,  0.75it/s, v_num=1]
+Epoch 5: |          | 93/? [02:04<00:00,  0.75it/s, v_num=1]
+Epoch 5: |          | 94/? [02:04<00:00,  0.75it/s, v_num=1]
+Epoch 5: |          | 94/? [02:04<00:00,  0.75it/s, v_num=1][NeMo I 2026-09-23 19:20:14 metric:549] 
+    
+[NeMo I 2026-09-23 19:20:14 metric:549] WER reference: जेव्हा कॅप्सूल पृथ्वीवर पोहोचून वातावरणात प्रवेश करेल तेव्हा पाहाटे <unk> वाजण्याच्या सुमारास पूर्वेकडील वेळ कॅलिफोर्निया उत्तर कॅलिफोर्निया ओरेगॉन नेवाडा आणि उताहमधील लोकांना प्रकाशाचा उत्सव पाहता येईल अशी अपेक्षा आहे
+[NeMo I 2026-09-23 19:20:14 metric:549] WER predicted: जेव्हा कॅप्सूल पृथ्वीवर पोहोचून वातावरणात प्रवेश करेल तेव्हा पहाटे <unk> वाजण्याच्या सुमारास पूर्वेकडील वेळ कॅलिफोर्निया उत्तर कॅलिफोर्निया ओरेगॉन नेवाडा आणि उताहमधील लोकांना प्रकाशाचा उत्सव पाहता येईल अशी अपेक्षा आहे
+
+Epoch 5: |          | 95/? [02:10<00:00,  0.73it/s, v_num=1]
+Epoch 5: |          | 95/? [02:10<00:00,  0.73it/s, v_num=1]
+Epoch 5: |          | 96/? [02:10<00:00,  0.74it/s, v_num=1]
+Epoch 5: |          | 96/? [02:10<00:00,  0.74it/s, v_num=1]
+Epoch 5: |          | 97/? [02:10<00:00,  0.74it/s, v_num=1]
+Epoch 5: |          | 97/? [02:10<00:00,  0.74it/s, v_num=1]
+Epoch 5: |          | 98/? [02:11<00:00,  0.75it/s, v_num=1]
+Epoch 5: |          | 98/? [02:11<00:00,  0.75it/s, v_num=1]
+Epoch 5: |          | 99/? [02:11<00:00,  0.75it/s, v_num=1]
+Epoch 5: |          | 99/? [02:11<00:00,  0.75it/s, v_num=1][NeMo I 2026-09-23 19:20:20 metric:549] 
+    
+[NeMo I 2026-09-23 19:20:20 metric:549] WER reference: हे शाळा सोडलेल्यांमध्ये विशेष लोकप्रिय आहे शिक्षणाशी कोणतीही तडजोड न करता त्यांना विद्यापिठाच्या आधी एक वर्ष बाहेर पडता येते
+[NeMo I 2026-09-23 19:20:20 metric:549] WER predicted: हे शाळा सोडलेल्यांमध्ये विशेष लोकप्रिय आहे शिक्षणाशी कोणतीही तडजोड न करता त्यांना विद्यापिठाच्या आधी एक वर्ष बाहेर पडता येते
+
+Epoch 5: |          | 100/? [02:15<00:00,  0.74it/s, v_num=1]
+Epoch 5: |          | 100/? [02:15<00:00,  0.74it/s, v_num=1]
+Epoch 5: |          | 100/? [02:15<00:00,  0.74it/s, v_num=1]`Trainer.fit` stopped: `max_steps=600` reached.
+
+Epoch 5: |          | 100/? [02:15<00:00,  0.74it/s, v_num=1]
+Saved fine-tuned model to outputs/indic_transcribe_mr.nemo

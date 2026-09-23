@@ -109,6 +109,9 @@ def main():
         devices=args.devices,
         accelerator="gpu",
         strategy=DDPStrategy(find_unused_parameters=True) if args.devices > 1 else "auto",
+        # Lhotse's dynamic sampler shards across ranks itself and has no __len__;
+        # stop Lightning from wrapping it in a DistributedSampler.
+        use_distributed_sampler=False,
         precision="bf16-mixed",
         max_steps=args.max_steps,
         val_check_interval=max(10, args.max_steps // 3),

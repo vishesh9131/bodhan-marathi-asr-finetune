@@ -1,0 +1,251 @@
+Model dir: /home/vishesh/.cache/huggingface/hub/models--bodhan-ai--indic-transcribe-flex/snapshots/ecba9bac9013c0340fe814b336897ee51ed80be9
+OneLogger: Setting error_handling_strategy to DISABLE_QUIETLY_AND_REPORT_METRIC_ERROR for rank (rank=0) with OneLogger disabled. To override: explicitly set error_handling_strategy parameter.
+No exporters were provided. This means that no telemetry data will be collected.
+[NeMo I 2026-09-23 19:00:51 mixins:77] _setup_tokenizer: detected an aggregate tokenizer
+[NeMo I 2026-09-23 19:00:51 mixins:234] Tokenizer SentencePieceTokenizer initialized with 1152 tokens
+[NeMo I 2026-09-23 19:00:51 mixins:234] Tokenizer SentencePieceTokenizer initialized with 6000 tokens
+[NeMo I 2026-09-23 19:00:51 canary_tokenizer:46] Aggregate vocab size: 7152
+[NeMo W 2026-09-23 19:00:51 aed_multitask_models:152] If you intend to do training or fine-tuning, please call the ModelPT.setup_training_data() method and provide a valid configuration file to setup the train data loader.
+    Train config : 
+    use_lhotse: true
+    skip_missing_manifest_entries: true
+    tarred_audio_filepaths: null
+    manifest_filepath: null
+    sample_rate: 16000
+    shuffle: true
+    is_tarred: true
+    num_workers: 16
+    batch_size: 16
+    bucketing_strategy: synced_randomized
+    concat_sampling_technique: temperature
+    concat_sampling_temperature: 1.0
+    defer_setup: true
+    is_concat: true
+    max_duration: 30
+    min_duration: 0.025
+    pin_memory: true
+    shard_manifests: true
+    shuffle_n: 2048
+    text_field: text
+    lang_field: target_lang
+    
+[NeMo W 2026-09-23 19:00:51 aed_multitask_models:152] If you intend to do validation, please call the ModelPT.setup_validation_data() or ModelPT.setup_multiple_validation_data() method and provide a valid configuration file to setup the validation data loader(s). 
+    Validation config : 
+    use_lhotse: true
+    manifest_filepath: null
+    sample_rate: 16000
+    batch_size: 4
+    shuffle: false
+    num_workers: 4
+    pin_memory: true
+    use_start_end_token: true
+    use_bucketing: false
+    text_field: text
+    lang_field: target_lang
+    
+Error getting class at nemo.collections.asr.modules.transformer.get_nemo_transformer: Located non-class of type 'function' while loading 'nemo.collections.asr.modules.transformer.get_nemo_transformer'
+[NeMo I 2026-09-23 19:01:03 modelPT:489] Model EncDecMultiTaskModel was successfully restored from /home/vishesh/.cache/huggingface/hub/models--bodhan-ai--indic-transcribe-flex/snapshots/ecba9bac9013c0340fe814b336897ee51ed80be9/nemo/indic_transcribe_flex.nemo.
+Encoder frozen — training decoder + heads only.
+[NeMo I 2026-09-23 19:01:03 dataloader:309] We will be using a Lhotse DataLoader.
+[NeMo W 2026-09-23 19:01:03 dataloader:349] You are using a non-tarred dataset and requested tokenization during data sampling (pretokenize=True). This will cause the tokenization to happen in the main (GPU) process,possibly impacting the training speed if your tokenizer is very large.If the impact is noticable, set pretokenize=False in dataloader config.(note: that will disable token-per-second filtering and 2D bucketing features)
+[NeMo I 2026-09-23 19:01:03 dataloader:349] Creating a Lhotse DynamicCutSampler (bucketing is disabled, (max_batch_duration=None max_batch_size=2)
+[NeMo I 2026-09-23 19:01:03 dataloader:309] We will be using a Lhotse DataLoader.
+[NeMo W 2026-09-23 19:01:03 dataloader:349] You are using a non-tarred dataset and requested tokenization during data sampling (pretokenize=True). This will cause the tokenization to happen in the main (GPU) process,possibly impacting the training speed if your tokenizer is very large.If the impact is noticable, set pretokenize=False in dataloader config.(note: that will disable token-per-second filtering and 2D bucketing features)
+[NeMo I 2026-09-23 19:01:03 dataloader:349] Creating a Lhotse DynamicCutSampler (bucketing is disabled, (max_batch_duration=None max_batch_size=2)
+[NeMo W 2026-09-23 19:01:03 finetune:105] Trainer wasn't specified in model constructor. Make sure that you really wanted it.
+[NeMo I 2026-09-23 19:01:03 finetune:105] Optimizer config = AdamW (
+    Parameter Group 0
+        amsgrad: False
+        betas: (0.9, 0.98)
+        capturable: False
+        decoupled_weight_decay: True
+        differentiable: False
+        eps: 1e-08
+        foreach: None
+        fused: None
+        lr: 1e-05
+        maximize: False
+        weight_decay: 0.001
+    )
+[NeMo I 2026-09-23 19:01:03 modelPT:786] Scheduler "<nemo.core.optim.lr_scheduler.CosineAnnealing object at 0x7956055eff40>" 
+    will be used during training (effective maximum steps = 10) - 
+    Parameters : 
+    (warmup_steps: 10
+    min_lr: 5.000000000000001e-07
+    max_steps: 10
+    )
+[NeMo W 2026-09-23 19:01:03 warnings:109] /home/vishesh/miniconda3/envs/bodhan-asr/lib/python3.10/site-packages/lightning/fabric/plugins/environments/slurm.py:204: The `srun` command is available on your system but is not used. HINT: If your intention is to run Lightning on SLURM, prepend your python command with `srun` like so: srun python src/finetune.py --data data/fleurs_mr --smoke --mode ...
+    
+Using bfloat16 Automatic Mixed Precision (AMP)
+GPU available: True (cuda), used: True
+TPU available: False, using: 0 TPU cores
+HPU available: False, using: 0 HPUs
+You are using a CUDA device ('NVIDIA RTX A6000') that has Tensor Cores. To properly utilize them, you should set `torch.set_float32_matmul_precision('medium' | 'high')` which will trade-off precision for performance. For more details, read https://pytorch.org/docs/stable/generated/torch.set_float32_matmul_precision.html#torch.set_float32_matmul_precision
+LOCAL_RANK: 0 - CUDA_VISIBLE_DEVICES: [0]
+[NeMo I 2026-09-23 19:01:03 modelPT:864] Optimizer config = AdamW (
+    Parameter Group 0
+        amsgrad: False
+        betas: (0.9, 0.98)
+        capturable: False
+        decoupled_weight_decay: True
+        differentiable: False
+        eps: 1e-08
+        foreach: None
+        fused: None
+        lr: 1e-05
+        maximize: False
+        weight_decay: 0.001
+    )
+[NeMo I 2026-09-23 19:01:03 modelPT:786] Scheduler "<nemo.core.optim.lr_scheduler.CosineAnnealing object at 0x79561d5053f0>" 
+    will be used during training (effective maximum steps = 10) - 
+    Parameters : 
+    (warmup_steps: 10
+    min_lr: 5.000000000000001e-07
+    max_steps: 10
+    )
+
+  | Name                 | Type                              | Params | Mode
+----------------------------------------------------------------------------------
+0 | preprocessor         | AudioToMelSpectrogramPreprocessor | 0      | eval
+1 | encoder              | ConformerEncoder                  | 810 M  | eval
+2 | encoder_decoder_proj | Identity                          | 0      | eval
+3 | transf_decoder       | TransformerDecoderNM              | 410 M  | eval
+4 | log_softmax          | TokenClassifier                   | 7.3 M  | eval
+5 | loss                 | SmoothedCrossEntropyLoss          | 0      | eval
+6 | spec_augmentation    | SpectrogramAugmentation           | 0      | eval
+7 | val_loss             | GlobalAverageLossMetric           | 0      | eval
+8 | wer                  | WER                               | 0      | eval
+9 | bleu                 | BLEU                              | 0      | eval
+----------------------------------------------------------------------------------
+410 M     Trainable params
+810 M     Non-trainable params
+1.2 B     Total params
+4,885.758 Total estimated model params size (MB)
+0         Modules in train mode
+1460      Modules in eval mode
+
+    
+[NeMo I 2026-09-23 19:01:06 metric:549] WER reference: एखादी संस्था नाविन्यपूर्ण होण्यापूर्वी त्यातील प्रमुखांनी नाविन्यतेची एक संस्कृती निर्माण केली पाहिजे तसेच ज्ञानाची देवाण-घेवाण आणि संस्थात्मक अध्ययन केले पाहिजे
+[NeMo I 2026-09-23 19:01:06 metric:549] WER predicted: एखादी स संस्था नाविन्यपूर्ण होण्यापूर्वी त्यातील प्रामुख्याने नाविन्यतेची एक संस्कृती निर्माण केली पाहिजे तसेच ज्ञानाची देवाणघेवाण आणि संस्थात्मक अध्ययन केले पाहिजे
+
+    
+[NeMo I 2026-09-23 19:01:09 metric:549] WER reference: वैज्ञानिक असा विचार करतात की ऑसेलोट प्राण्यांना खाण्यासाठी भक्ष्य म्हणून ते जमिनीवर कोठे आहेत हे पाहण्यासाठी त्यांचा पाठलाग आणि शोध त्यांच्या वास गंधाद्वारे करतात
+[NeMo I 2026-09-23 19:01:09 metric:549] WER predicted: वैज्ञानिक असा विचार करतात की ऑसेलोट प्राण्यांना खाण्यासाठी भक्ष्य म्हणून ते जमिनीवर कोठे आहेत हे पाहण्यासाठी त्यांचा पाठलाग आणि शोध त्यांच्या वासगंधाद्वारे करतात
+
+                                                                           
+
+    
+[NeMo I 2026-09-23 19:01:14 metric:549] WER reference: तुम्ही राजकारणी नसाल तर परदेशी काम करणे याचा अर्थ तुम्ही ज्या देशात राहता तिथे तुम्हाला आयकर भरावा लागेल
+[NeMo I 2026-09-23 19:01:14 metric:549] WER predicted: तुम्ही राजकारणी नसाल तर परदेशी काम करणे याचा अर्थ तुम्ही ज्या देशात राहता तेथे तुम्हाला आयकर भरावा लागेल
+
+    
+[NeMo I 2026-09-23 19:01:18 metric:549] WER reference: तुमच्या स्वत:च्या चिन्हांमध्ये फेरबदल करण्यासाठी स्वतंत्रपणे पेन्सिल वापरा परंतु लक्षात ठेवा म्युझिकल कारणांसाठी मुद्रित धनुष्याची चिन्हे आहेत त्यामुळे  सहसा त्यांना महत्त्व देणे आवश्यक आहे
+[NeMo I 2026-09-23 19:01:18 metric:549] WER predicted: तुमच्या स्वतःच्या चिन्हांमध्ये फेरबदल करण्यासाठी स्वतंत्रपणे पेन्सिल वापरा परंतु लक्षात ठेवा म्युझिकल कारणांसाठी मुद्रित धनुष्याची चिन्हे आहेत त्यामुळे सहसा त्यांना महत्त्व देणे आवश्यक आहे
+
+
+
+
+    
+[NeMo I 2026-09-23 19:01:22 metric:549] WER reference: एखादी संस्था नाविन्यपूर्ण होण्यापूर्वी त्यातील प्रमुखांनी नाविन्यतेची एक संस्कृती निर्माण केली पाहिजे तसेच ज्ञानाची देवाण-घेवाण आणि संस्थात्मक अध्ययन केले पाहिजे
+[NeMo I 2026-09-23 19:01:22 metric:549] WER predicted: एखादी स संस्था नाविन्यपूर्ण होण्यापूर्वी त्यातील प्रामुख्याने नाविन्यतेची एक संस्कृती निर्माण केली पाहिजे तसेच ज्ञानाची देवाणघेवाण आणि संस्थात्मक अध्ययन केले पाहिजे
+
+
+    
+[NeMo I 2026-09-23 19:01:25 metric:549] WER reference: वैज्ञानिक असा विचार करतात की ऑसेलोट प्राण्यांना खाण्यासाठी भक्ष्य म्हणून ते जमिनीवर कोठे आहेत हे पाहण्यासाठी त्यांचा पाठलाग आणि शोध त्यांच्या वास गंधाद्वारे करतात
+[NeMo I 2026-09-23 19:01:25 metric:549] WER predicted: वैज्ञानिक असा विचार करतात की ऑसेलोट प्राण्यांना खाण्यासाठी भक्ष्य म्हणून ते जमिनीवर कोठे आहेत हे पाहण्यासाठी त्यांचा पाठलाग आणि शोध त्यांच्या वासगंधाद्वारे करतात
+
+
+    
+[NeMo I 2026-09-23 19:01:28 metric:549] WER reference: पॉइंट मॅरिअन आणि फेअरमॉंट मधील क्षेत्र विलग असणाऱ्या वन्यक्षेत्रामधून वारंवार जाणाऱ्या बफेलो-पिट्सबर्ग हायवेवर आव्हानात्मक परिस्थिती निर्माण करते
+[NeMo I 2026-09-23 19:01:28 metric:549] WER predicted: पॉईंट मोरियन आणि फेअरमॉटमधील क्षेत्र विलग असणाऱ्या वनक्ष वन्यक्षेत्रामधून वारंवार जाणाऱ्या बफेलो पिट्सबर्ग हायवेवर आव्हानात्मक परिस्थिती निर्माण करते
+
+
+    
+[NeMo I 2026-09-23 19:01:32 metric:549] WER reference: विज्ञान आता दर्शविते की या प्रचंड कार्बन अर्थव्यवस्थेने गेल्या 2 दशलक्ष वर्षांपासून मानवी उत्क्रांतीला पाठिंबा देणाऱ्या जीवावरणाच्या 1 स्थिर स्थितीत बदल घडवून आणला आहे
+[NeMo I 2026-09-23 19:01:32 metric:549] WER predicted: विज्ञान आता दर्शविते की या प्रचंड कार्बन अर्थव्यवस्थेने गेल्या दोन दशलक्ष वर्षापासून मानवी उत्क्रांतीला पाठिंबा देणाऱ्या जीवावरणाच्या एक स्थिर स्थितीतील बदल घडवून आणला आहे
+
+
+    
+[NeMo I 2026-09-23 19:01:35 metric:549] WER reference: प्राचीन रोमन जेवणामध्ये अमेरिका किंवा आशिया तून नंतरच्या शतकामध्ये युरोप मध्ये आलेलं अन्न समाविष्ट करणे शक्य नव्हते
+[NeMo I 2026-09-23 19:01:35 metric:549] WER predicted: प्राचीन रोमन जेवणामध्ये अमेरिका किंवा आशियातून नंतरच्या शतकामध्ये युरोपमध्ये आलेलं अन्न समाविष्ट करणे शक्य नव्हते
+
+
+    
+[NeMo I 2026-09-23 19:01:38 metric:549] WER reference: तंत्रज्ञानाद्वारे वर्चुअल फील्ड ट्रीप्ससाठी उपाय मिळाला आहे विद्यार्थी संग्रहालयातील कला वस्तू पाहू शकतात एखाद्या मत्स्य संग्रहालयाला भेट देऊ शकतात किंवा आपल्या वर्गातच बसून सुंदर कलेचा आस्वाद घेऊ शकतात
+[NeMo I 2026-09-23 19:01:38 metric:549] WER predicted: तंत्रज्ञानाद्वारे व्हर्च्युअल फील्ड ट्रिपसाठी स उपाय मिळाला आहे विद्यार्थी संग्रहालयातील कला वस्तू पाहू शकतात एखाद्या मत्स्य प्रग संग्रहालयाला भेट देऊ शकतात किंवा आपल्या वर्गातच बसून सुंदर कलेचा आस्वाद घेऊ शकतात
+
+
+    
+[NeMo I 2026-09-23 19:01:42 metric:549] WER reference: जपान जवळपास 7000 बेटांचा समूह आहे  सर्वात मोठे आहे होन्शू जे जपानला जगातील 7 सर्वात मोठे बेट बनवते
+[NeMo I 2026-09-23 19:01:42 metric:549] WER predicted: जापान जवळपास सात हजार बेटांचा समूह आहे सर्वात मोठे आहे होन्शू जे जपानला जगातील सात सर्वात मोठे बेट बनवते
+
+
+    
+[NeMo I 2026-09-23 19:01:45 metric:549] WER reference: नवीन किंगडमच्या प्राचीन इजिप्शियन लोकांनी त्यांच्या पूर्ववर्ती स्मारकांवर लक्ष केंद्रित केले जे हजार वर्षांहून अधिक जुने होते
+[NeMo I 2026-09-23 19:01:45 metric:549] WER predicted: नवीन किंगडमच्या प्राचीन इजिप्शियन लोकांनी त्यांच्या पूर्ववर्ती स्मारकांवर लक्ष केंद्रित केले जे हजार वर्षांहून अधिक जुने होते
+
+
+    
+[NeMo I 2026-09-23 19:01:49 metric:549] WER reference: राज्यांच्या दरम्यान कर कायदे अधिलिखित करण्याचे अधिकार त्याला नव्हते
+[NeMo I 2026-09-23 19:01:49 metric:549] WER predicted: राज्यांच्या दरम्यान कर कायदे अधिलिखित करण्याचे अधिकार त्याला नव्हते
+
+
+    
+[NeMo I 2026-09-23 19:01:51 metric:549] WER reference: दिवसामध्ये फक्त अठरा पदके उपलब्ध असल्याने कित्येक देश पदकतालिकेत आपले नाव आणण्यात अयशस्वी ठरले
+[NeMo I 2026-09-23 19:01:51 metric:549] WER predicted: दिवसामध्ये फक्त अठरा पदके उपलब्ध असल्याने कित्येक देश पदकालिकेत आपले नाव आणण्यात अयशस्वी ठरले
+
+
+    
+[NeMo I 2026-09-23 19:01:54 metric:549] WER reference: याआधी रिंगचे सीईओ जेमी सिमीनऑफ ने असे उद्गार काढले की ही कंपनी तेव्हा सुरु झाली जेव्हा त्याच्या दाराची घंटा त्याच्या गॅरेजमधील दुकानातून ऐकू येत नव्हती
+[NeMo I 2026-09-23 19:01:54 metric:549] WER predicted: याआधी रिंगचे सी ई ओ जेमी सिमिनॉफ ने असे उद्गार काढले की ही कंपनी तेव्हा सुरू झाली जेव्हा त्याच्या दाराची घटा घंटा त्याच्या गॅरेजमधील दुकानातून ऐकू येत नव्हती
+
+
+    
+[NeMo I 2026-09-23 19:01:58 metric:549] WER reference: या ऋतूतील रोगाची पहिली प्रकरणे जुलैच्या अखेरीस नोंदवण्यात आली
+[NeMo I 2026-09-23 19:01:58 metric:549] WER predicted: या ऋतूतील रोगाची पहिली प्रकरणे जुलैच्या अखेरीस नोंदवण्यात आली
+
+
+    
+[NeMo I 2026-09-23 19:02:02 metric:549] WER reference: संपूर्ण युनायटेड स्टेट्स ऑफ अमेरिका येथे मल्टिपल स्क्लेरोसिस ms ची जवळपास 400,000 ज्ञात प्रकरणे आहेत ज्यामुळे तरूण आणि मध्यमवयीन प्रौढांमध्ये हा अग्रगण्य न्यूरोलॉजिकल आजार बनत आहे
+[NeMo I 2026-09-23 19:02:02 metric:549] WER predicted: संपूर्ण युनायटेड स्टेट्स ऑफ अमेरिका येथे मल्टिपल स्क्लोरायसिस यम एसची जवळपास चारशे हजार ज्ञात प्रकरणे आहेत ज्यामुळे तरुण आणि मध्यमवयीन प्रौढांमध्ये हा अग्रगण्य न्यूरोलॉजिकल आजार बनत आहे
+
+
+    
+[NeMo I 2026-09-23 19:02:06 metric:549] WER reference: वर्षातील सर्वात मोठी स्पर्धा डिसेंबरमध्ये लास कानिटासमधील पोलो मैदानावर होते
+[NeMo I 2026-09-23 19:02:06 metric:549] WER predicted: वर्षातील सर्वात मोठी स्पर्धा डिसेंबरमध्ये लास कंटेन्समधील पोलो मैदानावर होते
+
+
+    
+[NeMo I 2026-09-23 19:02:08 metric:549] WER reference: तुम्ही प्रवाहातून बाहेर पडल्यानंतर मागे पोहत जाणे नेहमीपेक्षा कठीण नाही
+[NeMo I 2026-09-23 19:02:08 metric:549] WER predicted: तुम्ही प्रवाहातून बाहेर पडल्यानंतर मागे पळून जाणे नेहमीपेक्षा कठीण नाही नाही
+
+
+    
+[NeMo I 2026-09-23 19:02:11 metric:549] WER reference: राज्यांच्या दरम्यान कर कायदे अधिलिखित करण्याचे अधिकार त्याला नव्हते
+[NeMo I 2026-09-23 19:02:11 metric:549] WER predicted: राज्यांच्या दरम्यान कर कायदे अधिलिखित करण्याचे अधिकार त्याला नव्हते
+
+
+    
+[NeMo I 2026-09-23 19:02:14 metric:549] WER reference: त्यानंतर लक्खा सिंग ने भजन गाण्यात पुढाकार घेतला
+[NeMo I 2026-09-23 19:02:14 metric:549] WER predicted: त्यानंतर लक्खा सिंगने भजन गाण्यात पुढाकार घेतला
+
+
+    
+[NeMo I 2026-09-23 19:02:19 metric:549] WER reference: आता संपूर्ण द्वीपसमूहात सर्वत्र उपलब्ध असलेल्या जावानीज व्यंजनांमध्ये अनेक मौसमी पाककृतींचा समावेश आहे. शेंगदाणे मिरची साखर विशेषत: जावानीज कोकोनट शुगर आणि विविध सुगंधित मसाले हे जावानीज पदार्थांमधील प्रमुख घटक आहेत
+[NeMo I 2026-09-23 19:02:19 metric:549] WER predicted: आता संपूर्ण द्वीपसमूहात सर्वत्र उपलब्ध असलेल्या जावानीज व्यंजनांमध्ये अनेक मौसमी पाककृतींचा समावेश आहे शेंगदाणे मिरची साखर विशेषतः जावानीज कोकोनट शुगर आणि विविध सुगंधित मसाले हे जावानीज पदार्थांमधील प्रमुख घटक आहेत
+
+
+    
+[NeMo I 2026-09-23 19:02:24 metric:549] WER reference: एकदा करारावर सह्या झाल्यानंतर इस्राइलने सध्या दरीत असलेल्या सैन्याचा तळ 10 वर्षे असू द्यावा अशी मागणी केली आहे तर पी ए ने हा तळ फक्त 5 वर्षापर्यंत असावा असे मान्य केले
+[NeMo I 2026-09-23 19:02:24 metric:549] WER predicted: एकदा करारावर सह्या झाल्यानंतर इज्रायलने सध्या दरीत असलेल्या सैन्याचा तळ दहा वर्षे असू द्यावा अशी मागणी केली आहे तर पी एन ए हा तळ फक्त पाच वर्षापर्यंत असावा असे मान्य केले
+
+
+    
+[NeMo I 2026-09-23 19:02:28 metric:549] WER reference: इराणमध्ये हवाई दुर्घटना सामान्य आहेत ज्यांच्याकडे नागरी आणि सैन्यदोन्ही वापरासाठी निकृष्ट पद्धतीने देखभाल केलेल्या विमानांचा ताफाआहे
+[NeMo I 2026-09-23 19:02:28 metric:549] WER predicted: इराणमध्ये हवाई दुर्घटना सामान्य आहेत ज्यांच्याकडे नागरी आणि सैन्य दोन्हीही वापरासाठी निकृष्ट पद्धतीने देखभाल केलेल्या विमानांचा ताफा आहे
+
+
+
+                                                                        [A
+
+Saved fine-tuned model to outputs/indic_transcribe_mr.nemo

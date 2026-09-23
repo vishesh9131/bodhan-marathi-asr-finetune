@@ -78,7 +78,14 @@ shared `ml` env stayed untouched and the run is reproducible from
 Smoke run: 10 steps, validation, WER computed, checkpoint saved — the loop closes.
 Short run: 2× A6000, 600 steps, encoder frozen.
 
-<!-- RESULTS -->
+| model | WER (100 FLEURS `mr` val clips) |
+|---|---|
+| base `indic-transcribe-flex` | 0.180 |
+| fine-tuned (decoder-only, 600 steps) | **0.165** |
+
+train_loss fell 0.67 -> 0.14 over the run (see `outputs/logs/version_1/metrics.csv`).
+The qualitative diffs are mostly spelling/spacing normalisation (e.g. नाविन्य ->
+नावीन्य, joined vs split compounds).
 
 WER numbers here are illustrative on 200 FLEURS val clips; the base model already
 transcribes Marathi well, so this run demonstrates a working fine-tune, not a

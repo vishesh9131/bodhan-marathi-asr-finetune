@@ -106,3 +106,15 @@ Hit + fixed: DDP tried to wrap Lhotse's dynamic sampler (no __len__) ->
 ~16GB/GPU). train_loss 0.67 -> 0.14 over 600 steps; batch WER ~0.21 -> ~0.06-0.19.
 Checkpoint saved (4.6GB). Loss curve in outputs/logs/version_1/metrics.csv.
 Running infer.py for base-vs-finetuned WER on val next.
+
+## P3 — Inference (DONE)
+Base WER 0.180 -> fine-tuned 0.165 on 100 FLEURS mr val clips. Sensible outputs
+(diffs are spelling/spacing normalisation). End-to-end pipeline proven with real
+before/after numbers. Artifacts staged in artifacts/ (loss_curve.png, metrics.csv,
+logs). Checkpoint at outputs/indic_transcribe_mr.nemo (4.6GB, for Google Drive).
+
+## P4 — Deliverables
+- GitHub (private): github.com/vishesh9131/bodhan-marathi-asr-finetune  [DONE]
+- Docs: README.md + docs/APPROACH.md + this PROGRESS.md  [DONE]
+- Google Drive: upload outputs/indic_transcribe_mr.nemo + artifacts/  [USER STEP]
+- Email reply with repo link + Drive link + approach  [USER STEP]
