@@ -74,3 +74,14 @@ won't risk downgrading torch in the shared `ml` env.
 - Download trimmed to `allow_patterns=["nemo/*"]` (~4.6GB, skips HF safetensors).
 
 ### Now waiting on the env build (slow network) to run: prepare_data -> smoke -> real run.
+
+## P0 result — env works, downloads running
+- Env `bodhan-asr`: NeMo 3.0.0, lhotse 1.33, jiwer 4.0, torch 2.14.0+cu126 (4 GPUs).
+- Snag: torch here is a custom 2.14+cu126 build in ~/.local; the paired torchaudio
+  was built for CUDA 12.8, so torchaudio's import guard raises (12.6 vs 12.8).
+  Same break exists in the `ml` env — it's global, not mine. No public torchaudio
+  matches torch 2.14. Fix: `src/_env.py` spoofs the reported CUDA string before
+  torchaudio loads (cosmetic; verified MelSpectrogram runs on GPU, NeMo imports).
+- Downloads running in background: model `nemo/` (~4.6GB, ~370kB/s, ~3h) +
+  FLEURS `mr_in`. Smoke run is gated on the model finishing.
+- Disk holding at ~72G free.

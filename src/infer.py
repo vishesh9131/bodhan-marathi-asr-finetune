@@ -12,6 +12,7 @@ import json
 import os
 import sys
 
+import _env  # noqa: F401  -- must precede nemo/torchaudio; see src/_env.py
 from huggingface_hub import snapshot_download
 from jiwer import wer
 
