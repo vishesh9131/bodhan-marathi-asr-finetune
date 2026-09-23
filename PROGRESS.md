@@ -99,3 +99,10 @@ as expected — this run proves the loop closes, not that metrics improve.
 ### Real run launched (2x A6000, 600 steps, batch 8)
 Encoder frozen (decoder-only), bf16, DDP with find_unused_parameters=True.
 CSV logger -> outputs/logs/.../metrics.csv for a loss curve artifact.
+
+### Real run DONE (2x A6000, 600 steps)
+Hit + fixed: DDP tried to wrap Lhotse's dynamic sampler (no __len__) ->
+`use_distributed_sampler=False`. Then trained clean on both GPUs (~0.8 it/s,
+~16GB/GPU). train_loss 0.67 -> 0.14 over 600 steps; batch WER ~0.21 -> ~0.06-0.19.
+Checkpoint saved (4.6GB). Loss curve in outputs/logs/version_1/metrics.csv.
+Running infer.py for base-vs-finetuned WER on val next.
