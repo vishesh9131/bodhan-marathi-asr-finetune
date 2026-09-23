@@ -15,11 +15,12 @@ Usage:
     python src/prepare_data.py --out data/fleurs_mr --max-train 800 --max-val 200
 """
 import argparse
+import io
 import json
 import os
 
 import soundfile as sf
-from datasets import load_dataset
+from datasets import Audio, load_dataset
 
 DATASET_ID = "google/fleurs"
 CONFIG = "mr_in"          # Marathi (India)
@@ -35,9 +36,13 @@ def dump_split(ds, split_dir, manifest_path, limit):
         for ex in ds:
             if limit and n >= limit:
                 break
+            # decode ourselves via soundfile — datasets>=5 needs torchcodec for its
+            # own audio decode, and torchcodec pins a torch version this box doesn't have.
             audio = ex["audio"]
-            wav = audio["array"]
-            sr = audio["sampling_rate"]
+            if audio.get("bytes"):
+                wav, sr = sf.read(io.BytesIO(audio["bytes"]))
+            else:
+                wav, sr = sf.read(audio["path"])
             # FLEURS is already 16k mono; assert instead of silently resampling,
             # so a future dataset swap fails loudly rather than shipping bad audio.
             assert sr == TARGET_SR, f"expected {TARGET_SR}Hz, got {sr}Hz — add a resample step"
@@ -68,8 +73,9 @@ def main():
 
     os.makedirs(args.out, exist_ok=True)
     print(f"Loading {DATASET_ID}:{CONFIG} (this streams a few hundred MB the first time)...")
-    train = load_dataset(DATASET_ID, CONFIG, split="train")
-    val = load_dataset(DATASET_ID, CONFIG, split="validation")
+    # decode=False -> we get raw bytes/path instead of a decoded array (see loop)
+    train = load_dataset(DATASET_ID, CONFIG, split="train").cast_column("audio", Audio(decode=False))
+    val = load_dataset(DATASET_ID, CONFIG, split="validation").cast_column("audio", Audio(decode=False))
 
     n_tr = dump_split(train, os.path.join(args.out, "train"),
                       os.path.join(args.out, "train_manifest.json"), args.max_train)
