@@ -12,6 +12,10 @@ The repository contains the reproducible source code, the approach and
 challenge notes, training/inference artifacts small enough for Git, and the
 inference-serving benchmark.
 
+## Google Drive artifacts
+
+https://drive.google.com/drive/folders/1pKZw-Aohw3LCqxQBbNURYxnGLuMVU96r?usp=sharing
+
 ## Google Drive upload contents
 
 Create one folder named `bodhan-marathi-asr-finetune-deliverables` and upload:
@@ -28,10 +32,9 @@ artifacts/
   benchmark.log
 ```
 
-After uploading, set the folder to **Anyone with the link: Viewer** (or share it
-directly with the reviewers) and paste the folder URL in the email reply. The
-checkpoint is intentionally excluded from Git by `.gitignore` because it is
-4.6 GB.
+Set the folder to **Anyone with the link: Viewer** (or share it directly with
+the reviewers). The checkpoint is intentionally excluded from Git by
+`.gitignore` because it is 4.6 GB.
 
 ## Documentation to point reviewers to
 
@@ -53,9 +56,8 @@ checkpoint is intentionally excluded from Git by `.gitignore` because it is
 > benchmark covering latency, throughput, memory, and batch-size trade-offs.
 >
 > - GitHub repository: https://github.com/vishesh9131/bodhan-marathi-asr-finetune
-> - Google Drive artifacts: <paste shared Drive folder link>
+> - Google Drive artifacts: https://drive.google.com/drive/folders/1pKZw-Aohw3LCqxQBbNURYxnGLuMVU96r?usp=sharing
 > - Detailed approach and challenges: `docs/APPROACH.md` in the repository
 > - Deployment benchmark: `docs/DEPLOYMENT.md` in the repository
 >
 > Thank you for your consideration.
-
