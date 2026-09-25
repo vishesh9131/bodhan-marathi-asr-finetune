@@ -102,3 +102,12 @@ python src/finetune.py --data data/fleurs_mr --smoke              # sanity
 python src/finetune.py --data data/fleurs_mr --devices 2 --max-steps 600
 python src/infer.py  --data data/fleurs_mr --finetuned outputs/indic_transcribe_mr.nemo
 ```
+
+## 7. Inference engineering follow-up
+
+Fine-tuning alone does not select a usable serving configuration. I therefore
+added `src/benchmark.py`, which holds the fine-tuned checkpoint and 100 held-out
+FLEURS clips fixed while measuring WER, p50/p95 request latency, audio-second
+throughput, real-time factor, and peak allocated GPU memory at batch sizes 1, 2,
+4, and 8. The results and decision framework are in `docs/DEPLOYMENT.md`; the
+machine-readable output is `artifacts/benchmark.csv`.

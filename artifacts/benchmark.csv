@@ -1,0 +1,5 @@
+model,clips,audio_seconds,batch_size,wer,total_wall_seconds,request_p50_seconds,request_p95_seconds,throughput_audio_seconds_per_wall_second,real_time_factor,model_torch_allocated_gib,peak_torch_allocated_gib,incremental_request_memory_gib
+fine-tuned decoder-only (600 steps),100,1315.62,1,0.1648,86.605,0.831,1.408,15.191,0.0658,4.602,4.777,0.176
+fine-tuned decoder-only (600 steps),100,1315.62,2,0.1648,54.139,1.051,1.595,24.301,0.0412,4.602,4.953,0.351
+fine-tuned decoder-only (600 steps),100,1315.62,4,0.1648,33.301,1.363,1.878,39.507,0.0253,4.602,5.304,0.702
+fine-tuned decoder-only (600 steps),100,1315.62,8,0.1648,29.602,2.157,3.09,44.444,0.0225,4.602,6.006,1.405

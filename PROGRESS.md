@@ -118,3 +118,26 @@ logs). Checkpoint at outputs/indic_transcribe_mr.nemo (4.6GB, for Google Drive).
 - Docs: README.md + docs/APPROACH.md + this PROGRESS.md  [DONE]
 - Google Drive: upload outputs/indic_transcribe_mr.nemo + artifacts/  [USER STEP]
 - Email reply with repo link + Drive link + approach  [USER STEP]
+
+## P5 — Inference engineering benchmark
+
+### Planned
+- Add a repeatable serving benchmark of the fine-tuned checkpoint at batch sizes
+  1, 2, 4, and 8 on a held-out FLEURS subset.
+- Report quality, request p50/p95 latency, audio-second throughput, real-time
+  factor, and peak allocated GPU memory rather than presenting WER alone.
+- Document a workload-specific recommendation: batch 1 for interactive requests,
+  batch 4 for short queues, and batch 8 for bulk transcription. Exact results
+  are recorded in `artifacts/benchmark.csv` after the run.
+
+### Done
+- Ran the fine-tuned model over the same 100 held-out Marathi clips (1,315.62
+  seconds) at batch sizes 1, 2, 4, and 8 on one isolated RTX A6000.
+- WER was identical at **0.1648** across configurations; quality is unchanged by
+  serving batch size.
+- Throughput: **15.191 -> 24.301 -> 39.507 -> 44.444 audio s/s** for batches
+  1/2/4/8. p95 request latency: **1.408 -> 1.595 -> 1.878 -> 3.090 s**.
+- Recommended batch 1 for interactive requests, batch 4 for queued requests
+  (near-batch-8 throughput with lower latency/memory), and batch 8 only for bulk
+  offline transcription.
+- Raw CSV + console log: `artifacts/benchmark.csv`, `artifacts/benchmark.log`.

@@ -1,0 +1,810 @@
+Fetching 6 files:   0%|          | 0/6 [00:00<?, ?it/s]Fetching 6 files: 100%|██████████| 6/6 [00:00<00:00, 981.70it/s]
+OneLogger: Setting error_handling_strategy to DISABLE_QUIETLY_AND_REPORT_METRIC_ERROR for rank (rank=0) with OneLogger disabled. To override: explicitly set error_handling_strategy parameter.
+No exporters were provided. This means that no telemetry data will be collected.
+[NeMo I 2026-09-25 15:11:16 mixins:77] _setup_tokenizer: detected an aggregate tokenizer
+[NeMo I 2026-09-25 15:11:16 mixins:234] Tokenizer SentencePieceTokenizer initialized with 1152 tokens
+[NeMo I 2026-09-25 15:11:16 mixins:234] Tokenizer SentencePieceTokenizer initialized with 6000 tokens
+[NeMo I 2026-09-25 15:11:16 canary_tokenizer:46] Aggregate vocab size: 7152
+[NeMo W 2026-09-25 15:11:16 aed_multitask_models:152] If you intend to do training or fine-tuning, please call the ModelPT.setup_training_data() method and provide a valid configuration file to setup the train data loader.
+    Train config : 
+    use_lhotse: true
+    manifest_filepath: /home/vishesh/github/assign/data/fleurs_mr/train_manifest.json
+    sample_rate: 16000
+    batch_size: 8
+    shuffle: true
+    num_workers: 4
+    pin_memory: true
+    max_duration: 30.0
+    min_duration: 0.3
+    
+[NeMo W 2026-09-25 15:11:16 aed_multitask_models:152] If you intend to do validation, please call the ModelPT.setup_validation_data() or ModelPT.setup_multiple_validation_data() method and provide a valid configuration file to setup the validation data loader(s). 
+    Validation config : 
+    use_lhotse: true
+    manifest_filepath: /home/vishesh/github/assign/data/fleurs_mr/val_manifest.json
+    sample_rate: 16000
+    batch_size: 8
+    shuffle: false
+    num_workers: 4
+    pin_memory: true
+    max_duration: 30.0
+    min_duration: 0.3
+    
+Error getting class at nemo.collections.asr.modules.transformer.get_nemo_transformer: Located non-class of type 'function' while loading 'nemo.collections.asr.modules.transformer.get_nemo_transformer'
+[NeMo I 2026-09-25 15:11:26 modelPT:489] Model EncDecMultiTaskModel was successfully restored from /home/vishesh/github/assign/outputs/indic_transcribe_mr.nemo.
+Benchmarking batch_size=1 on 100 clips...
+[NeMo W 2026-09-25 15:11:26 _contextlib:124] Chunking is disabled. Please pass a single audio file or set batch_size to 1
+[NeMo W 2026-09-25 15:11:27 dataloader:343] The following configuration keys are ignored by Lhotse dataloader: trim_silence,enable_chunking
+[NeMo W 2026-09-25 15:11:27 dataloader:349] You are using a non-tarred dataset and requested tokenization during data sampling (pretokenize=True). This will cause the tokenization to happen in the main (GPU) process,possibly impacting the training speed if your tokenizer is very large.If the impact is noticable, set pretokenize=False in dataloader config.(note: that will disable token-per-second filtering and 2D bucketing features)
+Transcribing: 0it [00:00, ?it/s]Transcribing: 1it [00:01,  1.36s/it]Transcribing: 1it [00:01,  1.36s/it]
+[NeMo W 2026-09-25 15:11:28 _contextlib:124] Chunking is disabled. Please pass a single audio file or set batch_size to 1
+[NeMo W 2026-09-25 15:11:28 dataloader:343] The following configuration keys are ignored by Lhotse dataloader: trim_silence,enable_chunking
+[NeMo W 2026-09-25 15:11:28 dataloader:349] You are using a non-tarred dataset and requested tokenization during data sampling (pretokenize=True). This will cause the tokenization to happen in the main (GPU) process,possibly impacting the training speed if your tokenizer is very large.If the impact is noticable, set pretokenize=False in dataloader config.(note: that will disable token-per-second filtering and 2D bucketing features)
+Transcribing: 0it [00:00, ?it/s]Transcribing: 1it [00:00,  1.08it/s]Transcribing: 1it [00:00,  1.08it/s]
+[NeMo W 2026-09-25 15:11:29 _contextlib:124] Chunking is disabled. Please pass a single audio file or set batch_size to 1
+[NeMo W 2026-09-25 15:11:29 dataloader:343] The following configuration keys are ignored by Lhotse dataloader: trim_silence,enable_chunking
+[NeMo W 2026-09-25 15:11:29 dataloader:349] You are using a non-tarred dataset and requested tokenization during data sampling (pretokenize=True). This will cause the tokenization to happen in the main (GPU) process,possibly impacting the training speed if your tokenizer is very large.If the impact is noticable, set pretokenize=False in dataloader config.(note: that will disable token-per-second filtering and 2D bucketing features)
+Transcribing: 0it [00:00, ?it/s]Transcribing: 1it [00:00,  1.61it/s]Transcribing: 1it [00:00,  1.61it/s]
+[NeMo W 2026-09-25 15:11:30 _contextlib:124] Chunking is disabled. Please pass a single audio file or set batch_size to 1
+[NeMo W 2026-09-25 15:11:30 dataloader:343] The following configuration keys are ignored by Lhotse dataloader: trim_silence,enable_chunking
+[NeMo W 2026-09-25 15:11:30 dataloader:349] You are using a non-tarred dataset and requested tokenization during data sampling (pretokenize=True). This will cause the tokenization to happen in the main (GPU) process,possibly impacting the training speed if your tokenizer is very large.If the impact is noticable, set pretokenize=False in dataloader config.(note: that will disable token-per-second filtering and 2D bucketing features)
+Transcribing: 0it [00:00, ?it/s]Transcribing: 1it [00:00,  1.12it/s]Transcribing: 1it [00:00,  1.12it/s]
+[NeMo W 2026-09-25 15:11:31 _contextlib:124] Chunking is disabled. Please pass a single audio file or set batch_size to 1
+[NeMo W 2026-09-25 15:11:31 dataloader:343] The following configuration keys are ignored by Lhotse dataloader: trim_silence,enable_chunking
+[NeMo W 2026-09-25 15:11:31 dataloader:349] You are using a non-tarred dataset and requested tokenization during data sampling (pretokenize=True). This will cause the tokenization to happen in the main (GPU) process,possibly impacting the training speed if your tokenizer is very large.If the impact is noticable, set pretokenize=False in dataloader config.(note: that will disable token-per-second filtering and 2D bucketing features)
+Transcribing: 0it [00:00, ?it/s]Transcribing: 1it [00:00,  1.78it/s]Transcribing: 1it [00:00,  1.78it/s]
+[NeMo W 2026-09-25 15:11:31 _contextlib:124] Chunking is disabled. Please pass a single audio file or set batch_size to 1
+[NeMo W 2026-09-25 15:11:31 dataloader:343] The following configuration keys are ignored by Lhotse dataloader: trim_silence,enable_chunking
+[NeMo W 2026-09-25 15:11:31 dataloader:349] You are using a non-tarred dataset and requested tokenization during data sampling (pretokenize=True). This will cause the tokenization to happen in the main (GPU) process,possibly impacting the training speed if your tokenizer is very large.If the impact is noticable, set pretokenize=False in dataloader config.(note: that will disable token-per-second filtering and 2D bucketing features)
+Transcribing: 0it [00:00, ?it/s]Transcribing: 1it [00:00,  1.02it/s]Transcribing: 1it [00:00,  1.02it/s]
+[NeMo W 2026-09-25 15:11:32 _contextlib:124] Chunking is disabled. Please pass a single audio file or set batch_size to 1
+[NeMo W 2026-09-25 15:11:32 dataloader:343] The following configuration keys are ignored by Lhotse dataloader: trim_silence,enable_chunking
+[NeMo W 2026-09-25 15:11:32 dataloader:349] You are using a non-tarred dataset and requested tokenization during data sampling (pretokenize=True). This will cause the tokenization to happen in the main (GPU) process,possibly impacting the training speed if your tokenizer is very large.If the impact is noticable, set pretokenize=False in dataloader config.(note: that will disable token-per-second filtering and 2D bucketing features)
+Transcribing: 0it [00:00, ?it/s]Transcribing: 1it [00:01,  1.05s/it]Transcribing: 1it [00:01,  1.05s/it]
+[NeMo W 2026-09-25 15:11:33 _contextlib:124] Chunking is disabled. Please pass a single audio file or set batch_size to 1
+[NeMo W 2026-09-25 15:11:33 dataloader:343] The following configuration keys are ignored by Lhotse dataloader: trim_silence,enable_chunking
+[NeMo W 2026-09-25 15:11:33 dataloader:349] You are using a non-tarred dataset and requested tokenization during data sampling (pretokenize=True). This will cause the tokenization to happen in the main (GPU) process,possibly impacting the training speed if your tokenizer is very large.If the impact is noticable, set pretokenize=False in dataloader config.(note: that will disable token-per-second filtering and 2D bucketing features)
+Transcribing: 0it [00:00, ?it/s]Transcribing: 1it [00:01,  1.12s/it]Transcribing: 1it [00:01,  1.12s/it]
+[NeMo W 2026-09-25 15:11:35 _contextlib:124] Chunking is disabled. Please pass a single audio file or set batch_size to 1
+[NeMo W 2026-09-25 15:11:35 dataloader:343] The following configuration keys are ignored by Lhotse dataloader: trim_silence,enable_chunking
+[NeMo W 2026-09-25 15:11:35 dataloader:349] You are using a non-tarred dataset and requested tokenization during data sampling (pretokenize=True). This will cause the tokenization to happen in the main (GPU) process,possibly impacting the training speed if your tokenizer is very large.If the impact is noticable, set pretokenize=False in dataloader config.(note: that will disable token-per-second filtering and 2D bucketing features)
+Transcribing: 0it [00:00, ?it/s]Transcribing: 1it [00:01,  1.17s/it]Transcribing: 1it [00:01,  1.17s/it]
+[NeMo W 2026-09-25 15:11:36 _contextlib:124] Chunking is disabled. Please pass a single audio file or set batch_size to 1
+[NeMo W 2026-09-25 15:11:36 dataloader:343] The following configuration keys are ignored by Lhotse dataloader: trim_silence,enable_chunking
+[NeMo W 2026-09-25 15:11:36 dataloader:349] You are using a non-tarred dataset and requested tokenization during data sampling (pretokenize=True). This will cause the tokenization to happen in the main (GPU) process,possibly impacting the training speed if your tokenizer is very large.If the impact is noticable, set pretokenize=False in dataloader config.(note: that will disable token-per-second filtering and 2D bucketing features)
+Transcribing: 0it [00:00, ?it/s]Transcribing: 1it [00:00,  1.37it/s]Transcribing: 1it [00:00,  1.37it/s]
+[NeMo W 2026-09-25 15:11:37 _contextlib:124] Chunking is disabled. Please pass a single audio file or set batch_size to 1
+[NeMo W 2026-09-25 15:11:37 dataloader:343] The following configuration keys are ignored by Lhotse dataloader: trim_silence,enable_chunking
+[NeMo W 2026-09-25 15:11:37 dataloader:349] You are using a non-tarred dataset and requested tokenization during data sampling (pretokenize=True). This will cause the tokenization to happen in the main (GPU) process,possibly impacting the training speed if your tokenizer is very large.If the impact is noticable, set pretokenize=False in dataloader config.(note: that will disable token-per-second filtering and 2D bucketing features)
+Transcribing: 0it [00:00, ?it/s]Transcribing: 1it [00:00,  2.01it/s]Transcribing: 1it [00:00,  2.01it/s]
+[NeMo W 2026-09-25 15:11:37 _contextlib:124] Chunking is disabled. Please pass a single audio file or set batch_size to 1
+[NeMo W 2026-09-25 15:11:37 dataloader:343] The following configuration keys are ignored by Lhotse dataloader: trim_silence,enable_chunking
+[NeMo W 2026-09-25 15:11:37 dataloader:349] You are using a non-tarred dataset and requested tokenization during data sampling (pretokenize=True). This will cause the tokenization to happen in the main (GPU) process,possibly impacting the training speed if your tokenizer is very large.If the impact is noticable, set pretokenize=False in dataloader config.(note: that will disable token-per-second filtering and 2D bucketing features)
+Transcribing: 0it [00:00, ?it/s]Transcribing: 1it [00:01,  1.28s/it]Transcribing: 1it [00:01,  1.28s/it]
+[NeMo W 2026-09-25 15:11:38 _contextlib:124] Chunking is disabled. Please pass a single audio file or set batch_size to 1
+[NeMo W 2026-09-25 15:11:38 dataloader:343] The following configuration keys are ignored by Lhotse dataloader: trim_silence,enable_chunking
+[NeMo W 2026-09-25 15:11:38 dataloader:349] You are using a non-tarred dataset and requested tokenization during data sampling (pretokenize=True). This will cause the tokenization to happen in the main (GPU) process,possibly impacting the training speed if your tokenizer is very large.If the impact is noticable, set pretokenize=False in dataloader config.(note: that will disable token-per-second filtering and 2D bucketing features)
+Transcribing: 0it [00:00, ?it/s]Transcribing: 1it [00:00,  1.58it/s]Transcribing: 1it [00:00,  1.58it/s]
+[NeMo W 2026-09-25 15:11:39 _contextlib:124] Chunking is disabled. Please pass a single audio file or set batch_size to 1
+[NeMo W 2026-09-25 15:11:39 dataloader:343] The following configuration keys are ignored by Lhotse dataloader: trim_silence,enable_chunking
+[NeMo W 2026-09-25 15:11:39 dataloader:349] You are using a non-tarred dataset and requested tokenization during data sampling (pretokenize=True). This will cause the tokenization to happen in the main (GPU) process,possibly impacting the training speed if your tokenizer is very large.If the impact is noticable, set pretokenize=False in dataloader config.(note: that will disable token-per-second filtering and 2D bucketing features)
+Transcribing: 0it [00:00, ?it/s]Transcribing: 1it [00:00,  1.22it/s]Transcribing: 1it [00:00,  1.22it/s]
+[NeMo W 2026-09-25 15:11:40 _contextlib:124] Chunking is disabled. Please pass a single audio file or set batch_size to 1
+[NeMo W 2026-09-25 15:11:40 dataloader:343] The following configuration keys are ignored by Lhotse dataloader: trim_silence,enable_chunking
+[NeMo W 2026-09-25 15:11:40 dataloader:349] You are using a non-tarred dataset and requested tokenization during data sampling (pretokenize=True). This will cause the tokenization to happen in the main (GPU) process,possibly impacting the training speed if your tokenizer is very large.If the impact is noticable, set pretokenize=False in dataloader config.(note: that will disable token-per-second filtering and 2D bucketing features)
+Transcribing: 0it [00:00, ?it/s]Transcribing: 1it [00:00,  1.39it/s]Transcribing: 1it [00:00,  1.39it/s]
+[NeMo W 2026-09-25 15:11:41 _contextlib:124] Chunking is disabled. Please pass a single audio file or set batch_size to 1
+[NeMo W 2026-09-25 15:11:41 dataloader:343] The following configuration keys are ignored by Lhotse dataloader: trim_silence,enable_chunking
+[NeMo W 2026-09-25 15:11:41 dataloader:349] You are using a non-tarred dataset and requested tokenization during data sampling (pretokenize=True). This will cause the tokenization to happen in the main (GPU) process,possibly impacting the training speed if your tokenizer is very large.If the impact is noticable, set pretokenize=False in dataloader config.(note: that will disable token-per-second filtering and 2D bucketing features)
+Transcribing: 0it [00:00, ?it/s]Transcribing: 1it [00:00,  1.33it/s]Transcribing: 1it [00:00,  1.33it/s]
+[NeMo W 2026-09-25 15:11:41 _contextlib:124] Chunking is disabled. Please pass a single audio file or set batch_size to 1
+[NeMo W 2026-09-25 15:11:42 dataloader:343] The following configuration keys are ignored by Lhotse dataloader: trim_silence,enable_chunking
+[NeMo W 2026-09-25 15:11:42 dataloader:349] You are using a non-tarred dataset and requested tokenization during data sampling (pretokenize=True). This will cause the tokenization to happen in the main (GPU) process,possibly impacting the training speed if your tokenizer is very large.If the impact is noticable, set pretokenize=False in dataloader config.(note: that will disable token-per-second filtering and 2D bucketing features)
+Transcribing: 0it [00:00, ?it/s]Transcribing: 1it [00:01,  1.55s/it]Transcribing: 1it [00:01,  1.55s/it]
+[NeMo W 2026-09-25 15:11:43 _contextlib:124] Chunking is disabled. Please pass a single audio file or set batch_size to 1
+[NeMo W 2026-09-25 15:11:43 dataloader:343] The following configuration keys are ignored by Lhotse dataloader: trim_silence,enable_chunking
+[NeMo W 2026-09-25 15:11:43 dataloader:349] You are using a non-tarred dataset and requested tokenization during data sampling (pretokenize=True). This will cause the tokenization to happen in the main (GPU) process,possibly impacting the training speed if your tokenizer is very large.If the impact is noticable, set pretokenize=False in dataloader config.(note: that will disable token-per-second filtering and 2D bucketing features)
+Transcribing: 0it [00:00, ?it/s]Transcribing: 1it [00:00,  2.43it/s]Transcribing: 1it [00:00,  2.43it/s]
+[NeMo W 2026-09-25 15:11:44 _contextlib:124] Chunking is disabled. Please pass a single audio file or set batch_size to 1
+[NeMo W 2026-09-25 15:11:44 dataloader:343] The following configuration keys are ignored by Lhotse dataloader: trim_silence,enable_chunking
+[NeMo W 2026-09-25 15:11:44 dataloader:349] You are using a non-tarred dataset and requested tokenization during data sampling (pretokenize=True). This will cause the tokenization to happen in the main (GPU) process,possibly impacting the training speed if your tokenizer is very large.If the impact is noticable, set pretokenize=False in dataloader config.(note: that will disable token-per-second filtering and 2D bucketing features)
+Transcribing: 0it [00:00, ?it/s]Transcribing: 1it [00:00,  1.31it/s]Transcribing: 1it [00:00,  1.31it/s]
+[NeMo W 2026-09-25 15:11:44 _contextlib:124] Chunking is disabled. Please pass a single audio file or set batch_size to 1
+[NeMo W 2026-09-25 15:11:44 dataloader:343] The following configuration keys are ignored by Lhotse dataloader: trim_silence,enable_chunking
+[NeMo W 2026-09-25 15:11:44 dataloader:349] You are using a non-tarred dataset and requested tokenization during data sampling (pretokenize=True). This will cause the tokenization to happen in the main (GPU) process,possibly impacting the training speed if your tokenizer is very large.If the impact is noticable, set pretokenize=False in dataloader config.(note: that will disable token-per-second filtering and 2D bucketing features)
+Transcribing: 0it [00:00, ?it/s]Transcribing: 1it [00:00,  1.41it/s]Transcribing: 1it [00:00,  1.41it/s]
+[NeMo W 2026-09-25 15:11:45 _contextlib:124] Chunking is disabled. Please pass a single audio file or set batch_size to 1
+[NeMo W 2026-09-25 15:11:45 dataloader:343] The following configuration keys are ignored by Lhotse dataloader: trim_silence,enable_chunking
+[NeMo W 2026-09-25 15:11:45 dataloader:349] You are using a non-tarred dataset and requested tokenization during data sampling (pretokenize=True). This will cause the tokenization to happen in the main (GPU) process,possibly impacting the training speed if your tokenizer is very large.If the impact is noticable, set pretokenize=False in dataloader config.(note: that will disable token-per-second filtering and 2D bucketing features)
+Transcribing: 0it [00:00, ?it/s]Transcribing: 1it [00:00,  2.18it/s]Transcribing: 1it [00:00,  2.18it/s]
+[NeMo W 2026-09-25 15:11:46 _contextlib:124] Chunking is disabled. Please pass a single audio file or set batch_size to 1
+[NeMo W 2026-09-25 15:11:46 dataloader:343] The following configuration keys are ignored by Lhotse dataloader: trim_silence,enable_chunking
+[NeMo W 2026-09-25 15:11:46 dataloader:349] You are using a non-tarred dataset and requested tokenization during data sampling (pretokenize=True). This will cause the tokenization to happen in the main (GPU) process,possibly impacting the training speed if your tokenizer is very large.If the impact is noticable, set pretokenize=False in dataloader config.(note: that will disable token-per-second filtering and 2D bucketing features)
+Transcribing: 0it [00:00, ?it/s]Transcribing: 1it [00:01,  1.06s/it]Transcribing: 1it [00:01,  1.06s/it]
+[NeMo W 2026-09-25 15:11:47 _contextlib:124] Chunking is disabled. Please pass a single audio file or set batch_size to 1
+[NeMo W 2026-09-25 15:11:47 dataloader:343] The following configuration keys are ignored by Lhotse dataloader: trim_silence,enable_chunking
+[NeMo W 2026-09-25 15:11:47 dataloader:349] You are using a non-tarred dataset and requested tokenization during data sampling (pretokenize=True). This will cause the tokenization to happen in the main (GPU) process,possibly impacting the training speed if your tokenizer is very large.If the impact is noticable, set pretokenize=False in dataloader config.(note: that will disable token-per-second filtering and 2D bucketing features)
+Transcribing: 0it [00:00, ?it/s]Transcribing: 1it [00:00,  1.11it/s]Transcribing: 1it [00:00,  1.11it/s]
+[NeMo W 2026-09-25 15:11:48 _contextlib:124] Chunking is disabled. Please pass a single audio file or set batch_size to 1
+[NeMo W 2026-09-25 15:11:48 dataloader:343] The following configuration keys are ignored by Lhotse dataloader: trim_silence,enable_chunking
+[NeMo W 2026-09-25 15:11:48 dataloader:349] You are using a non-tarred dataset and requested tokenization during data sampling (pretokenize=True). This will cause the tokenization to happen in the main (GPU) process,possibly impacting the training speed if your tokenizer is very large.If the impact is noticable, set pretokenize=False in dataloader config.(note: that will disable token-per-second filtering and 2D bucketing features)
+Transcribing: 0it [00:00, ?it/s]Transcribing: 1it [00:00,  1.94it/s]Transcribing: 1it [00:00,  1.94it/s]
+[NeMo W 2026-09-25 15:11:48 _contextlib:124] Chunking is disabled. Please pass a single audio file or set batch_size to 1
+[NeMo W 2026-09-25 15:11:48 dataloader:343] The following configuration keys are ignored by Lhotse dataloader: trim_silence,enable_chunking
+[NeMo W 2026-09-25 15:11:48 dataloader:349] You are using a non-tarred dataset and requested tokenization during data sampling (pretokenize=True). This will cause the tokenization to happen in the main (GPU) process,possibly impacting the training speed if your tokenizer is very large.If the impact is noticable, set pretokenize=False in dataloader config.(note: that will disable token-per-second filtering and 2D bucketing features)
+Transcribing: 0it [00:00, ?it/s]Transcribing: 1it [00:01,  1.03s/it]Transcribing: 1it [00:01,  1.03s/it]
+[NeMo W 2026-09-25 15:11:49 _contextlib:124] Chunking is disabled. Please pass a single audio file or set batch_size to 1
+[NeMo W 2026-09-25 15:11:49 dataloader:343] The following configuration keys are ignored by Lhotse dataloader: trim_silence,enable_chunking
+[NeMo W 2026-09-25 15:11:49 dataloader:349] You are using a non-tarred dataset and requested tokenization during data sampling (pretokenize=True). This will cause the tokenization to happen in the main (GPU) process,possibly impacting the training speed if your tokenizer is very large.If the impact is noticable, set pretokenize=False in dataloader config.(note: that will disable token-per-second filtering and 2D bucketing features)
+Transcribing: 0it [00:00, ?it/s]Transcribing: 1it [00:01,  1.36s/it]Transcribing: 1it [00:01,  1.36s/it]
+[NeMo W 2026-09-25 15:11:51 _contextlib:124] Chunking is disabled. Please pass a single audio file or set batch_size to 1
+[NeMo W 2026-09-25 15:11:51 dataloader:343] The following configuration keys are ignored by Lhotse dataloader: trim_silence,enable_chunking
+[NeMo W 2026-09-25 15:11:51 dataloader:349] You are using a non-tarred dataset and requested tokenization during data sampling (pretokenize=True). This will cause the tokenization to happen in the main (GPU) process,possibly impacting the training speed if your tokenizer is very large.If the impact is noticable, set pretokenize=False in dataloader config.(note: that will disable token-per-second filtering and 2D bucketing features)
+Transcribing: 0it [00:00, ?it/s]Transcribing: 1it [00:01,  1.04s/it]Transcribing: 1it [00:01,  1.04s/it]
+[NeMo W 2026-09-25 15:11:52 _contextlib:124] Chunking is disabled. Please pass a single audio file or set batch_size to 1
+[NeMo W 2026-09-25 15:11:52 dataloader:343] The following configuration keys are ignored by Lhotse dataloader: trim_silence,enable_chunking
+[NeMo W 2026-09-25 15:11:52 dataloader:349] You are using a non-tarred dataset and requested tokenization during data sampling (pretokenize=True). This will cause the tokenization to happen in the main (GPU) process,possibly impacting the training speed if your tokenizer is very large.If the impact is noticable, set pretokenize=False in dataloader config.(note: that will disable token-per-second filtering and 2D bucketing features)
+Transcribing: 0it [00:00, ?it/s]Transcribing: 1it [00:00,  1.94it/s]Transcribing: 1it [00:00,  1.94it/s]
+[NeMo W 2026-09-25 15:11:52 _contextlib:124] Chunking is disabled. Please pass a single audio file or set batch_size to 1
+[NeMo W 2026-09-25 15:11:52 dataloader:343] The following configuration keys are ignored by Lhotse dataloader: trim_silence,enable_chunking
+[NeMo W 2026-09-25 15:11:52 dataloader:349] You are using a non-tarred dataset and requested tokenization during data sampling (pretokenize=True). This will cause the tokenization to happen in the main (GPU) process,possibly impacting the training speed if your tokenizer is very large.If the impact is noticable, set pretokenize=False in dataloader config.(note: that will disable token-per-second filtering and 2D bucketing features)
+Transcribing: 0it [00:00, ?it/s]Transcribing: 1it [00:00,  1.09it/s]Transcribing: 1it [00:00,  1.09it/s]
+[NeMo W 2026-09-25 15:11:53 _contextlib:124] Chunking is disabled. Please pass a single audio file or set batch_size to 1
+[NeMo W 2026-09-25 15:11:53 dataloader:343] The following configuration keys are ignored by Lhotse dataloader: trim_silence,enable_chunking
+[NeMo W 2026-09-25 15:11:53 dataloader:349] You are using a non-tarred dataset and requested tokenization during data sampling (pretokenize=True). This will cause the tokenization to happen in the main (GPU) process,possibly impacting the training speed if your tokenizer is very large.If the impact is noticable, set pretokenize=False in dataloader config.(note: that will disable token-per-second filtering and 2D bucketing features)
+Transcribing: 0it [00:00, ?it/s]Transcribing: 1it [00:00,  2.03it/s]Transcribing: 1it [00:00,  2.03it/s]
+[NeMo W 2026-09-25 15:11:54 _contextlib:124] Chunking is disabled. Please pass a single audio file or set batch_size to 1
+[NeMo W 2026-09-25 15:11:54 dataloader:343] The following configuration keys are ignored by Lhotse dataloader: trim_silence,enable_chunking
+[NeMo W 2026-09-25 15:11:54 dataloader:349] You are using a non-tarred dataset and requested tokenization during data sampling (pretokenize=True). This will cause the tokenization to happen in the main (GPU) process,possibly impacting the training speed if your tokenizer is very large.If the impact is noticable, set pretokenize=False in dataloader config.(note: that will disable token-per-second filtering and 2D bucketing features)
+Transcribing: 0it [00:00, ?it/s]Transcribing: 1it [00:00,  1.54it/s]Transcribing: 1it [00:00,  1.54it/s]
+[NeMo W 2026-09-25 15:11:54 _contextlib:124] Chunking is disabled. Please pass a single audio file or set batch_size to 1
+[NeMo W 2026-09-25 15:11:55 dataloader:343] The following configuration keys are ignored by Lhotse dataloader: trim_silence,enable_chunking
+[NeMo W 2026-09-25 15:11:55 dataloader:349] You are using a non-tarred dataset and requested tokenization during data sampling (pretokenize=True). This will cause the tokenization to happen in the main (GPU) process,possibly impacting the training speed if your tokenizer is very large.If the impact is noticable, set pretokenize=False in dataloader config.(note: that will disable token-per-second filtering and 2D bucketing features)
+Transcribing: 0it [00:00, ?it/s]Transcribing: 1it [00:00,  2.38it/s]Transcribing: 1it [00:00,  2.38it/s]
+[NeMo W 2026-09-25 15:11:55 _contextlib:124] Chunking is disabled. Please pass a single audio file or set batch_size to 1
+[NeMo W 2026-09-25 15:11:55 dataloader:343] The following configuration keys are ignored by Lhotse dataloader: trim_silence,enable_chunking
+[NeMo W 2026-09-25 15:11:55 dataloader:349] You are using a non-tarred dataset and requested tokenization during data sampling (pretokenize=True). This will cause the tokenization to happen in the main (GPU) process,possibly impacting the training speed if your tokenizer is very large.If the impact is noticable, set pretokenize=False in dataloader config.(note: that will disable token-per-second filtering and 2D bucketing features)
+Transcribing: 0it [00:00, ?it/s]Transcribing: 1it [00:00,  1.28it/s]Transcribing: 1it [00:00,  1.28it/s]
+[NeMo W 2026-09-25 15:11:56 _contextlib:124] Chunking is disabled. Please pass a single audio file or set batch_size to 1
+[NeMo W 2026-09-25 15:11:56 dataloader:343] The following configuration keys are ignored by Lhotse dataloader: trim_silence,enable_chunking
+[NeMo W 2026-09-25 15:11:56 dataloader:349] You are using a non-tarred dataset and requested tokenization during data sampling (pretokenize=True). This will cause the tokenization to happen in the main (GPU) process,possibly impacting the training speed if your tokenizer is very large.If the impact is noticable, set pretokenize=False in dataloader config.(note: that will disable token-per-second filtering and 2D bucketing features)
+Transcribing: 0it [00:00, ?it/s]Transcribing: 1it [00:00,  3.04it/s]Transcribing: 1it [00:00,  3.04it/s]
+[NeMo W 2026-09-25 15:11:56 _contextlib:124] Chunking is disabled. Please pass a single audio file or set batch_size to 1
+[NeMo W 2026-09-25 15:11:56 dataloader:343] The following configuration keys are ignored by Lhotse dataloader: trim_silence,enable_chunking
+[NeMo W 2026-09-25 15:11:56 dataloader:349] You are using a non-tarred dataset and requested tokenization during data sampling (pretokenize=True). This will cause the tokenization to happen in the main (GPU) process,possibly impacting the training speed if your tokenizer is very large.If the impact is noticable, set pretokenize=False in dataloader config.(note: that will disable token-per-second filtering and 2D bucketing features)
+Transcribing: 0it [00:00, ?it/s]Transcribing: 1it [00:01,  1.15s/it]Transcribing: 1it [00:01,  1.15s/it]
+[NeMo W 2026-09-25 15:11:57 _contextlib:124] Chunking is disabled. Please pass a single audio file or set batch_size to 1
+[NeMo W 2026-09-25 15:11:57 dataloader:343] The following configuration keys are ignored by Lhotse dataloader: trim_silence,enable_chunking
+[NeMo W 2026-09-25 15:11:57 dataloader:349] You are using a non-tarred dataset and requested tokenization during data sampling (pretokenize=True). This will cause the tokenization to happen in the main (GPU) process,possibly impacting the training speed if your tokenizer is very large.If the impact is noticable, set pretokenize=False in dataloader config.(note: that will disable token-per-second filtering and 2D bucketing features)
+Transcribing: 0it [00:00, ?it/s]Transcribing: 1it [00:01,  1.57s/it]Transcribing: 1it [00:01,  1.57s/it]
+[NeMo W 2026-09-25 15:11:59 _contextlib:124] Chunking is disabled. Please pass a single audio file or set batch_size to 1
+[NeMo W 2026-09-25 15:11:59 dataloader:343] The following configuration keys are ignored by Lhotse dataloader: trim_silence,enable_chunking
+[NeMo W 2026-09-25 15:11:59 dataloader:349] You are using a non-tarred dataset and requested tokenization during data sampling (pretokenize=True). This will cause the tokenization to happen in the main (GPU) process,possibly impacting the training speed if your tokenizer is very large.If the impact is noticable, set pretokenize=False in dataloader config.(note: that will disable token-per-second filtering and 2D bucketing features)
+Transcribing: 0it [00:00, ?it/s]Transcribing: 1it [00:00,  1.06it/s]Transcribing: 1it [00:00,  1.06it/s]
+[NeMo W 2026-09-25 15:12:00 _contextlib:124] Chunking is disabled. Please pass a single audio file or set batch_size to 1
+[NeMo W 2026-09-25 15:12:00 dataloader:343] The following configuration keys are ignored by Lhotse dataloader: trim_silence,enable_chunking
+[NeMo W 2026-09-25 15:12:00 dataloader:349] You are using a non-tarred dataset and requested tokenization during data sampling (pretokenize=True). This will cause the tokenization to happen in the main (GPU) process,possibly impacting the training speed if your tokenizer is very large.If the impact is noticable, set pretokenize=False in dataloader config.(note: that will disable token-per-second filtering and 2D bucketing features)
+Transcribing: 0it [00:00, ?it/s]Transcribing: 1it [00:01,  1.11s/it]Transcribing: 1it [00:01,  1.11s/it]
+[NeMo W 2026-09-25 15:12:01 _contextlib:124] Chunking is disabled. Please pass a single audio file or set batch_size to 1
+[NeMo W 2026-09-25 15:12:01 dataloader:343] The following configuration keys are ignored by Lhotse dataloader: trim_silence,enable_chunking
+[NeMo W 2026-09-25 15:12:01 dataloader:349] You are using a non-tarred dataset and requested tokenization during data sampling (pretokenize=True). This will cause the tokenization to happen in the main (GPU) process,possibly impacting the training speed if your tokenizer is very large.If the impact is noticable, set pretokenize=False in dataloader config.(note: that will disable token-per-second filtering and 2D bucketing features)
+Transcribing: 0it [00:00, ?it/s]Transcribing: 1it [00:01,  1.43s/it]Transcribing: 1it [00:01,  1.43s/it]
+[NeMo W 2026-09-25 15:12:03 _contextlib:124] Chunking is disabled. Please pass a single audio file or set batch_size to 1
+[NeMo W 2026-09-25 15:12:03 dataloader:343] The following configuration keys are ignored by Lhotse dataloader: trim_silence,enable_chunking
+[NeMo W 2026-09-25 15:12:03 dataloader:349] You are using a non-tarred dataset and requested tokenization during data sampling (pretokenize=True). This will cause the tokenization to happen in the main (GPU) process,possibly impacting the training speed if your tokenizer is very large.If the impact is noticable, set pretokenize=False in dataloader config.(note: that will disable token-per-second filtering and 2D bucketing features)
+Transcribing: 0it [00:00, ?it/s]Transcribing: 1it [00:00,  1.18it/s]Transcribing: 1it [00:00,  1.18it/s]
+[NeMo W 2026-09-25 15:12:03 _contextlib:124] Chunking is disabled. Please pass a single audio file or set batch_size to 1
+[NeMo W 2026-09-25 15:12:03 dataloader:343] The following configuration keys are ignored by Lhotse dataloader: trim_silence,enable_chunking
+[NeMo W 2026-09-25 15:12:03 dataloader:349] You are using a non-tarred dataset and requested tokenization during data sampling (pretokenize=True). This will cause the tokenization to happen in the main (GPU) process,possibly impacting the training speed if your tokenizer is very large.If the impact is noticable, set pretokenize=False in dataloader config.(note: that will disable token-per-second filtering and 2D bucketing features)
+Transcribing: 0it [00:00, ?it/s]Transcribing: 1it [00:00,  1.54it/s]Transcribing: 1it [00:00,  1.54it/s]
+[NeMo W 2026-09-25 15:12:04 _contextlib:124] Chunking is disabled. Please pass a single audio file or set batch_size to 1
+[NeMo W 2026-09-25 15:12:04 dataloader:343] The following configuration keys are ignored by Lhotse dataloader: trim_silence,enable_chunking
+[NeMo W 2026-09-25 15:12:04 dataloader:349] You are using a non-tarred dataset and requested tokenization during data sampling (pretokenize=True). This will cause the tokenization to happen in the main (GPU) process,possibly impacting the training speed if your tokenizer is very large.If the impact is noticable, set pretokenize=False in dataloader config.(note: that will disable token-per-second filtering and 2D bucketing features)
+Transcribing: 0it [00:00, ?it/s]Transcribing: 1it [00:00,  2.14it/s]Transcribing: 1it [00:00,  2.14it/s]
+[NeMo W 2026-09-25 15:12:05 _contextlib:124] Chunking is disabled. Please pass a single audio file or set batch_size to 1
+[NeMo W 2026-09-25 15:12:05 dataloader:343] The following configuration keys are ignored by Lhotse dataloader: trim_silence,enable_chunking
+[NeMo W 2026-09-25 15:12:05 dataloader:349] You are using a non-tarred dataset and requested tokenization during data sampling (pretokenize=True). This will cause the tokenization to happen in the main (GPU) process,possibly impacting the training speed if your tokenizer is very large.If the impact is noticable, set pretokenize=False in dataloader config.(note: that will disable token-per-second filtering and 2D bucketing features)
+Transcribing: 0it [00:00, ?it/s]Transcribing: 1it [00:00,  1.28it/s]Transcribing: 1it [00:00,  1.28it/s]
+[NeMo W 2026-09-25 15:12:05 _contextlib:124] Chunking is disabled. Please pass a single audio file or set batch_size to 1
+[NeMo W 2026-09-25 15:12:06 dataloader:343] The following configuration keys are ignored by Lhotse dataloader: trim_silence,enable_chunking
+[NeMo W 2026-09-25 15:12:06 dataloader:349] You are using a non-tarred dataset and requested tokenization during data sampling (pretokenize=True). This will cause the tokenization to happen in the main (GPU) process,possibly impacting the training speed if your tokenizer is very large.If the impact is noticable, set pretokenize=False in dataloader config.(note: that will disable token-per-second filtering and 2D bucketing features)
+Transcribing: 0it [00:00, ?it/s]Transcribing: 1it [00:00,  1.37it/s]Transcribing: 1it [00:00,  1.37it/s]
+[NeMo W 2026-09-25 15:12:06 _contextlib:124] Chunking is disabled. Please pass a single audio file or set batch_size to 1
+[NeMo W 2026-09-25 15:12:06 dataloader:343] The following configuration keys are ignored by Lhotse dataloader: trim_silence,enable_chunking
+[NeMo W 2026-09-25 15:12:06 dataloader:349] You are using a non-tarred dataset and requested tokenization during data sampling (pretokenize=True). This will cause the tokenization to happen in the main (GPU) process,possibly impacting the training speed if your tokenizer is very large.If the impact is noticable, set pretokenize=False in dataloader config.(note: that will disable token-per-second filtering and 2D bucketing features)
+Transcribing: 0it [00:00, ?it/s]Transcribing: 1it [00:01,  1.37s/it]Transcribing: 1it [00:01,  1.37s/it]
+[NeMo W 2026-09-25 15:12:08 _contextlib:124] Chunking is disabled. Please pass a single audio file or set batch_size to 1
+[NeMo W 2026-09-25 15:12:08 dataloader:343] The following configuration keys are ignored by Lhotse dataloader: trim_silence,enable_chunking
+[NeMo W 2026-09-25 15:12:08 dataloader:349] You are using a non-tarred dataset and requested tokenization during data sampling (pretokenize=True). This will cause the tokenization to happen in the main (GPU) process,possibly impacting the training speed if your tokenizer is very large.If the impact is noticable, set pretokenize=False in dataloader config.(note: that will disable token-per-second filtering and 2D bucketing features)
+Transcribing: 0it [00:00, ?it/s]Transcribing: 1it [00:00,  1.78it/s]Transcribing: 1it [00:00,  1.78it/s]
+[NeMo W 2026-09-25 15:12:08 _contextlib:124] Chunking is disabled. Please pass a single audio file or set batch_size to 1
+[NeMo W 2026-09-25 15:12:08 dataloader:343] The following configuration keys are ignored by Lhotse dataloader: trim_silence,enable_chunking
+[NeMo W 2026-09-25 15:12:08 dataloader:349] You are using a non-tarred dataset and requested tokenization during data sampling (pretokenize=True). This will cause the tokenization to happen in the main (GPU) process,possibly impacting the training speed if your tokenizer is very large.If the impact is noticable, set pretokenize=False in dataloader config.(note: that will disable token-per-second filtering and 2D bucketing features)
+Transcribing: 0it [00:00, ?it/s]Transcribing: 1it [00:00,  1.75it/s]Transcribing: 1it [00:00,  1.75it/s]
+[NeMo W 2026-09-25 15:12:09 _contextlib:124] Chunking is disabled. Please pass a single audio file or set batch_size to 1
+[NeMo W 2026-09-25 15:12:09 dataloader:343] The following configuration keys are ignored by Lhotse dataloader: trim_silence,enable_chunking
+[NeMo W 2026-09-25 15:12:09 dataloader:349] You are using a non-tarred dataset and requested tokenization during data sampling (pretokenize=True). This will cause the tokenization to happen in the main (GPU) process,possibly impacting the training speed if your tokenizer is very large.If the impact is noticable, set pretokenize=False in dataloader config.(note: that will disable token-per-second filtering and 2D bucketing features)
+Transcribing: 0it [00:00, ?it/s]Transcribing: 1it [00:00,  1.66it/s]Transcribing: 1it [00:00,  1.66it/s]
+[NeMo W 2026-09-25 15:12:10 _contextlib:124] Chunking is disabled. Please pass a single audio file or set batch_size to 1
+[NeMo W 2026-09-25 15:12:10 dataloader:343] The following configuration keys are ignored by Lhotse dataloader: trim_silence,enable_chunking
+[NeMo W 2026-09-25 15:12:10 dataloader:349] You are using a non-tarred dataset and requested tokenization during data sampling (pretokenize=True). This will cause the tokenization to happen in the main (GPU) process,possibly impacting the training speed if your tokenizer is very large.If the impact is noticable, set pretokenize=False in dataloader config.(note: that will disable token-per-second filtering and 2D bucketing features)
+Transcribing: 0it [00:00, ?it/s]Transcribing: 1it [00:00,  1.28it/s]Transcribing: 1it [00:00,  1.28it/s]
+[NeMo W 2026-09-25 15:12:10 _contextlib:124] Chunking is disabled. Please pass a single audio file or set batch_size to 1
+[NeMo W 2026-09-25 15:12:10 dataloader:343] The following configuration keys are ignored by Lhotse dataloader: trim_silence,enable_chunking
+[NeMo W 2026-09-25 15:12:10 dataloader:349] You are using a non-tarred dataset and requested tokenization during data sampling (pretokenize=True). This will cause the tokenization to happen in the main (GPU) process,possibly impacting the training speed if your tokenizer is very large.If the impact is noticable, set pretokenize=False in dataloader config.(note: that will disable token-per-second filtering and 2D bucketing features)
+Transcribing: 0it [00:00, ?it/s]Transcribing: 1it [00:01,  1.32s/it]Transcribing: 1it [00:01,  1.32s/it]
+[NeMo W 2026-09-25 15:12:12 _contextlib:124] Chunking is disabled. Please pass a single audio file or set batch_size to 1
+[NeMo W 2026-09-25 15:12:12 dataloader:343] The following configuration keys are ignored by Lhotse dataloader: trim_silence,enable_chunking
+[NeMo W 2026-09-25 15:12:12 dataloader:349] You are using a non-tarred dataset and requested tokenization during data sampling (pretokenize=True). This will cause the tokenization to happen in the main (GPU) process,possibly impacting the training speed if your tokenizer is very large.If the impact is noticable, set pretokenize=False in dataloader config.(note: that will disable token-per-second filtering and 2D bucketing features)
+Transcribing: 0it [00:00, ?it/s]Transcribing: 1it [00:01,  1.04s/it]Transcribing: 1it [00:01,  1.04s/it]
+[NeMo W 2026-09-25 15:12:13 _contextlib:124] Chunking is disabled. Please pass a single audio file or set batch_size to 1
+[NeMo W 2026-09-25 15:12:13 dataloader:343] The following configuration keys are ignored by Lhotse dataloader: trim_silence,enable_chunking
+[NeMo W 2026-09-25 15:12:13 dataloader:349] You are using a non-tarred dataset and requested tokenization during data sampling (pretokenize=True). This will cause the tokenization to happen in the main (GPU) process,possibly impacting the training speed if your tokenizer is very large.If the impact is noticable, set pretokenize=False in dataloader config.(note: that will disable token-per-second filtering and 2D bucketing features)
+Transcribing: 0it [00:00, ?it/s]Transcribing: 1it [00:01,  1.37s/it]Transcribing: 1it [00:01,  1.37s/it]
+[NeMo W 2026-09-25 15:12:14 _contextlib:124] Chunking is disabled. Please pass a single audio file or set batch_size to 1
+[NeMo W 2026-09-25 15:12:14 dataloader:343] The following configuration keys are ignored by Lhotse dataloader: trim_silence,enable_chunking
+[NeMo W 2026-09-25 15:12:14 dataloader:349] You are using a non-tarred dataset and requested tokenization during data sampling (pretokenize=True). This will cause the tokenization to happen in the main (GPU) process,possibly impacting the training speed if your tokenizer is very large.If the impact is noticable, set pretokenize=False in dataloader config.(note: that will disable token-per-second filtering and 2D bucketing features)
+Transcribing: 0it [00:00, ?it/s]Transcribing: 1it [00:00,  1.26it/s]Transcribing: 1it [00:00,  1.26it/s]
+[NeMo W 2026-09-25 15:12:15 _contextlib:124] Chunking is disabled. Please pass a single audio file or set batch_size to 1
+[NeMo W 2026-09-25 15:12:15 dataloader:343] The following configuration keys are ignored by Lhotse dataloader: trim_silence,enable_chunking
+[NeMo W 2026-09-25 15:12:15 dataloader:349] You are using a non-tarred dataset and requested tokenization during data sampling (pretokenize=True). This will cause the tokenization to happen in the main (GPU) process,possibly impacting the training speed if your tokenizer is very large.If the impact is noticable, set pretokenize=False in dataloader config.(note: that will disable token-per-second filtering and 2D bucketing features)
+Transcribing: 0it [00:00, ?it/s]Transcribing: 1it [00:00,  1.38it/s]Transcribing: 1it [00:00,  1.38it/s]
+[NeMo W 2026-09-25 15:12:16 _contextlib:124] Chunking is disabled. Please pass a single audio file or set batch_size to 1
+[NeMo W 2026-09-25 15:12:16 dataloader:343] The following configuration keys are ignored by Lhotse dataloader: trim_silence,enable_chunking
+[NeMo W 2026-09-25 15:12:16 dataloader:349] You are using a non-tarred dataset and requested tokenization during data sampling (pretokenize=True). This will cause the tokenization to happen in the main (GPU) process,possibly impacting the training speed if your tokenizer is very large.If the impact is noticable, set pretokenize=False in dataloader config.(note: that will disable token-per-second filtering and 2D bucketing features)
+Transcribing: 0it [00:00, ?it/s]Transcribing: 1it [00:00,  1.47it/s]Transcribing: 1it [00:00,  1.47it/s]
+[NeMo W 2026-09-25 15:12:17 _contextlib:124] Chunking is disabled. Please pass a single audio file or set batch_size to 1
+[NeMo W 2026-09-25 15:12:17 dataloader:343] The following configuration keys are ignored by Lhotse dataloader: trim_silence,enable_chunking
+[NeMo W 2026-09-25 15:12:17 dataloader:349] You are using a non-tarred dataset and requested tokenization during data sampling (pretokenize=True). This will cause the tokenization to happen in the main (GPU) process,possibly impacting the training speed if your tokenizer is very large.If the impact is noticable, set pretokenize=False in dataloader config.(note: that will disable token-per-second filtering and 2D bucketing features)
+Transcribing: 0it [00:00, ?it/s]Transcribing: 1it [00:00,  1.25it/s]Transcribing: 1it [00:00,  1.25it/s]
+[NeMo W 2026-09-25 15:12:17 _contextlib:124] Chunking is disabled. Please pass a single audio file or set batch_size to 1
+[NeMo W 2026-09-25 15:12:17 dataloader:343] The following configuration keys are ignored by Lhotse dataloader: trim_silence,enable_chunking
+[NeMo W 2026-09-25 15:12:17 dataloader:349] You are using a non-tarred dataset and requested tokenization during data sampling (pretokenize=True). This will cause the tokenization to happen in the main (GPU) process,possibly impacting the training speed if your tokenizer is very large.If the impact is noticable, set pretokenize=False in dataloader config.(note: that will disable token-per-second filtering and 2D bucketing features)
+Transcribing: 0it [00:00, ?it/s]Transcribing: 1it [00:00,  1.14it/s]Transcribing: 1it [00:00,  1.14it/s]
+[NeMo W 2026-09-25 15:12:18 _contextlib:124] Chunking is disabled. Please pass a single audio file or set batch_size to 1
+[NeMo W 2026-09-25 15:12:18 dataloader:343] The following configuration keys are ignored by Lhotse dataloader: trim_silence,enable_chunking
+[NeMo W 2026-09-25 15:12:18 dataloader:349] You are using a non-tarred dataset and requested tokenization during data sampling (pretokenize=True). This will cause the tokenization to happen in the main (GPU) process,possibly impacting the training speed if your tokenizer is very large.If the impact is noticable, set pretokenize=False in dataloader config.(note: that will disable token-per-second filtering and 2D bucketing features)
+Transcribing: 0it [00:00, ?it/s]Transcribing: 1it [00:00,  1.31it/s]Transcribing: 1it [00:00,  1.31it/s]
+[NeMo W 2026-09-25 15:12:19 _contextlib:124] Chunking is disabled. Please pass a single audio file or set batch_size to 1
+[NeMo W 2026-09-25 15:12:19 dataloader:343] The following configuration keys are ignored by Lhotse dataloader: trim_silence,enable_chunking
+[NeMo W 2026-09-25 15:12:19 dataloader:349] You are using a non-tarred dataset and requested tokenization during data sampling (pretokenize=True). This will cause the tokenization to happen in the main (GPU) process,possibly impacting the training speed if your tokenizer is very large.If the impact is noticable, set pretokenize=False in dataloader config.(note: that will disable token-per-second filtering and 2D bucketing features)
+Transcribing: 0it [00:00, ?it/s]Transcribing: 1it [00:00,  1.11it/s]Transcribing: 1it [00:00,  1.11it/s]
+[NeMo W 2026-09-25 15:12:20 _contextlib:124] Chunking is disabled. Please pass a single audio file or set batch_size to 1
+[NeMo W 2026-09-25 15:12:20 dataloader:343] The following configuration keys are ignored by Lhotse dataloader: trim_silence,enable_chunking
+[NeMo W 2026-09-25 15:12:20 dataloader:349] You are using a non-tarred dataset and requested tokenization during data sampling (pretokenize=True). This will cause the tokenization to happen in the main (GPU) process,possibly impacting the training speed if your tokenizer is very large.If the impact is noticable, set pretokenize=False in dataloader config.(note: that will disable token-per-second filtering and 2D bucketing features)
+Transcribing: 0it [00:00, ?it/s]Transcribing: 1it [00:00,  1.01it/s]Transcribing: 1it [00:00,  1.01it/s]
+[NeMo W 2026-09-25 15:12:21 _contextlib:124] Chunking is disabled. Please pass a single audio file or set batch_size to 1
+[NeMo W 2026-09-25 15:12:21 dataloader:343] The following configuration keys are ignored by Lhotse dataloader: trim_silence,enable_chunking
+[NeMo W 2026-09-25 15:12:21 dataloader:349] You are using a non-tarred dataset and requested tokenization during data sampling (pretokenize=True). This will cause the tokenization to happen in the main (GPU) process,possibly impacting the training speed if your tokenizer is very large.If the impact is noticable, set pretokenize=False in dataloader config.(note: that will disable token-per-second filtering and 2D bucketing features)
+Transcribing: 0it [00:00, ?it/s]Transcribing: 1it [00:00,  1.28it/s]Transcribing: 1it [00:00,  1.28it/s]
+[NeMo W 2026-09-25 15:12:22 _contextlib:124] Chunking is disabled. Please pass a single audio file or set batch_size to 1
+[NeMo W 2026-09-25 15:12:22 dataloader:343] The following configuration keys are ignored by Lhotse dataloader: trim_silence,enable_chunking
+[NeMo W 2026-09-25 15:12:22 dataloader:349] You are using a non-tarred dataset and requested tokenization during data sampling (pretokenize=True). This will cause the tokenization to happen in the main (GPU) process,possibly impacting the training speed if your tokenizer is very large.If the impact is noticable, set pretokenize=False in dataloader config.(note: that will disable token-per-second filtering and 2D bucketing features)
+Transcribing: 0it [00:00, ?it/s]Transcribing: 1it [00:00,  1.17it/s]Transcribing: 1it [00:00,  1.17it/s]
+[NeMo W 2026-09-25 15:12:23 _contextlib:124] Chunking is disabled. Please pass a single audio file or set batch_size to 1
+[NeMo W 2026-09-25 15:12:23 dataloader:343] The following configuration keys are ignored by Lhotse dataloader: trim_silence,enable_chunking
+[NeMo W 2026-09-25 15:12:23 dataloader:349] You are using a non-tarred dataset and requested tokenization during data sampling (pretokenize=True). This will cause the tokenization to happen in the main (GPU) process,possibly impacting the training speed if your tokenizer is very large.If the impact is noticable, set pretokenize=False in dataloader config.(note: that will disable token-per-second filtering and 2D bucketing features)
+Transcribing: 0it [00:00, ?it/s]Transcribing: 1it [00:00,  1.62it/s]Transcribing: 1it [00:00,  1.62it/s]
+[NeMo W 2026-09-25 15:12:23 _contextlib:124] Chunking is disabled. Please pass a single audio file or set batch_size to 1
+[NeMo W 2026-09-25 15:12:23 dataloader:343] The following configuration keys are ignored by Lhotse dataloader: trim_silence,enable_chunking
+[NeMo W 2026-09-25 15:12:23 dataloader:349] You are using a non-tarred dataset and requested tokenization during data sampling (pretokenize=True). This will cause the tokenization to happen in the main (GPU) process,possibly impacting the training speed if your tokenizer is very large.If the impact is noticable, set pretokenize=False in dataloader config.(note: that will disable token-per-second filtering and 2D bucketing features)
+Transcribing: 0it [00:00, ?it/s]Transcribing: 1it [00:00,  1.80it/s]Transcribing: 1it [00:00,  1.80it/s]
+[NeMo W 2026-09-25 15:12:24 _contextlib:124] Chunking is disabled. Please pass a single audio file or set batch_size to 1
+[NeMo W 2026-09-25 15:12:24 dataloader:343] The following configuration keys are ignored by Lhotse dataloader: trim_silence,enable_chunking
+[NeMo W 2026-09-25 15:12:24 dataloader:349] You are using a non-tarred dataset and requested tokenization during data sampling (pretokenize=True). This will cause the tokenization to happen in the main (GPU) process,possibly impacting the training speed if your tokenizer is very large.If the impact is noticable, set pretokenize=False in dataloader config.(note: that will disable token-per-second filtering and 2D bucketing features)
+Transcribing: 0it [00:00, ?it/s]Transcribing: 1it [00:00,  1.19it/s]Transcribing: 1it [00:00,  1.19it/s]
+[NeMo W 2026-09-25 15:12:25 _contextlib:124] Chunking is disabled. Please pass a single audio file or set batch_size to 1
+[NeMo W 2026-09-25 15:12:25 dataloader:343] The following configuration keys are ignored by Lhotse dataloader: trim_silence,enable_chunking
+[NeMo W 2026-09-25 15:12:25 dataloader:349] You are using a non-tarred dataset and requested tokenization during data sampling (pretokenize=True). This will cause the tokenization to happen in the main (GPU) process,possibly impacting the training speed if your tokenizer is very large.If the impact is noticable, set pretokenize=False in dataloader config.(note: that will disable token-per-second filtering and 2D bucketing features)
+Transcribing: 0it [00:00, ?it/s]Transcribing: 1it [00:01,  1.18s/it]Transcribing: 1it [00:01,  1.18s/it]
+[NeMo W 2026-09-25 15:12:26 _contextlib:124] Chunking is disabled. Please pass a single audio file or set batch_size to 1
+[NeMo W 2026-09-25 15:12:26 dataloader:343] The following configuration keys are ignored by Lhotse dataloader: trim_silence,enable_chunking
+[NeMo W 2026-09-25 15:12:26 dataloader:349] You are using a non-tarred dataset and requested tokenization during data sampling (pretokenize=True). This will cause the tokenization to happen in the main (GPU) process,possibly impacting the training speed if your tokenizer is very large.If the impact is noticable, set pretokenize=False in dataloader config.(note: that will disable token-per-second filtering and 2D bucketing features)
+Transcribing: 0it [00:00, ?it/s]Transcribing: 1it [00:00,  1.04it/s]Transcribing: 1it [00:00,  1.04it/s]
+[NeMo W 2026-09-25 15:12:27 _contextlib:124] Chunking is disabled. Please pass a single audio file or set batch_size to 1
+[NeMo W 2026-09-25 15:12:27 dataloader:343] The following configuration keys are ignored by Lhotse dataloader: trim_silence,enable_chunking
+[NeMo W 2026-09-25 15:12:27 dataloader:349] You are using a non-tarred dataset and requested tokenization during data sampling (pretokenize=True). This will cause the tokenization to happen in the main (GPU) process,possibly impacting the training speed if your tokenizer is very large.If the impact is noticable, set pretokenize=False in dataloader config.(note: that will disable token-per-second filtering and 2D bucketing features)
+Transcribing: 0it [00:00, ?it/s]Transcribing: 1it [00:00,  1.21it/s]Transcribing: 1it [00:00,  1.21it/s]
+[NeMo W 2026-09-25 15:12:28 _contextlib:124] Chunking is disabled. Please pass a single audio file or set batch_size to 1
+[NeMo W 2026-09-25 15:12:28 dataloader:343] The following configuration keys are ignored by Lhotse dataloader: trim_silence,enable_chunking
+[NeMo W 2026-09-25 15:12:28 dataloader:349] You are using a non-tarred dataset and requested tokenization during data sampling (pretokenize=True). This will cause the tokenization to happen in the main (GPU) process,possibly impacting the training speed if your tokenizer is very large.If the impact is noticable, set pretokenize=False in dataloader config.(note: that will disable token-per-second filtering and 2D bucketing features)
+Transcribing: 0it [00:00, ?it/s]Transcribing: 1it [00:01,  1.13s/it]Transcribing: 1it [00:01,  1.13s/it]
+[NeMo W 2026-09-25 15:12:29 _contextlib:124] Chunking is disabled. Please pass a single audio file or set batch_size to 1
+[NeMo W 2026-09-25 15:12:29 dataloader:343] The following configuration keys are ignored by Lhotse dataloader: trim_silence,enable_chunking
+[NeMo W 2026-09-25 15:12:29 dataloader:349] You are using a non-tarred dataset and requested tokenization during data sampling (pretokenize=True). This will cause the tokenization to happen in the main (GPU) process,possibly impacting the training speed if your tokenizer is very large.If the impact is noticable, set pretokenize=False in dataloader config.(note: that will disable token-per-second filtering and 2D bucketing features)
+Transcribing: 0it [00:00, ?it/s]Transcribing: 1it [00:00,  2.16it/s]Transcribing: 1it [00:00,  2.16it/s]
+[NeMo W 2026-09-25 15:12:30 _contextlib:124] Chunking is disabled. Please pass a single audio file or set batch_size to 1
+[NeMo W 2026-09-25 15:12:30 dataloader:343] The following configuration keys are ignored by Lhotse dataloader: trim_silence,enable_chunking
+[NeMo W 2026-09-25 15:12:30 dataloader:349] You are using a non-tarred dataset and requested tokenization during data sampling (pretokenize=True). This will cause the tokenization to happen in the main (GPU) process,possibly impacting the training speed if your tokenizer is very large.If the impact is noticable, set pretokenize=False in dataloader config.(note: that will disable token-per-second filtering and 2D bucketing features)
+Transcribing: 0it [00:00, ?it/s]Transcribing: 1it [00:00,  1.07it/s]Transcribing: 1it [00:00,  1.07it/s]
+[NeMo W 2026-09-25 15:12:31 _contextlib:124] Chunking is disabled. Please pass a single audio file or set batch_size to 1
+[NeMo W 2026-09-25 15:12:31 dataloader:343] The following configuration keys are ignored by Lhotse dataloader: trim_silence,enable_chunking
+[NeMo W 2026-09-25 15:12:31 dataloader:349] You are using a non-tarred dataset and requested tokenization during data sampling (pretokenize=True). This will cause the tokenization to happen in the main (GPU) process,possibly impacting the training speed if your tokenizer is very large.If the impact is noticable, set pretokenize=False in dataloader config.(note: that will disable token-per-second filtering and 2D bucketing features)
+Transcribing: 0it [00:00, ?it/s]Transcribing: 1it [00:00,  2.02it/s]Transcribing: 1it [00:00,  2.02it/s]
+[NeMo W 2026-09-25 15:12:31 _contextlib:124] Chunking is disabled. Please pass a single audio file or set batch_size to 1
+[NeMo W 2026-09-25 15:12:31 dataloader:343] The following configuration keys are ignored by Lhotse dataloader: trim_silence,enable_chunking
+[NeMo W 2026-09-25 15:12:31 dataloader:349] You are using a non-tarred dataset and requested tokenization during data sampling (pretokenize=True). This will cause the tokenization to happen in the main (GPU) process,possibly impacting the training speed if your tokenizer is very large.If the impact is noticable, set pretokenize=False in dataloader config.(note: that will disable token-per-second filtering and 2D bucketing features)
+Transcribing: 0it [00:00, ?it/s]Transcribing: 1it [00:00,  1.10it/s]Transcribing: 1it [00:00,  1.10it/s]
+[NeMo W 2026-09-25 15:12:32 _contextlib:124] Chunking is disabled. Please pass a single audio file or set batch_size to 1
+[NeMo W 2026-09-25 15:12:32 dataloader:343] The following configuration keys are ignored by Lhotse dataloader: trim_silence,enable_chunking
+[NeMo W 2026-09-25 15:12:32 dataloader:349] You are using a non-tarred dataset and requested tokenization during data sampling (pretokenize=True). This will cause the tokenization to happen in the main (GPU) process,possibly impacting the training speed if your tokenizer is very large.If the impact is noticable, set pretokenize=False in dataloader config.(note: that will disable token-per-second filtering and 2D bucketing features)
+Transcribing: 0it [00:00, ?it/s]Transcribing: 1it [00:00,  1.41it/s]Transcribing: 1it [00:00,  1.41it/s]
+[NeMo W 2026-09-25 15:12:33 _contextlib:124] Chunking is disabled. Please pass a single audio file or set batch_size to 1
+[NeMo W 2026-09-25 15:12:33 dataloader:343] The following configuration keys are ignored by Lhotse dataloader: trim_silence,enable_chunking
+[NeMo W 2026-09-25 15:12:33 dataloader:349] You are using a non-tarred dataset and requested tokenization during data sampling (pretokenize=True). This will cause the tokenization to happen in the main (GPU) process,possibly impacting the training speed if your tokenizer is very large.If the impact is noticable, set pretokenize=False in dataloader config.(note: that will disable token-per-second filtering and 2D bucketing features)
+Transcribing: 0it [00:00, ?it/s]Transcribing: 1it [00:00,  1.37it/s]Transcribing: 1it [00:00,  1.36it/s]
+[NeMo W 2026-09-25 15:12:34 _contextlib:124] Chunking is disabled. Please pass a single audio file or set batch_size to 1
+[NeMo W 2026-09-25 15:12:34 dataloader:343] The following configuration keys are ignored by Lhotse dataloader: trim_silence,enable_chunking
+[NeMo W 2026-09-25 15:12:34 dataloader:349] You are using a non-tarred dataset and requested tokenization during data sampling (pretokenize=True). This will cause the tokenization to happen in the main (GPU) process,possibly impacting the training speed if your tokenizer is very large.If the impact is noticable, set pretokenize=False in dataloader config.(note: that will disable token-per-second filtering and 2D bucketing features)
+Transcribing: 0it [00:00, ?it/s]Transcribing: 1it [00:00,  1.35it/s]Transcribing: 1it [00:00,  1.35it/s]
+[NeMo W 2026-09-25 15:12:34 _contextlib:124] Chunking is disabled. Please pass a single audio file or set batch_size to 1
+[NeMo W 2026-09-25 15:12:34 dataloader:343] The following configuration keys are ignored by Lhotse dataloader: trim_silence,enable_chunking
+[NeMo W 2026-09-25 15:12:34 dataloader:349] You are using a non-tarred dataset and requested tokenization during data sampling (pretokenize=True). This will cause the tokenization to happen in the main (GPU) process,possibly impacting the training speed if your tokenizer is very large.If the impact is noticable, set pretokenize=False in dataloader config.(note: that will disable token-per-second filtering and 2D bucketing features)
+Transcribing: 0it [00:00, ?it/s]Transcribing: 1it [00:00,  1.51it/s]Transcribing: 1it [00:00,  1.51it/s]
+[NeMo W 2026-09-25 15:12:35 _contextlib:124] Chunking is disabled. Please pass a single audio file or set batch_size to 1
+[NeMo W 2026-09-25 15:12:35 dataloader:343] The following configuration keys are ignored by Lhotse dataloader: trim_silence,enable_chunking
+[NeMo W 2026-09-25 15:12:35 dataloader:349] You are using a non-tarred dataset and requested tokenization during data sampling (pretokenize=True). This will cause the tokenization to happen in the main (GPU) process,possibly impacting the training speed if your tokenizer is very large.If the impact is noticable, set pretokenize=False in dataloader config.(note: that will disable token-per-second filtering and 2D bucketing features)
+Transcribing: 0it [00:00, ?it/s]Transcribing: 1it [00:00,  2.67it/s]Transcribing: 1it [00:00,  2.67it/s]
+[NeMo W 2026-09-25 15:12:36 _contextlib:124] Chunking is disabled. Please pass a single audio file or set batch_size to 1
+[NeMo W 2026-09-25 15:12:36 dataloader:343] The following configuration keys are ignored by Lhotse dataloader: trim_silence,enable_chunking
+[NeMo W 2026-09-25 15:12:36 dataloader:349] You are using a non-tarred dataset and requested tokenization during data sampling (pretokenize=True). This will cause the tokenization to happen in the main (GPU) process,possibly impacting the training speed if your tokenizer is very large.If the impact is noticable, set pretokenize=False in dataloader config.(note: that will disable token-per-second filtering and 2D bucketing features)
+Transcribing: 0it [00:00, ?it/s]Transcribing: 1it [00:00,  2.15it/s]Transcribing: 1it [00:00,  2.14it/s]
+[NeMo W 2026-09-25 15:12:36 _contextlib:124] Chunking is disabled. Please pass a single audio file or set batch_size to 1
+[NeMo W 2026-09-25 15:12:36 dataloader:343] The following configuration keys are ignored by Lhotse dataloader: trim_silence,enable_chunking
+[NeMo W 2026-09-25 15:12:36 dataloader:349] You are using a non-tarred dataset and requested tokenization during data sampling (pretokenize=True). This will cause the tokenization to happen in the main (GPU) process,possibly impacting the training speed if your tokenizer is very large.If the impact is noticable, set pretokenize=False in dataloader config.(note: that will disable token-per-second filtering and 2D bucketing features)
+Transcribing: 0it [00:00, ?it/s]Transcribing: 1it [00:00,  1.30it/s]Transcribing: 1it [00:00,  1.30it/s]
+[NeMo W 2026-09-25 15:12:37 _contextlib:124] Chunking is disabled. Please pass a single audio file or set batch_size to 1
+[NeMo W 2026-09-25 15:12:37 dataloader:343] The following configuration keys are ignored by Lhotse dataloader: trim_silence,enable_chunking
+[NeMo W 2026-09-25 15:12:37 dataloader:349] You are using a non-tarred dataset and requested tokenization during data sampling (pretokenize=True). This will cause the tokenization to happen in the main (GPU) process,possibly impacting the training speed if your tokenizer is very large.If the impact is noticable, set pretokenize=False in dataloader config.(note: that will disable token-per-second filtering and 2D bucketing features)
+Transcribing: 0it [00:00, ?it/s]Transcribing: 1it [00:00,  1.93it/s]Transcribing: 1it [00:00,  1.92it/s]
+[NeMo W 2026-09-25 15:12:37 _contextlib:124] Chunking is disabled. Please pass a single audio file or set batch_size to 1
+[NeMo W 2026-09-25 15:12:37 dataloader:343] The following configuration keys are ignored by Lhotse dataloader: trim_silence,enable_chunking
+[NeMo W 2026-09-25 15:12:37 dataloader:349] You are using a non-tarred dataset and requested tokenization during data sampling (pretokenize=True). This will cause the tokenization to happen in the main (GPU) process,possibly impacting the training speed if your tokenizer is very large.If the impact is noticable, set pretokenize=False in dataloader config.(note: that will disable token-per-second filtering and 2D bucketing features)
+Transcribing: 0it [00:00, ?it/s]Transcribing: 1it [00:00,  1.79it/s]Transcribing: 1it [00:00,  1.79it/s]
+[NeMo W 2026-09-25 15:12:38 _contextlib:124] Chunking is disabled. Please pass a single audio file or set batch_size to 1
+[NeMo W 2026-09-25 15:12:38 dataloader:343] The following configuration keys are ignored by Lhotse dataloader: trim_silence,enable_chunking
+[NeMo W 2026-09-25 15:12:38 dataloader:349] You are using a non-tarred dataset and requested tokenization during data sampling (pretokenize=True). This will cause the tokenization to happen in the main (GPU) process,possibly impacting the training speed if your tokenizer is very large.If the impact is noticable, set pretokenize=False in dataloader config.(note: that will disable token-per-second filtering and 2D bucketing features)
+Transcribing: 0it [00:00, ?it/s]Transcribing: 1it [00:01,  1.14s/it]Transcribing: 1it [00:01,  1.14s/it]
+[NeMo W 2026-09-25 15:12:39 _contextlib:124] Chunking is disabled. Please pass a single audio file or set batch_size to 1
+[NeMo W 2026-09-25 15:12:39 dataloader:343] The following configuration keys are ignored by Lhotse dataloader: trim_silence,enable_chunking
+[NeMo W 2026-09-25 15:12:39 dataloader:349] You are using a non-tarred dataset and requested tokenization during data sampling (pretokenize=True). This will cause the tokenization to happen in the main (GPU) process,possibly impacting the training speed if your tokenizer is very large.If the impact is noticable, set pretokenize=False in dataloader config.(note: that will disable token-per-second filtering and 2D bucketing features)
+Transcribing: 0it [00:00, ?it/s]Transcribing: 1it [00:00,  1.06it/s]Transcribing: 1it [00:00,  1.06it/s]
+[NeMo W 2026-09-25 15:12:40 _contextlib:124] Chunking is disabled. Please pass a single audio file or set batch_size to 1
+[NeMo W 2026-09-25 15:12:40 dataloader:343] The following configuration keys are ignored by Lhotse dataloader: trim_silence,enable_chunking
+[NeMo W 2026-09-25 15:12:40 dataloader:349] You are using a non-tarred dataset and requested tokenization during data sampling (pretokenize=True). This will cause the tokenization to happen in the main (GPU) process,possibly impacting the training speed if your tokenizer is very large.If the impact is noticable, set pretokenize=False in dataloader config.(note: that will disable token-per-second filtering and 2D bucketing features)
+Transcribing: 0it [00:00, ?it/s]Transcribing: 1it [00:00,  1.33it/s]Transcribing: 1it [00:00,  1.33it/s]
+[NeMo W 2026-09-25 15:12:41 _contextlib:124] Chunking is disabled. Please pass a single audio file or set batch_size to 1
+[NeMo W 2026-09-25 15:12:41 dataloader:343] The following configuration keys are ignored by Lhotse dataloader: trim_silence,enable_chunking
+[NeMo W 2026-09-25 15:12:41 dataloader:349] You are using a non-tarred dataset and requested tokenization during data sampling (pretokenize=True). This will cause the tokenization to happen in the main (GPU) process,possibly impacting the training speed if your tokenizer is very large.If the impact is noticable, set pretokenize=False in dataloader config.(note: that will disable token-per-second filtering and 2D bucketing features)
+Transcribing: 0it [00:00, ?it/s]Transcribing: 1it [00:00,  3.03it/s]Transcribing: 1it [00:00,  3.02it/s]
+[NeMo W 2026-09-25 15:12:41 _contextlib:124] Chunking is disabled. Please pass a single audio file or set batch_size to 1
+[NeMo W 2026-09-25 15:12:41 dataloader:343] The following configuration keys are ignored by Lhotse dataloader: trim_silence,enable_chunking
+[NeMo W 2026-09-25 15:12:41 dataloader:349] You are using a non-tarred dataset and requested tokenization during data sampling (pretokenize=True). This will cause the tokenization to happen in the main (GPU) process,possibly impacting the training speed if your tokenizer is very large.If the impact is noticable, set pretokenize=False in dataloader config.(note: that will disable token-per-second filtering and 2D bucketing features)
+Transcribing: 0it [00:00, ?it/s]Transcribing: 1it [00:00,  1.72it/s]Transcribing: 1it [00:00,  1.72it/s]
+[NeMo W 2026-09-25 15:12:42 _contextlib:124] Chunking is disabled. Please pass a single audio file or set batch_size to 1
+[NeMo W 2026-09-25 15:12:42 dataloader:343] The following configuration keys are ignored by Lhotse dataloader: trim_silence,enable_chunking
+[NeMo W 2026-09-25 15:12:42 dataloader:349] You are using a non-tarred dataset and requested tokenization during data sampling (pretokenize=True). This will cause the tokenization to happen in the main (GPU) process,possibly impacting the training speed if your tokenizer is very large.If the impact is noticable, set pretokenize=False in dataloader config.(note: that will disable token-per-second filtering and 2D bucketing features)
+Transcribing: 0it [00:00, ?it/s]Transcribing: 1it [00:01,  1.01s/it]Transcribing: 1it [00:01,  1.01s/it]
+[NeMo W 2026-09-25 15:12:43 _contextlib:124] Chunking is disabled. Please pass a single audio file or set batch_size to 1
+[NeMo W 2026-09-25 15:12:43 dataloader:343] The following configuration keys are ignored by Lhotse dataloader: trim_silence,enable_chunking
+[NeMo W 2026-09-25 15:12:43 dataloader:349] You are using a non-tarred dataset and requested tokenization during data sampling (pretokenize=True). This will cause the tokenization to happen in the main (GPU) process,possibly impacting the training speed if your tokenizer is very large.If the impact is noticable, set pretokenize=False in dataloader config.(note: that will disable token-per-second filtering and 2D bucketing features)
+Transcribing: 0it [00:00, ?it/s]Transcribing: 1it [00:00,  1.15it/s]Transcribing: 1it [00:00,  1.15it/s]
+[NeMo W 2026-09-25 15:12:44 _contextlib:124] Chunking is disabled. Please pass a single audio file or set batch_size to 1
+[NeMo W 2026-09-25 15:12:44 dataloader:343] The following configuration keys are ignored by Lhotse dataloader: trim_silence,enable_chunking
+[NeMo W 2026-09-25 15:12:44 dataloader:349] You are using a non-tarred dataset and requested tokenization during data sampling (pretokenize=True). This will cause the tokenization to happen in the main (GPU) process,possibly impacting the training speed if your tokenizer is very large.If the impact is noticable, set pretokenize=False in dataloader config.(note: that will disable token-per-second filtering and 2D bucketing features)
+Transcribing: 0it [00:00, ?it/s]Transcribing: 1it [00:00,  1.82it/s]Transcribing: 1it [00:00,  1.82it/s]
+[NeMo W 2026-09-25 15:12:45 _contextlib:124] Chunking is disabled. Please pass a single audio file or set batch_size to 1
+[NeMo W 2026-09-25 15:12:45 dataloader:343] The following configuration keys are ignored by Lhotse dataloader: trim_silence,enable_chunking
+[NeMo W 2026-09-25 15:12:45 dataloader:349] You are using a non-tarred dataset and requested tokenization during data sampling (pretokenize=True). This will cause the tokenization to happen in the main (GPU) process,possibly impacting the training speed if your tokenizer is very large.If the impact is noticable, set pretokenize=False in dataloader config.(note: that will disable token-per-second filtering and 2D bucketing features)
+Transcribing: 0it [00:00, ?it/s]Transcribing: 1it [00:00,  1.07it/s]Transcribing: 1it [00:00,  1.06it/s]
+[NeMo W 2026-09-25 15:12:46 _contextlib:124] Chunking is disabled. Please pass a single audio file or set batch_size to 1
+[NeMo W 2026-09-25 15:12:46 dataloader:343] The following configuration keys are ignored by Lhotse dataloader: trim_silence,enable_chunking
+[NeMo W 2026-09-25 15:12:46 dataloader:349] You are using a non-tarred dataset and requested tokenization during data sampling (pretokenize=True). This will cause the tokenization to happen in the main (GPU) process,possibly impacting the training speed if your tokenizer is very large.If the impact is noticable, set pretokenize=False in dataloader config.(note: that will disable token-per-second filtering and 2D bucketing features)
+Transcribing: 0it [00:00, ?it/s]Transcribing: 1it [00:01,  1.01s/it]Transcribing: 1it [00:01,  1.01s/it]
+[NeMo W 2026-09-25 15:12:47 _contextlib:124] Chunking is disabled. Please pass a single audio file or set batch_size to 1
+[NeMo W 2026-09-25 15:12:47 dataloader:343] The following configuration keys are ignored by Lhotse dataloader: trim_silence,enable_chunking
+[NeMo W 2026-09-25 15:12:47 dataloader:349] You are using a non-tarred dataset and requested tokenization during data sampling (pretokenize=True). This will cause the tokenization to happen in the main (GPU) process,possibly impacting the training speed if your tokenizer is very large.If the impact is noticable, set pretokenize=False in dataloader config.(note: that will disable token-per-second filtering and 2D bucketing features)
+Transcribing: 0it [00:00, ?it/s]Transcribing: 1it [00:00,  1.15it/s]Transcribing: 1it [00:00,  1.15it/s]
+[NeMo W 2026-09-25 15:12:48 _contextlib:124] Chunking is disabled. Please pass a single audio file or set batch_size to 1
+[NeMo W 2026-09-25 15:12:48 dataloader:343] The following configuration keys are ignored by Lhotse dataloader: trim_silence,enable_chunking
+[NeMo W 2026-09-25 15:12:48 dataloader:349] You are using a non-tarred dataset and requested tokenization during data sampling (pretokenize=True). This will cause the tokenization to happen in the main (GPU) process,possibly impacting the training speed if your tokenizer is very large.If the impact is noticable, set pretokenize=False in dataloader config.(note: that will disable token-per-second filtering and 2D bucketing features)
+Transcribing: 0it [00:00, ?it/s]Transcribing: 1it [00:00,  1.69it/s]Transcribing: 1it [00:00,  1.69it/s]
+[NeMo W 2026-09-25 15:12:48 _contextlib:124] Chunking is disabled. Please pass a single audio file or set batch_size to 1
+[NeMo W 2026-09-25 15:12:48 dataloader:343] The following configuration keys are ignored by Lhotse dataloader: trim_silence,enable_chunking
+[NeMo W 2026-09-25 15:12:48 dataloader:349] You are using a non-tarred dataset and requested tokenization during data sampling (pretokenize=True). This will cause the tokenization to happen in the main (GPU) process,possibly impacting the training speed if your tokenizer is very large.If the impact is noticable, set pretokenize=False in dataloader config.(note: that will disable token-per-second filtering and 2D bucketing features)
+Transcribing: 0it [00:00, ?it/s]Transcribing: 1it [00:01,  1.12s/it]Transcribing: 1it [00:01,  1.12s/it]
+[NeMo W 2026-09-25 15:12:49 _contextlib:124] Chunking is disabled. Please pass a single audio file or set batch_size to 1
+[NeMo W 2026-09-25 15:12:49 dataloader:343] The following configuration keys are ignored by Lhotse dataloader: trim_silence,enable_chunking
+[NeMo W 2026-09-25 15:12:49 dataloader:349] You are using a non-tarred dataset and requested tokenization during data sampling (pretokenize=True). This will cause the tokenization to happen in the main (GPU) process,possibly impacting the training speed if your tokenizer is very large.If the impact is noticable, set pretokenize=False in dataloader config.(note: that will disable token-per-second filtering and 2D bucketing features)
+Transcribing: 0it [00:00, ?it/s]Transcribing: 1it [00:01,  1.04s/it]Transcribing: 1it [00:01,  1.04s/it]
+[NeMo W 2026-09-25 15:12:50 _contextlib:124] Chunking is disabled. Please pass a single audio file or set batch_size to 1
+[NeMo W 2026-09-25 15:12:50 dataloader:343] The following configuration keys are ignored by Lhotse dataloader: trim_silence,enable_chunking
+[NeMo W 2026-09-25 15:12:50 dataloader:349] You are using a non-tarred dataset and requested tokenization during data sampling (pretokenize=True). This will cause the tokenization to happen in the main (GPU) process,possibly impacting the training speed if your tokenizer is very large.If the impact is noticable, set pretokenize=False in dataloader config.(note: that will disable token-per-second filtering and 2D bucketing features)
+Transcribing: 0it [00:00, ?it/s]Transcribing: 1it [00:01,  1.08s/it]Transcribing: 1it [00:01,  1.08s/it]
+[NeMo W 2026-09-25 15:12:52 _contextlib:124] Chunking is disabled. Please pass a single audio file or set batch_size to 1
+[NeMo W 2026-09-25 15:12:52 dataloader:343] The following configuration keys are ignored by Lhotse dataloader: trim_silence,enable_chunking
+[NeMo W 2026-09-25 15:12:52 dataloader:349] You are using a non-tarred dataset and requested tokenization during data sampling (pretokenize=True). This will cause the tokenization to happen in the main (GPU) process,possibly impacting the training speed if your tokenizer is very large.If the impact is noticable, set pretokenize=False in dataloader config.(note: that will disable token-per-second filtering and 2D bucketing features)
+Transcribing: 0it [00:00, ?it/s]Transcribing: 1it [00:00,  2.88it/s]Transcribing: 1it [00:00,  2.87it/s]
+[NeMo W 2026-09-25 15:12:52 _contextlib:124] Chunking is disabled. Please pass a single audio file or set batch_size to 1
+[NeMo W 2026-09-25 15:12:52 dataloader:343] The following configuration keys are ignored by Lhotse dataloader: trim_silence,enable_chunking
+[NeMo W 2026-09-25 15:12:52 dataloader:349] You are using a non-tarred dataset and requested tokenization during data sampling (pretokenize=True). This will cause the tokenization to happen in the main (GPU) process,possibly impacting the training speed if your tokenizer is very large.If the impact is noticable, set pretokenize=False in dataloader config.(note: that will disable token-per-second filtering and 2D bucketing features)
+Transcribing: 0it [00:00, ?it/s]Transcribing: 1it [00:00,  2.45it/s]Transcribing: 1it [00:00,  2.45it/s]
+[NeMo W 2026-09-25 15:12:52 _contextlib:124] Chunking is disabled. Please pass a single audio file or set batch_size to 1
+[NeMo W 2026-09-25 15:12:52 dataloader:343] The following configuration keys are ignored by Lhotse dataloader: trim_silence,enable_chunking
+[NeMo W 2026-09-25 15:12:52 dataloader:349] You are using a non-tarred dataset and requested tokenization during data sampling (pretokenize=True). This will cause the tokenization to happen in the main (GPU) process,possibly impacting the training speed if your tokenizer is very large.If the impact is noticable, set pretokenize=False in dataloader config.(note: that will disable token-per-second filtering and 2D bucketing features)
+Transcribing: 0it [00:00, ?it/s]Transcribing: 1it [00:00,  1.18it/s]Transcribing: 1it [00:00,  1.18it/s]
+[NeMo W 2026-09-25 15:12:53 _contextlib:124] Chunking is disabled. Please pass a single audio file or set batch_size to 1
+[NeMo W 2026-09-25 15:12:53 dataloader:343] The following configuration keys are ignored by Lhotse dataloader: trim_silence,enable_chunking
+[NeMo W 2026-09-25 15:12:53 dataloader:349] You are using a non-tarred dataset and requested tokenization during data sampling (pretokenize=True). This will cause the tokenization to happen in the main (GPU) process,possibly impacting the training speed if your tokenizer is very large.If the impact is noticable, set pretokenize=False in dataloader config.(note: that will disable token-per-second filtering and 2D bucketing features)
+Transcribing: 0it [00:00, ?it/s]Transcribing: 1it [00:01,  1.43s/it]Transcribing: 1it [00:01,  1.43s/it]
+{"model": "fine-tuned decoder-only (600 steps)", "clips": 100, "audio_seconds": 1315.62, "batch_size": 1, "wer": 0.1648, "total_wall_seconds": 86.605, "request_p50_seconds": 0.831, "request_p95_seconds": 1.408, "throughput_audio_seconds_per_wall_second": 15.191, "real_time_factor": 0.0658, "model_torch_allocated_gib": 4.602, "peak_torch_allocated_gib": 4.777, "incremental_request_memory_gib": 0.176}
+Benchmarking batch_size=2 on 100 clips...
+[NeMo W 2026-09-25 15:12:55 _contextlib:124] Chunking is disabled. Please pass a single audio file or set batch_size to 1
+[NeMo W 2026-09-25 15:12:55 dataloader:343] The following configuration keys are ignored by Lhotse dataloader: trim_silence,enable_chunking
+[NeMo W 2026-09-25 15:12:55 dataloader:349] You are using a non-tarred dataset and requested tokenization during data sampling (pretokenize=True). This will cause the tokenization to happen in the main (GPU) process,possibly impacting the training speed if your tokenizer is very large.If the impact is noticable, set pretokenize=False in dataloader config.(note: that will disable token-per-second filtering and 2D bucketing features)
+Transcribing: 0it [00:00, ?it/s]Transcribing: 1it [00:00,  1.08it/s]Transcribing: 1it [00:00,  1.08it/s]
+[NeMo W 2026-09-25 15:12:56 _contextlib:124] Chunking is disabled. Please pass a single audio file or set batch_size to 1
+[NeMo W 2026-09-25 15:12:56 dataloader:343] The following configuration keys are ignored by Lhotse dataloader: trim_silence,enable_chunking
+[NeMo W 2026-09-25 15:12:56 dataloader:349] You are using a non-tarred dataset and requested tokenization during data sampling (pretokenize=True). This will cause the tokenization to happen in the main (GPU) process,possibly impacting the training speed if your tokenizer is very large.If the impact is noticable, set pretokenize=False in dataloader config.(note: that will disable token-per-second filtering and 2D bucketing features)
+Transcribing: 0it [00:00, ?it/s]Transcribing: 1it [00:01,  1.02s/it]Transcribing: 1it [00:01,  1.02s/it]
+[NeMo W 2026-09-25 15:12:57 _contextlib:124] Chunking is disabled. Please pass a single audio file or set batch_size to 1
+[NeMo W 2026-09-25 15:12:57 dataloader:343] The following configuration keys are ignored by Lhotse dataloader: trim_silence,enable_chunking
+[NeMo W 2026-09-25 15:12:57 dataloader:349] You are using a non-tarred dataset and requested tokenization during data sampling (pretokenize=True). This will cause the tokenization to happen in the main (GPU) process,possibly impacting the training speed if your tokenizer is very large.If the impact is noticable, set pretokenize=False in dataloader config.(note: that will disable token-per-second filtering and 2D bucketing features)
+Transcribing: 0it [00:00, ?it/s]Transcribing: 1it [00:00,  1.03it/s]Transcribing: 1it [00:00,  1.03it/s]
+[NeMo W 2026-09-25 15:12:58 _contextlib:124] Chunking is disabled. Please pass a single audio file or set batch_size to 1
+[NeMo W 2026-09-25 15:12:58 dataloader:343] The following configuration keys are ignored by Lhotse dataloader: trim_silence,enable_chunking
+[NeMo W 2026-09-25 15:12:58 dataloader:349] You are using a non-tarred dataset and requested tokenization during data sampling (pretokenize=True). This will cause the tokenization to happen in the main (GPU) process,possibly impacting the training speed if your tokenizer is very large.If the impact is noticable, set pretokenize=False in dataloader config.(note: that will disable token-per-second filtering and 2D bucketing features)
+Transcribing: 0it [00:00, ?it/s]Transcribing: 1it [00:01,  1.13s/it]Transcribing: 1it [00:01,  1.13s/it]
+[NeMo W 2026-09-25 15:12:59 _contextlib:124] Chunking is disabled. Please pass a single audio file or set batch_size to 1
+[NeMo W 2026-09-25 15:12:59 dataloader:343] The following configuration keys are ignored by Lhotse dataloader: trim_silence,enable_chunking
+[NeMo W 2026-09-25 15:12:59 dataloader:349] You are using a non-tarred dataset and requested tokenization during data sampling (pretokenize=True). This will cause the tokenization to happen in the main (GPU) process,possibly impacting the training speed if your tokenizer is very large.If the impact is noticable, set pretokenize=False in dataloader config.(note: that will disable token-per-second filtering and 2D bucketing features)
+Transcribing: 0it [00:00, ?it/s]Transcribing: 1it [00:01,  1.27s/it]Transcribing: 1it [00:01,  1.27s/it]
+[NeMo W 2026-09-25 15:13:00 _contextlib:124] Chunking is disabled. Please pass a single audio file or set batch_size to 1
+[NeMo W 2026-09-25 15:13:00 dataloader:343] The following configuration keys are ignored by Lhotse dataloader: trim_silence,enable_chunking
+[NeMo W 2026-09-25 15:13:00 dataloader:349] You are using a non-tarred dataset and requested tokenization during data sampling (pretokenize=True). This will cause the tokenization to happen in the main (GPU) process,possibly impacting the training speed if your tokenizer is very large.If the impact is noticable, set pretokenize=False in dataloader config.(note: that will disable token-per-second filtering and 2D bucketing features)
+Transcribing: 0it [00:00, ?it/s]Transcribing: 1it [00:00,  1.26it/s]Transcribing: 1it [00:00,  1.26it/s]
+[NeMo W 2026-09-25 15:13:01 _contextlib:124] Chunking is disabled. Please pass a single audio file or set batch_size to 1
+[NeMo W 2026-09-25 15:13:01 dataloader:343] The following configuration keys are ignored by Lhotse dataloader: trim_silence,enable_chunking
+[NeMo W 2026-09-25 15:13:01 dataloader:349] You are using a non-tarred dataset and requested tokenization during data sampling (pretokenize=True). This will cause the tokenization to happen in the main (GPU) process,possibly impacting the training speed if your tokenizer is very large.If the impact is noticable, set pretokenize=False in dataloader config.(note: that will disable token-per-second filtering and 2D bucketing features)
+Transcribing: 0it [00:00, ?it/s]Transcribing: 1it [00:01,  1.38s/it]Transcribing: 1it [00:01,  1.38s/it]
+[NeMo W 2026-09-25 15:13:03 _contextlib:124] Chunking is disabled. Please pass a single audio file or set batch_size to 1
+[NeMo W 2026-09-25 15:13:03 dataloader:343] The following configuration keys are ignored by Lhotse dataloader: trim_silence,enable_chunking
+[NeMo W 2026-09-25 15:13:03 dataloader:349] You are using a non-tarred dataset and requested tokenization during data sampling (pretokenize=True). This will cause the tokenization to happen in the main (GPU) process,possibly impacting the training speed if your tokenizer is very large.If the impact is noticable, set pretokenize=False in dataloader config.(note: that will disable token-per-second filtering and 2D bucketing features)
+Transcribing: 0it [00:00, ?it/s]Transcribing: 1it [00:00,  1.15it/s]Transcribing: 1it [00:00,  1.15it/s]
+[NeMo W 2026-09-25 15:13:03 _contextlib:124] Chunking is disabled. Please pass a single audio file or set batch_size to 1
+[NeMo W 2026-09-25 15:13:03 dataloader:343] The following configuration keys are ignored by Lhotse dataloader: trim_silence,enable_chunking
+[NeMo W 2026-09-25 15:13:03 dataloader:349] You are using a non-tarred dataset and requested tokenization during data sampling (pretokenize=True). This will cause the tokenization to happen in the main (GPU) process,possibly impacting the training speed if your tokenizer is very large.If the impact is noticable, set pretokenize=False in dataloader config.(note: that will disable token-per-second filtering and 2D bucketing features)
+Transcribing: 0it [00:00, ?it/s]Transcribing: 1it [00:01,  1.62s/it]Transcribing: 1it [00:01,  1.62s/it]
+[NeMo W 2026-09-25 15:13:05 _contextlib:124] Chunking is disabled. Please pass a single audio file or set batch_size to 1
+[NeMo W 2026-09-25 15:13:05 dataloader:343] The following configuration keys are ignored by Lhotse dataloader: trim_silence,enable_chunking
+[NeMo W 2026-09-25 15:13:05 dataloader:349] You are using a non-tarred dataset and requested tokenization during data sampling (pretokenize=True). This will cause the tokenization to happen in the main (GPU) process,possibly impacting the training speed if your tokenizer is very large.If the impact is noticable, set pretokenize=False in dataloader config.(note: that will disable token-per-second filtering and 2D bucketing features)
+Transcribing: 0it [00:00, ?it/s]Transcribing: 1it [00:00,  1.25it/s]Transcribing: 1it [00:00,  1.25it/s]
+[NeMo W 2026-09-25 15:13:06 _contextlib:124] Chunking is disabled. Please pass a single audio file or set batch_size to 1
+[NeMo W 2026-09-25 15:13:06 dataloader:343] The following configuration keys are ignored by Lhotse dataloader: trim_silence,enable_chunking
+[NeMo W 2026-09-25 15:13:06 dataloader:349] You are using a non-tarred dataset and requested tokenization during data sampling (pretokenize=True). This will cause the tokenization to happen in the main (GPU) process,possibly impacting the training speed if your tokenizer is very large.If the impact is noticable, set pretokenize=False in dataloader config.(note: that will disable token-per-second filtering and 2D bucketing features)
+Transcribing: 0it [00:00, ?it/s]Transcribing: 1it [00:00,  1.37it/s]Transcribing: 1it [00:00,  1.36it/s]
+[NeMo W 2026-09-25 15:13:07 _contextlib:124] Chunking is disabled. Please pass a single audio file or set batch_size to 1
+[NeMo W 2026-09-25 15:13:07 dataloader:343] The following configuration keys are ignored by Lhotse dataloader: trim_silence,enable_chunking
+[NeMo W 2026-09-25 15:13:07 dataloader:349] You are using a non-tarred dataset and requested tokenization during data sampling (pretokenize=True). This will cause the tokenization to happen in the main (GPU) process,possibly impacting the training speed if your tokenizer is very large.If the impact is noticable, set pretokenize=False in dataloader config.(note: that will disable token-per-second filtering and 2D bucketing features)
+Transcribing: 0it [00:00, ?it/s]Transcribing: 1it [00:01,  1.14s/it]Transcribing: 1it [00:01,  1.15s/it]
+[NeMo W 2026-09-25 15:13:08 _contextlib:124] Chunking is disabled. Please pass a single audio file or set batch_size to 1
+[NeMo W 2026-09-25 15:13:08 dataloader:343] The following configuration keys are ignored by Lhotse dataloader: trim_silence,enable_chunking
+[NeMo W 2026-09-25 15:13:08 dataloader:349] You are using a non-tarred dataset and requested tokenization during data sampling (pretokenize=True). This will cause the tokenization to happen in the main (GPU) process,possibly impacting the training speed if your tokenizer is very large.If the impact is noticable, set pretokenize=False in dataloader config.(note: that will disable token-per-second filtering and 2D bucketing features)
+Transcribing: 0it [00:00, ?it/s]Transcribing: 1it [00:01,  1.10s/it]Transcribing: 1it [00:01,  1.10s/it]
+[NeMo W 2026-09-25 15:13:09 _contextlib:124] Chunking is disabled. Please pass a single audio file or set batch_size to 1
+[NeMo W 2026-09-25 15:13:09 dataloader:343] The following configuration keys are ignored by Lhotse dataloader: trim_silence,enable_chunking
+[NeMo W 2026-09-25 15:13:09 dataloader:349] You are using a non-tarred dataset and requested tokenization during data sampling (pretokenize=True). This will cause the tokenization to happen in the main (GPU) process,possibly impacting the training speed if your tokenizer is very large.If the impact is noticable, set pretokenize=False in dataloader config.(note: that will disable token-per-second filtering and 2D bucketing features)
+Transcribing: 0it [00:00, ?it/s]Transcribing: 1it [00:01,  1.42s/it]Transcribing: 1it [00:01,  1.42s/it]
+[NeMo W 2026-09-25 15:13:10 _contextlib:124] Chunking is disabled. Please pass a single audio file or set batch_size to 1
+[NeMo W 2026-09-25 15:13:11 dataloader:343] The following configuration keys are ignored by Lhotse dataloader: trim_silence,enable_chunking
+[NeMo W 2026-09-25 15:13:11 dataloader:349] You are using a non-tarred dataset and requested tokenization during data sampling (pretokenize=True). This will cause the tokenization to happen in the main (GPU) process,possibly impacting the training speed if your tokenizer is very large.If the impact is noticable, set pretokenize=False in dataloader config.(note: that will disable token-per-second filtering and 2D bucketing features)
+Transcribing: 0it [00:00, ?it/s]Transcribing: 1it [00:00,  1.02it/s]Transcribing: 1it [00:00,  1.02it/s]
+[NeMo W 2026-09-25 15:13:12 _contextlib:124] Chunking is disabled. Please pass a single audio file or set batch_size to 1
+[NeMo W 2026-09-25 15:13:12 dataloader:343] The following configuration keys are ignored by Lhotse dataloader: trim_silence,enable_chunking
+[NeMo W 2026-09-25 15:13:12 dataloader:349] You are using a non-tarred dataset and requested tokenization during data sampling (pretokenize=True). This will cause the tokenization to happen in the main (GPU) process,possibly impacting the training speed if your tokenizer is very large.If the impact is noticable, set pretokenize=False in dataloader config.(note: that will disable token-per-second filtering and 2D bucketing features)
+Transcribing: 0it [00:00, ?it/s]Transcribing: 1it [00:00,  1.43it/s]Transcribing: 1it [00:00,  1.43it/s]
+[NeMo W 2026-09-25 15:13:12 _contextlib:124] Chunking is disabled. Please pass a single audio file or set batch_size to 1
+[NeMo W 2026-09-25 15:13:12 dataloader:343] The following configuration keys are ignored by Lhotse dataloader: trim_silence,enable_chunking
+[NeMo W 2026-09-25 15:13:12 dataloader:349] You are using a non-tarred dataset and requested tokenization during data sampling (pretokenize=True). This will cause the tokenization to happen in the main (GPU) process,possibly impacting the training speed if your tokenizer is very large.If the impact is noticable, set pretokenize=False in dataloader config.(note: that will disable token-per-second filtering and 2D bucketing features)
+Transcribing: 0it [00:00, ?it/s]Transcribing: 1it [00:00,  1.20it/s]Transcribing: 1it [00:00,  1.20it/s]
+[NeMo W 2026-09-25 15:13:13 _contextlib:124] Chunking is disabled. Please pass a single audio file or set batch_size to 1
+[NeMo W 2026-09-25 15:13:13 dataloader:343] The following configuration keys are ignored by Lhotse dataloader: trim_silence,enable_chunking
+[NeMo W 2026-09-25 15:13:13 dataloader:349] You are using a non-tarred dataset and requested tokenization during data sampling (pretokenize=True). This will cause the tokenization to happen in the main (GPU) process,possibly impacting the training speed if your tokenizer is very large.If the impact is noticable, set pretokenize=False in dataloader config.(note: that will disable token-per-second filtering and 2D bucketing features)
+Transcribing: 0it [00:00, ?it/s]Transcribing: 1it [00:01,  1.24s/it]Transcribing: 1it [00:01,  1.24s/it]
+[NeMo W 2026-09-25 15:13:14 _contextlib:124] Chunking is disabled. Please pass a single audio file or set batch_size to 1
+[NeMo W 2026-09-25 15:13:14 dataloader:343] The following configuration keys are ignored by Lhotse dataloader: trim_silence,enable_chunking
+[NeMo W 2026-09-25 15:13:14 dataloader:349] You are using a non-tarred dataset and requested tokenization during data sampling (pretokenize=True). This will cause the tokenization to happen in the main (GPU) process,possibly impacting the training speed if your tokenizer is very large.If the impact is noticable, set pretokenize=False in dataloader config.(note: that will disable token-per-second filtering and 2D bucketing features)
+Transcribing: 0it [00:00, ?it/s]Transcribing: 1it [00:01,  1.56s/it]Transcribing: 1it [00:01,  1.56s/it]
+[NeMo W 2026-09-25 15:13:16 _contextlib:124] Chunking is disabled. Please pass a single audio file or set batch_size to 1
+[NeMo W 2026-09-25 15:13:16 dataloader:343] The following configuration keys are ignored by Lhotse dataloader: trim_silence,enable_chunking
+[NeMo W 2026-09-25 15:13:16 dataloader:349] You are using a non-tarred dataset and requested tokenization during data sampling (pretokenize=True). This will cause the tokenization to happen in the main (GPU) process,possibly impacting the training speed if your tokenizer is very large.If the impact is noticable, set pretokenize=False in dataloader config.(note: that will disable token-per-second filtering and 2D bucketing features)
+Transcribing: 0it [00:00, ?it/s]Transcribing: 1it [00:01,  1.55s/it]Transcribing: 1it [00:01,  1.56s/it]
+[NeMo W 2026-09-25 15:13:18 _contextlib:124] Chunking is disabled. Please pass a single audio file or set batch_size to 1
+[NeMo W 2026-09-25 15:13:18 dataloader:343] The following configuration keys are ignored by Lhotse dataloader: trim_silence,enable_chunking
+[NeMo W 2026-09-25 15:13:18 dataloader:349] You are using a non-tarred dataset and requested tokenization during data sampling (pretokenize=True). This will cause the tokenization to happen in the main (GPU) process,possibly impacting the training speed if your tokenizer is very large.If the impact is noticable, set pretokenize=False in dataloader config.(note: that will disable token-per-second filtering and 2D bucketing features)
+Transcribing: 0it [00:00, ?it/s]Transcribing: 1it [00:00,  1.10it/s]Transcribing: 1it [00:00,  1.10it/s]
+[NeMo W 2026-09-25 15:13:19 _contextlib:124] Chunking is disabled. Please pass a single audio file or set batch_size to 1
+[NeMo W 2026-09-25 15:13:19 dataloader:343] The following configuration keys are ignored by Lhotse dataloader: trim_silence,enable_chunking
+[NeMo W 2026-09-25 15:13:19 dataloader:349] You are using a non-tarred dataset and requested tokenization during data sampling (pretokenize=True). This will cause the tokenization to happen in the main (GPU) process,possibly impacting the training speed if your tokenizer is very large.If the impact is noticable, set pretokenize=False in dataloader config.(note: that will disable token-per-second filtering and 2D bucketing features)
+Transcribing: 0it [00:00, ?it/s]Transcribing: 1it [00:00,  1.21it/s]Transcribing: 1it [00:00,  1.21it/s]
+[NeMo W 2026-09-25 15:13:19 _contextlib:124] Chunking is disabled. Please pass a single audio file or set batch_size to 1
+[NeMo W 2026-09-25 15:13:19 dataloader:343] The following configuration keys are ignored by Lhotse dataloader: trim_silence,enable_chunking
+[NeMo W 2026-09-25 15:13:19 dataloader:349] You are using a non-tarred dataset and requested tokenization during data sampling (pretokenize=True). This will cause the tokenization to happen in the main (GPU) process,possibly impacting the training speed if your tokenizer is very large.If the impact is noticable, set pretokenize=False in dataloader config.(note: that will disable token-per-second filtering and 2D bucketing features)
+Transcribing: 0it [00:00, ?it/s]Transcribing: 1it [00:01,  1.45s/it]Transcribing: 1it [00:01,  1.45s/it]
+[NeMo W 2026-09-25 15:13:21 _contextlib:124] Chunking is disabled. Please pass a single audio file or set batch_size to 1
+[NeMo W 2026-09-25 15:13:21 dataloader:343] The following configuration keys are ignored by Lhotse dataloader: trim_silence,enable_chunking
+[NeMo W 2026-09-25 15:13:21 dataloader:349] You are using a non-tarred dataset and requested tokenization during data sampling (pretokenize=True). This will cause the tokenization to happen in the main (GPU) process,possibly impacting the training speed if your tokenizer is very large.If the impact is noticable, set pretokenize=False in dataloader config.(note: that will disable token-per-second filtering and 2D bucketing features)
+Transcribing: 0it [00:00, ?it/s]Transcribing: 1it [00:00,  1.63it/s]Transcribing: 1it [00:00,  1.63it/s]
+[NeMo W 2026-09-25 15:13:22 _contextlib:124] Chunking is disabled. Please pass a single audio file or set batch_size to 1
+[NeMo W 2026-09-25 15:13:22 dataloader:343] The following configuration keys are ignored by Lhotse dataloader: trim_silence,enable_chunking
+[NeMo W 2026-09-25 15:13:22 dataloader:349] You are using a non-tarred dataset and requested tokenization during data sampling (pretokenize=True). This will cause the tokenization to happen in the main (GPU) process,possibly impacting the training speed if your tokenizer is very large.If the impact is noticable, set pretokenize=False in dataloader config.(note: that will disable token-per-second filtering and 2D bucketing features)
+Transcribing: 0it [00:00, ?it/s]Transcribing: 1it [00:00,  1.19it/s]Transcribing: 1it [00:00,  1.19it/s]
+[NeMo W 2026-09-25 15:13:22 _contextlib:124] Chunking is disabled. Please pass a single audio file or set batch_size to 1
+[NeMo W 2026-09-25 15:13:22 dataloader:343] The following configuration keys are ignored by Lhotse dataloader: trim_silence,enable_chunking
+[NeMo W 2026-09-25 15:13:22 dataloader:349] You are using a non-tarred dataset and requested tokenization during data sampling (pretokenize=True). This will cause the tokenization to happen in the main (GPU) process,possibly impacting the training speed if your tokenizer is very large.If the impact is noticable, set pretokenize=False in dataloader config.(note: that will disable token-per-second filtering and 2D bucketing features)
+Transcribing: 0it [00:00, ?it/s]Transcribing: 1it [00:01,  1.46s/it]Transcribing: 1it [00:01,  1.46s/it]
+[NeMo W 2026-09-25 15:13:24 _contextlib:124] Chunking is disabled. Please pass a single audio file or set batch_size to 1
+[NeMo W 2026-09-25 15:13:24 dataloader:343] The following configuration keys are ignored by Lhotse dataloader: trim_silence,enable_chunking
+[NeMo W 2026-09-25 15:13:24 dataloader:349] You are using a non-tarred dataset and requested tokenization during data sampling (pretokenize=True). This will cause the tokenization to happen in the main (GPU) process,possibly impacting the training speed if your tokenizer is very large.If the impact is noticable, set pretokenize=False in dataloader config.(note: that will disable token-per-second filtering and 2D bucketing features)
+Transcribing: 0it [00:00, ?it/s]Transcribing: 1it [00:01,  1.48s/it]Transcribing: 1it [00:01,  1.48s/it]
+[NeMo W 2026-09-25 15:13:25 _contextlib:124] Chunking is disabled. Please pass a single audio file or set batch_size to 1
+[NeMo W 2026-09-25 15:13:26 dataloader:343] The following configuration keys are ignored by Lhotse dataloader: trim_silence,enable_chunking
+[NeMo W 2026-09-25 15:13:26 dataloader:349] You are using a non-tarred dataset and requested tokenization during data sampling (pretokenize=True). This will cause the tokenization to happen in the main (GPU) process,possibly impacting the training speed if your tokenizer is very large.If the impact is noticable, set pretokenize=False in dataloader config.(note: that will disable token-per-second filtering and 2D bucketing features)
+Transcribing: 0it [00:00, ?it/s]Transcribing: 1it [00:00,  1.27it/s]Transcribing: 1it [00:00,  1.27it/s]
+[NeMo W 2026-09-25 15:13:26 _contextlib:124] Chunking is disabled. Please pass a single audio file or set batch_size to 1
+[NeMo W 2026-09-25 15:13:26 dataloader:343] The following configuration keys are ignored by Lhotse dataloader: trim_silence,enable_chunking
+[NeMo W 2026-09-25 15:13:26 dataloader:349] You are using a non-tarred dataset and requested tokenization during data sampling (pretokenize=True). This will cause the tokenization to happen in the main (GPU) process,possibly impacting the training speed if your tokenizer is very large.If the impact is noticable, set pretokenize=False in dataloader config.(note: that will disable token-per-second filtering and 2D bucketing features)
+Transcribing: 0it [00:00, ?it/s]Transcribing: 1it [00:00,  1.09it/s]Transcribing: 1it [00:00,  1.09it/s]
+[NeMo W 2026-09-25 15:13:27 _contextlib:124] Chunking is disabled. Please pass a single audio file or set batch_size to 1
+[NeMo W 2026-09-25 15:13:27 dataloader:343] The following configuration keys are ignored by Lhotse dataloader: trim_silence,enable_chunking
+[NeMo W 2026-09-25 15:13:27 dataloader:349] You are using a non-tarred dataset and requested tokenization during data sampling (pretokenize=True). This will cause the tokenization to happen in the main (GPU) process,possibly impacting the training speed if your tokenizer is very large.If the impact is noticable, set pretokenize=False in dataloader config.(note: that will disable token-per-second filtering and 2D bucketing features)
+Transcribing: 0it [00:00, ?it/s]Transcribing: 1it [00:00,  1.03it/s]Transcribing: 1it [00:00,  1.03it/s]
+[NeMo W 2026-09-25 15:13:28 _contextlib:124] Chunking is disabled. Please pass a single audio file or set batch_size to 1
+[NeMo W 2026-09-25 15:13:28 dataloader:343] The following configuration keys are ignored by Lhotse dataloader: trim_silence,enable_chunking
+[NeMo W 2026-09-25 15:13:28 dataloader:349] You are using a non-tarred dataset and requested tokenization during data sampling (pretokenize=True). This will cause the tokenization to happen in the main (GPU) process,possibly impacting the training speed if your tokenizer is very large.If the impact is noticable, set pretokenize=False in dataloader config.(note: that will disable token-per-second filtering and 2D bucketing features)
+Transcribing: 0it [00:00, ?it/s]Transcribing: 1it [00:01,  1.07s/it]Transcribing: 1it [00:01,  1.07s/it]
+[NeMo W 2026-09-25 15:13:29 _contextlib:124] Chunking is disabled. Please pass a single audio file or set batch_size to 1
+[NeMo W 2026-09-25 15:13:29 dataloader:343] The following configuration keys are ignored by Lhotse dataloader: trim_silence,enable_chunking
+[NeMo W 2026-09-25 15:13:29 dataloader:349] You are using a non-tarred dataset and requested tokenization during data sampling (pretokenize=True). This will cause the tokenization to happen in the main (GPU) process,possibly impacting the training speed if your tokenizer is very large.If the impact is noticable, set pretokenize=False in dataloader config.(note: that will disable token-per-second filtering and 2D bucketing features)
+Transcribing: 0it [00:00, ?it/s]Transcribing: 1it [00:00,  1.08it/s]Transcribing: 1it [00:00,  1.08it/s]
+[NeMo W 2026-09-25 15:13:30 _contextlib:124] Chunking is disabled. Please pass a single audio file or set batch_size to 1
+[NeMo W 2026-09-25 15:13:30 dataloader:343] The following configuration keys are ignored by Lhotse dataloader: trim_silence,enable_chunking
+[NeMo W 2026-09-25 15:13:30 dataloader:349] You are using a non-tarred dataset and requested tokenization during data sampling (pretokenize=True). This will cause the tokenization to happen in the main (GPU) process,possibly impacting the training speed if your tokenizer is very large.If the impact is noticable, set pretokenize=False in dataloader config.(note: that will disable token-per-second filtering and 2D bucketing features)
+Transcribing: 0it [00:00, ?it/s]Transcribing: 1it [00:00,  1.10it/s]Transcribing: 1it [00:00,  1.10it/s]
+[NeMo W 2026-09-25 15:13:31 _contextlib:124] Chunking is disabled. Please pass a single audio file or set batch_size to 1
+[NeMo W 2026-09-25 15:13:31 dataloader:343] The following configuration keys are ignored by Lhotse dataloader: trim_silence,enable_chunking
+[NeMo W 2026-09-25 15:13:31 dataloader:349] You are using a non-tarred dataset and requested tokenization during data sampling (pretokenize=True). This will cause the tokenization to happen in the main (GPU) process,possibly impacting the training speed if your tokenizer is very large.If the impact is noticable, set pretokenize=False in dataloader config.(note: that will disable token-per-second filtering and 2D bucketing features)
+Transcribing: 0it [00:00, ?it/s]Transcribing: 1it [00:01,  1.27s/it]Transcribing: 1it [00:01,  1.28s/it]
+[NeMo W 2026-09-25 15:13:33 _contextlib:124] Chunking is disabled. Please pass a single audio file or set batch_size to 1
+[NeMo W 2026-09-25 15:13:33 dataloader:343] The following configuration keys are ignored by Lhotse dataloader: trim_silence,enable_chunking
+[NeMo W 2026-09-25 15:13:33 dataloader:349] You are using a non-tarred dataset and requested tokenization during data sampling (pretokenize=True). This will cause the tokenization to happen in the main (GPU) process,possibly impacting the training speed if your tokenizer is very large.If the impact is noticable, set pretokenize=False in dataloader config.(note: that will disable token-per-second filtering and 2D bucketing features)
+Transcribing: 0it [00:00, ?it/s]Transcribing: 1it [00:01,  1.24s/it]Transcribing: 1it [00:01,  1.24s/it]
+[NeMo W 2026-09-25 15:13:34 _contextlib:124] Chunking is disabled. Please pass a single audio file or set batch_size to 1
+[NeMo W 2026-09-25 15:13:34 dataloader:343] The following configuration keys are ignored by Lhotse dataloader: trim_silence,enable_chunking
+[NeMo W 2026-09-25 15:13:34 dataloader:349] You are using a non-tarred dataset and requested tokenization during data sampling (pretokenize=True). This will cause the tokenization to happen in the main (GPU) process,possibly impacting the training speed if your tokenizer is very large.If the impact is noticable, set pretokenize=False in dataloader config.(note: that will disable token-per-second filtering and 2D bucketing features)
+Transcribing: 0it [00:00, ?it/s]Transcribing: 1it [00:01,  1.01s/it]Transcribing: 1it [00:01,  1.01s/it]
+[NeMo W 2026-09-25 15:13:35 _contextlib:124] Chunking is disabled. Please pass a single audio file or set batch_size to 1
+[NeMo W 2026-09-25 15:13:35 dataloader:343] The following configuration keys are ignored by Lhotse dataloader: trim_silence,enable_chunking
+[NeMo W 2026-09-25 15:13:35 dataloader:349] You are using a non-tarred dataset and requested tokenization during data sampling (pretokenize=True). This will cause the tokenization to happen in the main (GPU) process,possibly impacting the training speed if your tokenizer is very large.If the impact is noticable, set pretokenize=False in dataloader config.(note: that will disable token-per-second filtering and 2D bucketing features)
+Transcribing: 0it [00:00, ?it/s]Transcribing: 1it [00:00,  1.01it/s]Transcribing: 1it [00:00,  1.01it/s]
+[NeMo W 2026-09-25 15:13:36 _contextlib:124] Chunking is disabled. Please pass a single audio file or set batch_size to 1
+[NeMo W 2026-09-25 15:13:36 dataloader:343] The following configuration keys are ignored by Lhotse dataloader: trim_silence,enable_chunking
+[NeMo W 2026-09-25 15:13:36 dataloader:349] You are using a non-tarred dataset and requested tokenization during data sampling (pretokenize=True). This will cause the tokenization to happen in the main (GPU) process,possibly impacting the training speed if your tokenizer is very large.If the impact is noticable, set pretokenize=False in dataloader config.(note: that will disable token-per-second filtering and 2D bucketing features)
+Transcribing: 0it [00:00, ?it/s]Transcribing: 1it [00:00,  1.27it/s]Transcribing: 1it [00:00,  1.27it/s]
+[NeMo W 2026-09-25 15:13:37 _contextlib:124] Chunking is disabled. Please pass a single audio file or set batch_size to 1
+[NeMo W 2026-09-25 15:13:37 dataloader:343] The following configuration keys are ignored by Lhotse dataloader: trim_silence,enable_chunking
+[NeMo W 2026-09-25 15:13:37 dataloader:349] You are using a non-tarred dataset and requested tokenization during data sampling (pretokenize=True). This will cause the tokenization to happen in the main (GPU) process,possibly impacting the training speed if your tokenizer is very large.If the impact is noticable, set pretokenize=False in dataloader config.(note: that will disable token-per-second filtering and 2D bucketing features)
+Transcribing: 0it [00:00, ?it/s]Transcribing: 1it [00:00,  1.27it/s]Transcribing: 1it [00:00,  1.27it/s]
+[NeMo W 2026-09-25 15:13:38 _contextlib:124] Chunking is disabled. Please pass a single audio file or set batch_size to 1
+[NeMo W 2026-09-25 15:13:38 dataloader:343] The following configuration keys are ignored by Lhotse dataloader: trim_silence,enable_chunking
+[NeMo W 2026-09-25 15:13:38 dataloader:349] You are using a non-tarred dataset and requested tokenization during data sampling (pretokenize=True). This will cause the tokenization to happen in the main (GPU) process,possibly impacting the training speed if your tokenizer is very large.If the impact is noticable, set pretokenize=False in dataloader config.(note: that will disable token-per-second filtering and 2D bucketing features)
+Transcribing: 0it [00:00, ?it/s]Transcribing: 1it [00:00,  2.04it/s]Transcribing: 1it [00:00,  2.04it/s]
+[NeMo W 2026-09-25 15:13:38 _contextlib:124] Chunking is disabled. Please pass a single audio file or set batch_size to 1
+[NeMo W 2026-09-25 15:13:38 dataloader:343] The following configuration keys are ignored by Lhotse dataloader: trim_silence,enable_chunking
+[NeMo W 2026-09-25 15:13:38 dataloader:349] You are using a non-tarred dataset and requested tokenization during data sampling (pretokenize=True). This will cause the tokenization to happen in the main (GPU) process,possibly impacting the training speed if your tokenizer is very large.If the impact is noticable, set pretokenize=False in dataloader config.(note: that will disable token-per-second filtering and 2D bucketing features)
+Transcribing: 0it [00:00, ?it/s]Transcribing: 1it [00:00,  1.21it/s]Transcribing: 1it [00:00,  1.21it/s]
+[NeMo W 2026-09-25 15:13:39 _contextlib:124] Chunking is disabled. Please pass a single audio file or set batch_size to 1
+[NeMo W 2026-09-25 15:13:39 dataloader:343] The following configuration keys are ignored by Lhotse dataloader: trim_silence,enable_chunking
+[NeMo W 2026-09-25 15:13:39 dataloader:349] You are using a non-tarred dataset and requested tokenization during data sampling (pretokenize=True). This will cause the tokenization to happen in the main (GPU) process,possibly impacting the training speed if your tokenizer is very large.If the impact is noticable, set pretokenize=False in dataloader config.(note: that will disable token-per-second filtering and 2D bucketing features)
+Transcribing: 0it [00:00, ?it/s]Transcribing: 1it [00:01,  1.23s/it]Transcribing: 1it [00:01,  1.23s/it]
+[NeMo W 2026-09-25 15:13:40 _contextlib:124] Chunking is disabled. Please pass a single audio file or set batch_size to 1
+[NeMo W 2026-09-25 15:13:40 dataloader:343] The following configuration keys are ignored by Lhotse dataloader: trim_silence,enable_chunking
+[NeMo W 2026-09-25 15:13:40 dataloader:349] You are using a non-tarred dataset and requested tokenization during data sampling (pretokenize=True). This will cause the tokenization to happen in the main (GPU) process,possibly impacting the training speed if your tokenizer is very large.If the impact is noticable, set pretokenize=False in dataloader config.(note: that will disable token-per-second filtering and 2D bucketing features)
+Transcribing: 0it [00:00, ?it/s]Transcribing: 1it [00:01,  1.01s/it]Transcribing: 1it [00:01,  1.01s/it]
+[NeMo W 2026-09-25 15:13:41 _contextlib:124] Chunking is disabled. Please pass a single audio file or set batch_size to 1
+[NeMo W 2026-09-25 15:13:41 dataloader:343] The following configuration keys are ignored by Lhotse dataloader: trim_silence,enable_chunking
+[NeMo W 2026-09-25 15:13:41 dataloader:349] You are using a non-tarred dataset and requested tokenization during data sampling (pretokenize=True). This will cause the tokenization to happen in the main (GPU) process,possibly impacting the training speed if your tokenizer is very large.If the impact is noticable, set pretokenize=False in dataloader config.(note: that will disable token-per-second filtering and 2D bucketing features)
+Transcribing: 0it [00:00, ?it/s]Transcribing: 1it [00:00,  1.65it/s]Transcribing: 1it [00:00,  1.65it/s]
+[NeMo W 2026-09-25 15:13:42 _contextlib:124] Chunking is disabled. Please pass a single audio file or set batch_size to 1
+[NeMo W 2026-09-25 15:13:42 dataloader:343] The following configuration keys are ignored by Lhotse dataloader: trim_silence,enable_chunking
+[NeMo W 2026-09-25 15:13:42 dataloader:349] You are using a non-tarred dataset and requested tokenization during data sampling (pretokenize=True). This will cause the tokenization to happen in the main (GPU) process,possibly impacting the training speed if your tokenizer is very large.If the impact is noticable, set pretokenize=False in dataloader config.(note: that will disable token-per-second filtering and 2D bucketing features)
+Transcribing: 0it [00:00, ?it/s]Transcribing: 1it [00:01,  1.10s/it]Transcribing: 1it [00:01,  1.10s/it]
+[NeMo W 2026-09-25 15:13:43 _contextlib:124] Chunking is disabled. Please pass a single audio file or set batch_size to 1
+[NeMo W 2026-09-25 15:13:43 dataloader:343] The following configuration keys are ignored by Lhotse dataloader: trim_silence,enable_chunking
+[NeMo W 2026-09-25 15:13:43 dataloader:349] You are using a non-tarred dataset and requested tokenization during data sampling (pretokenize=True). This will cause the tokenization to happen in the main (GPU) process,possibly impacting the training speed if your tokenizer is very large.If the impact is noticable, set pretokenize=False in dataloader config.(note: that will disable token-per-second filtering and 2D bucketing features)
+Transcribing: 0it [00:00, ?it/s]Transcribing: 1it [00:01,  1.02s/it]Transcribing: 1it [00:01,  1.02s/it]
+[NeMo W 2026-09-25 15:13:44 _contextlib:124] Chunking is disabled. Please pass a single audio file or set batch_size to 1
+[NeMo W 2026-09-25 15:13:44 dataloader:343] The following configuration keys are ignored by Lhotse dataloader: trim_silence,enable_chunking
+[NeMo W 2026-09-25 15:13:44 dataloader:349] You are using a non-tarred dataset and requested tokenization during data sampling (pretokenize=True). This will cause the tokenization to happen in the main (GPU) process,possibly impacting the training speed if your tokenizer is very large.If the impact is noticable, set pretokenize=False in dataloader config.(note: that will disable token-per-second filtering and 2D bucketing features)
+Transcribing: 0it [00:00, ?it/s]Transcribing: 1it [00:01,  1.08s/it]Transcribing: 1it [00:01,  1.08s/it]
+[NeMo W 2026-09-25 15:13:45 _contextlib:124] Chunking is disabled. Please pass a single audio file or set batch_size to 1
+[NeMo W 2026-09-25 15:13:45 dataloader:343] The following configuration keys are ignored by Lhotse dataloader: trim_silence,enable_chunking
+[NeMo W 2026-09-25 15:13:45 dataloader:349] You are using a non-tarred dataset and requested tokenization during data sampling (pretokenize=True). This will cause the tokenization to happen in the main (GPU) process,possibly impacting the training speed if your tokenizer is very large.If the impact is noticable, set pretokenize=False in dataloader config.(note: that will disable token-per-second filtering and 2D bucketing features)
+Transcribing: 0it [00:00, ?it/s]Transcribing: 1it [00:01,  1.19s/it]Transcribing: 1it [00:01,  1.19s/it]
+[NeMo W 2026-09-25 15:13:47 _contextlib:124] Chunking is disabled. Please pass a single audio file or set batch_size to 1
+[NeMo W 2026-09-25 15:13:47 dataloader:343] The following configuration keys are ignored by Lhotse dataloader: trim_silence,enable_chunking
+[NeMo W 2026-09-25 15:13:47 dataloader:349] You are using a non-tarred dataset and requested tokenization during data sampling (pretokenize=True). This will cause the tokenization to happen in the main (GPU) process,possibly impacting the training speed if your tokenizer is very large.If the impact is noticable, set pretokenize=False in dataloader config.(note: that will disable token-per-second filtering and 2D bucketing features)
+Transcribing: 0it [00:00, ?it/s]Transcribing: 1it [00:01,  1.17s/it]Transcribing: 1it [00:01,  1.17s/it]
+[NeMo W 2026-09-25 15:13:48 _contextlib:124] Chunking is disabled. Please pass a single audio file or set batch_size to 1
+[NeMo W 2026-09-25 15:13:48 dataloader:343] The following configuration keys are ignored by Lhotse dataloader: trim_silence,enable_chunking
+[NeMo W 2026-09-25 15:13:48 dataloader:349] You are using a non-tarred dataset and requested tokenization during data sampling (pretokenize=True). This will cause the tokenization to happen in the main (GPU) process,possibly impacting the training speed if your tokenizer is very large.If the impact is noticable, set pretokenize=False in dataloader config.(note: that will disable token-per-second filtering and 2D bucketing features)
+Transcribing: 0it [00:00, ?it/s]Transcribing: 1it [00:00,  2.34it/s]Transcribing: 1it [00:00,  2.34it/s]
+[NeMo W 2026-09-25 15:13:48 _contextlib:124] Chunking is disabled. Please pass a single audio file or set batch_size to 1
+[NeMo W 2026-09-25 15:13:48 dataloader:343] The following configuration keys are ignored by Lhotse dataloader: trim_silence,enable_chunking
+[NeMo W 2026-09-25 15:13:48 dataloader:349] You are using a non-tarred dataset and requested tokenization during data sampling (pretokenize=True). This will cause the tokenization to happen in the main (GPU) process,possibly impacting the training speed if your tokenizer is very large.If the impact is noticable, set pretokenize=False in dataloader config.(note: that will disable token-per-second filtering and 2D bucketing features)
+Transcribing: 0it [00:00, ?it/s]Transcribing: 1it [00:01,  1.55s/it]Transcribing: 1it [00:01,  1.55s/it]
+{"model": "fine-tuned decoder-only (600 steps)", "clips": 100, "audio_seconds": 1315.62, "batch_size": 2, "wer": 0.1648, "total_wall_seconds": 54.139, "request_p50_seconds": 1.051, "request_p95_seconds": 1.595, "throughput_audio_seconds_per_wall_second": 24.301, "real_time_factor": 0.0412, "model_torch_allocated_gib": 4.602, "peak_torch_allocated_gib": 4.953, "incremental_request_memory_gib": 0.351}
+Benchmarking batch_size=4 on 100 clips...
+[NeMo W 2026-09-25 15:13:50 _contextlib:124] Chunking is disabled. Please pass a single audio file or set batch_size to 1
+[NeMo W 2026-09-25 15:13:50 dataloader:343] The following configuration keys are ignored by Lhotse dataloader: trim_silence,enable_chunking
+[NeMo W 2026-09-25 15:13:50 dataloader:349] You are using a non-tarred dataset and requested tokenization during data sampling (pretokenize=True). This will cause the tokenization to happen in the main (GPU) process,possibly impacting the training speed if your tokenizer is very large.If the impact is noticable, set pretokenize=False in dataloader config.(note: that will disable token-per-second filtering and 2D bucketing features)
+Transcribing: 0it [00:00, ?it/s]Transcribing: 1it [00:00,  1.06it/s]Transcribing: 1it [00:00,  1.06it/s]
+[NeMo W 2026-09-25 15:13:51 _contextlib:124] Chunking is disabled. Please pass a single audio file or set batch_size to 1
+[NeMo W 2026-09-25 15:13:51 dataloader:343] The following configuration keys are ignored by Lhotse dataloader: trim_silence,enable_chunking
+[NeMo W 2026-09-25 15:13:51 dataloader:349] You are using a non-tarred dataset and requested tokenization during data sampling (pretokenize=True). This will cause the tokenization to happen in the main (GPU) process,possibly impacting the training speed if your tokenizer is very large.If the impact is noticable, set pretokenize=False in dataloader config.(note: that will disable token-per-second filtering and 2D bucketing features)
+Transcribing: 0it [00:00, ?it/s]Transcribing: 1it [00:01,  1.08s/it]Transcribing: 1it [00:01,  1.08s/it]
+[NeMo W 2026-09-25 15:13:52 _contextlib:124] Chunking is disabled. Please pass a single audio file or set batch_size to 1
+[NeMo W 2026-09-25 15:13:52 dataloader:343] The following configuration keys are ignored by Lhotse dataloader: trim_silence,enable_chunking
+[NeMo W 2026-09-25 15:13:52 dataloader:349] You are using a non-tarred dataset and requested tokenization during data sampling (pretokenize=True). This will cause the tokenization to happen in the main (GPU) process,possibly impacting the training speed if your tokenizer is very large.If the impact is noticable, set pretokenize=False in dataloader config.(note: that will disable token-per-second filtering and 2D bucketing features)
+Transcribing: 0it [00:00, ?it/s]Transcribing: 1it [00:01,  1.32s/it]Transcribing: 1it [00:01,  1.32s/it]
+[NeMo W 2026-09-25 15:13:53 _contextlib:124] Chunking is disabled. Please pass a single audio file or set batch_size to 1
+[NeMo W 2026-09-25 15:13:53 dataloader:343] The following configuration keys are ignored by Lhotse dataloader: trim_silence,enable_chunking
+[NeMo W 2026-09-25 15:13:53 dataloader:349] You are using a non-tarred dataset and requested tokenization during data sampling (pretokenize=True). This will cause the tokenization to happen in the main (GPU) process,possibly impacting the training speed if your tokenizer is very large.If the impact is noticable, set pretokenize=False in dataloader config.(note: that will disable token-per-second filtering and 2D bucketing features)
+Transcribing: 0it [00:00, ?it/s]Transcribing: 1it [00:01,  1.44s/it]Transcribing: 1it [00:01,  1.44s/it]
+[NeMo W 2026-09-25 15:13:55 _contextlib:124] Chunking is disabled. Please pass a single audio file or set batch_size to 1
+[NeMo W 2026-09-25 15:13:55 dataloader:343] The following configuration keys are ignored by Lhotse dataloader: trim_silence,enable_chunking
+[NeMo W 2026-09-25 15:13:55 dataloader:349] You are using a non-tarred dataset and requested tokenization during data sampling (pretokenize=True). This will cause the tokenization to happen in the main (GPU) process,possibly impacting the training speed if your tokenizer is very large.If the impact is noticable, set pretokenize=False in dataloader config.(note: that will disable token-per-second filtering and 2D bucketing features)
+Transcribing: 0it [00:00, ?it/s]Transcribing: 1it [00:01,  1.82s/it]Transcribing: 1it [00:01,  1.83s/it]
+[NeMo W 2026-09-25 15:13:57 _contextlib:124] Chunking is disabled. Please pass a single audio file or set batch_size to 1
+[NeMo W 2026-09-25 15:13:57 dataloader:343] The following configuration keys are ignored by Lhotse dataloader: trim_silence,enable_chunking
+[NeMo W 2026-09-25 15:13:57 dataloader:349] You are using a non-tarred dataset and requested tokenization during data sampling (pretokenize=True). This will cause the tokenization to happen in the main (GPU) process,possibly impacting the training speed if your tokenizer is very large.If the impact is noticable, set pretokenize=False in dataloader config.(note: that will disable token-per-second filtering and 2D bucketing features)
+Transcribing: 0it [00:00, ?it/s]Transcribing: 1it [00:00,  1.20it/s]Transcribing: 1it [00:00,  1.20it/s]
+[NeMo W 2026-09-25 15:13:58 _contextlib:124] Chunking is disabled. Please pass a single audio file or set batch_size to 1
+[NeMo W 2026-09-25 15:13:58 dataloader:343] The following configuration keys are ignored by Lhotse dataloader: trim_silence,enable_chunking
+[NeMo W 2026-09-25 15:13:58 dataloader:349] You are using a non-tarred dataset and requested tokenization during data sampling (pretokenize=True). This will cause the tokenization to happen in the main (GPU) process,possibly impacting the training speed if your tokenizer is very large.If the impact is noticable, set pretokenize=False in dataloader config.(note: that will disable token-per-second filtering and 2D bucketing features)
+Transcribing: 0it [00:00, ?it/s]Transcribing: 1it [00:01,  1.32s/it]Transcribing: 1it [00:01,  1.32s/it]
+[NeMo W 2026-09-25 15:13:59 _contextlib:124] Chunking is disabled. Please pass a single audio file or set batch_size to 1
+[NeMo W 2026-09-25 15:13:59 dataloader:343] The following configuration keys are ignored by Lhotse dataloader: trim_silence,enable_chunking
+[NeMo W 2026-09-25 15:13:59 dataloader:349] You are using a non-tarred dataset and requested tokenization during data sampling (pretokenize=True). This will cause the tokenization to happen in the main (GPU) process,possibly impacting the training speed if your tokenizer is very large.If the impact is noticable, set pretokenize=False in dataloader config.(note: that will disable token-per-second filtering and 2D bucketing features)
+Transcribing: 0it [00:00, ?it/s]Transcribing: 1it [00:01,  1.58s/it]Transcribing: 1it [00:01,  1.58s/it]
+[NeMo W 2026-09-25 15:14:01 _contextlib:124] Chunking is disabled. Please pass a single audio file or set batch_size to 1
+[NeMo W 2026-09-25 15:14:01 dataloader:343] The following configuration keys are ignored by Lhotse dataloader: trim_silence,enable_chunking
+[NeMo W 2026-09-25 15:14:01 dataloader:349] You are using a non-tarred dataset and requested tokenization during data sampling (pretokenize=True). This will cause the tokenization to happen in the main (GPU) process,possibly impacting the training speed if your tokenizer is very large.If the impact is noticable, set pretokenize=False in dataloader config.(note: that will disable token-per-second filtering and 2D bucketing features)
+Transcribing: 0it [00:00, ?it/s]Transcribing: 1it [00:00,  1.12it/s]Transcribing: 1it [00:00,  1.12it/s]
+[NeMo W 2026-09-25 15:14:01 _contextlib:124] Chunking is disabled. Please pass a single audio file or set batch_size to 1
+[NeMo W 2026-09-25 15:14:01 dataloader:343] The following configuration keys are ignored by Lhotse dataloader: trim_silence,enable_chunking
+[NeMo W 2026-09-25 15:14:01 dataloader:349] You are using a non-tarred dataset and requested tokenization during data sampling (pretokenize=True). This will cause the tokenization to happen in the main (GPU) process,possibly impacting the training speed if your tokenizer is very large.If the impact is noticable, set pretokenize=False in dataloader config.(note: that will disable token-per-second filtering and 2D bucketing features)
+Transcribing: 0it [00:00, ?it/s]Transcribing: 1it [00:01,  1.84s/it]Transcribing: 1it [00:01,  1.84s/it]
+[NeMo W 2026-09-25 15:14:03 _contextlib:124] Chunking is disabled. Please pass a single audio file or set batch_size to 1
+[NeMo W 2026-09-25 15:14:03 dataloader:343] The following configuration keys are ignored by Lhotse dataloader: trim_silence,enable_chunking
+[NeMo W 2026-09-25 15:14:03 dataloader:349] You are using a non-tarred dataset and requested tokenization during data sampling (pretokenize=True). This will cause the tokenization to happen in the main (GPU) process,possibly impacting the training speed if your tokenizer is very large.If the impact is noticable, set pretokenize=False in dataloader config.(note: that will disable token-per-second filtering and 2D bucketing features)
+Transcribing: 0it [00:00, ?it/s]Transcribing: 1it [00:01,  1.63s/it]Transcribing: 1it [00:01,  1.64s/it]
+[NeMo W 2026-09-25 15:14:05 _contextlib:124] Chunking is disabled. Please pass a single audio file or set batch_size to 1
+[NeMo W 2026-09-25 15:14:05 dataloader:343] The following configuration keys are ignored by Lhotse dataloader: trim_silence,enable_chunking
+[NeMo W 2026-09-25 15:14:05 dataloader:349] You are using a non-tarred dataset and requested tokenization during data sampling (pretokenize=True). This will cause the tokenization to happen in the main (GPU) process,possibly impacting the training speed if your tokenizer is very large.If the impact is noticable, set pretokenize=False in dataloader config.(note: that will disable token-per-second filtering and 2D bucketing features)
+Transcribing: 0it [00:00, ?it/s]Transcribing: 1it [00:01,  1.64s/it]Transcribing: 1it [00:01,  1.64s/it]
+[NeMo W 2026-09-25 15:14:07 _contextlib:124] Chunking is disabled. Please pass a single audio file or set batch_size to 1
+[NeMo W 2026-09-25 15:14:07 dataloader:343] The following configuration keys are ignored by Lhotse dataloader: trim_silence,enable_chunking
+[NeMo W 2026-09-25 15:14:07 dataloader:349] You are using a non-tarred dataset and requested tokenization during data sampling (pretokenize=True). This will cause the tokenization to happen in the main (GPU) process,possibly impacting the training speed if your tokenizer is very large.If the impact is noticable, set pretokenize=False in dataloader config.(note: that will disable token-per-second filtering and 2D bucketing features)
+Transcribing: 0it [00:00, ?it/s]Transcribing: 1it [00:00,  1.10it/s]Transcribing: 1it [00:00,  1.10it/s]
+[NeMo W 2026-09-25 15:14:08 _contextlib:124] Chunking is disabled. Please pass a single audio file or set batch_size to 1
+[NeMo W 2026-09-25 15:14:08 dataloader:343] The following configuration keys are ignored by Lhotse dataloader: trim_silence,enable_chunking
+[NeMo W 2026-09-25 15:14:08 dataloader:349] You are using a non-tarred dataset and requested tokenization during data sampling (pretokenize=True). This will cause the tokenization to happen in the main (GPU) process,possibly impacting the training speed if your tokenizer is very large.If the impact is noticable, set pretokenize=False in dataloader config.(note: that will disable token-per-second filtering and 2D bucketing features)
+Transcribing: 0it [00:00, ?it/s]Transcribing: 1it [00:01,  1.90s/it]Transcribing: 1it [00:01,  1.91s/it]
+[NeMo W 2026-09-25 15:14:10 _contextlib:124] Chunking is disabled. Please pass a single audio file or set batch_size to 1
+[NeMo W 2026-09-25 15:14:10 dataloader:343] The following configuration keys are ignored by Lhotse dataloader: trim_silence,enable_chunking
+[NeMo W 2026-09-25 15:14:10 dataloader:349] You are using a non-tarred dataset and requested tokenization during data sampling (pretokenize=True). This will cause the tokenization to happen in the main (GPU) process,possibly impacting the training speed if your tokenizer is very large.If the impact is noticable, set pretokenize=False in dataloader config.(note: that will disable token-per-second filtering and 2D bucketing features)
+Transcribing: 0it [00:00, ?it/s]Transcribing: 1it [00:00,  1.02it/s]Transcribing: 1it [00:00,  1.02it/s]
+[NeMo W 2026-09-25 15:14:11 _contextlib:124] Chunking is disabled. Please pass a single audio file or set batch_size to 1
+[NeMo W 2026-09-25 15:14:11 dataloader:343] The following configuration keys are ignored by Lhotse dataloader: trim_silence,enable_chunking
+[NeMo W 2026-09-25 15:14:11 dataloader:349] You are using a non-tarred dataset and requested tokenization during data sampling (pretokenize=True). This will cause the tokenization to happen in the main (GPU) process,possibly impacting the training speed if your tokenizer is very large.If the impact is noticable, set pretokenize=False in dataloader config.(note: that will disable token-per-second filtering and 2D bucketing features)
+Transcribing: 0it [00:00, ?it/s]Transcribing: 1it [00:01,  1.15s/it]Transcribing: 1it [00:01,  1.15s/it]
+[NeMo W 2026-09-25 15:14:12 _contextlib:124] Chunking is disabled. Please pass a single audio file or set batch_size to 1
+[NeMo W 2026-09-25 15:14:12 dataloader:343] The following configuration keys are ignored by Lhotse dataloader: trim_silence,enable_chunking
+[NeMo W 2026-09-25 15:14:12 dataloader:349] You are using a non-tarred dataset and requested tokenization during data sampling (pretokenize=True). This will cause the tokenization to happen in the main (GPU) process,possibly impacting the training speed if your tokenizer is very large.If the impact is noticable, set pretokenize=False in dataloader config.(note: that will disable token-per-second filtering and 2D bucketing features)
+Transcribing: 0it [00:00, ?it/s]Transcribing: 1it [00:00,  1.02it/s]Transcribing: 1it [00:00,  1.02it/s]
+[NeMo W 2026-09-25 15:14:13 _contextlib:124] Chunking is disabled. Please pass a single audio file or set batch_size to 1
+[NeMo W 2026-09-25 15:14:13 dataloader:343] The following configuration keys are ignored by Lhotse dataloader: trim_silence,enable_chunking
+[NeMo W 2026-09-25 15:14:13 dataloader:349] You are using a non-tarred dataset and requested tokenization during data sampling (pretokenize=True). This will cause the tokenization to happen in the main (GPU) process,possibly impacting the training speed if your tokenizer is very large.If the impact is noticable, set pretokenize=False in dataloader config.(note: that will disable token-per-second filtering and 2D bucketing features)
+Transcribing: 0it [00:00, ?it/s]Transcribing: 1it [00:01,  1.36s/it]Transcribing: 1it [00:01,  1.36s/it]
+[NeMo W 2026-09-25 15:14:14 _contextlib:124] Chunking is disabled. Please pass a single audio file or set batch_size to 1
+[NeMo W 2026-09-25 15:14:14 dataloader:343] The following configuration keys are ignored by Lhotse dataloader: trim_silence,enable_chunking
+[NeMo W 2026-09-25 15:14:14 dataloader:349] You are using a non-tarred dataset and requested tokenization during data sampling (pretokenize=True). This will cause the tokenization to happen in the main (GPU) process,possibly impacting the training speed if your tokenizer is very large.If the impact is noticable, set pretokenize=False in dataloader config.(note: that will disable token-per-second filtering and 2D bucketing features)
+Transcribing: 0it [00:00, ?it/s]Transcribing: 1it [00:01,  1.13s/it]Transcribing: 1it [00:01,  1.13s/it]
+[NeMo W 2026-09-25 15:14:15 _contextlib:124] Chunking is disabled. Please pass a single audio file or set batch_size to 1
+[NeMo W 2026-09-25 15:14:15 dataloader:343] The following configuration keys are ignored by Lhotse dataloader: trim_silence,enable_chunking
+[NeMo W 2026-09-25 15:14:15 dataloader:349] You are using a non-tarred dataset and requested tokenization during data sampling (pretokenize=True). This will cause the tokenization to happen in the main (GPU) process,possibly impacting the training speed if your tokenizer is very large.If the impact is noticable, set pretokenize=False in dataloader config.(note: that will disable token-per-second filtering and 2D bucketing features)
+Transcribing: 0it [00:00, ?it/s]Transcribing: 1it [00:00,  1.17it/s]Transcribing: 1it [00:00,  1.17it/s]
+[NeMo W 2026-09-25 15:14:16 _contextlib:124] Chunking is disabled. Please pass a single audio file or set batch_size to 1
+[NeMo W 2026-09-25 15:14:16 dataloader:343] The following configuration keys are ignored by Lhotse dataloader: trim_silence,enable_chunking
+[NeMo W 2026-09-25 15:14:16 dataloader:349] You are using a non-tarred dataset and requested tokenization during data sampling (pretokenize=True). This will cause the tokenization to happen in the main (GPU) process,possibly impacting the training speed if your tokenizer is very large.If the impact is noticable, set pretokenize=False in dataloader config.(note: that will disable token-per-second filtering and 2D bucketing features)
+Transcribing: 0it [00:00, ?it/s]Transcribing: 1it [00:00,  1.09it/s]Transcribing: 1it [00:00,  1.09it/s]
+[NeMo W 2026-09-25 15:14:17 _contextlib:124] Chunking is disabled. Please pass a single audio file or set batch_size to 1
+[NeMo W 2026-09-25 15:14:17 dataloader:343] The following configuration keys are ignored by Lhotse dataloader: trim_silence,enable_chunking
+[NeMo W 2026-09-25 15:14:17 dataloader:349] You are using a non-tarred dataset and requested tokenization during data sampling (pretokenize=True). This will cause the tokenization to happen in the main (GPU) process,possibly impacting the training speed if your tokenizer is very large.If the impact is noticable, set pretokenize=False in dataloader config.(note: that will disable token-per-second filtering and 2D bucketing features)
+Transcribing: 0it [00:00, ?it/s]Transcribing: 1it [00:01,  1.32s/it]Transcribing: 1it [00:01,  1.32s/it]
+[NeMo W 2026-09-25 15:14:19 _contextlib:124] Chunking is disabled. Please pass a single audio file or set batch_size to 1
+[NeMo W 2026-09-25 15:14:19 dataloader:343] The following configuration keys are ignored by Lhotse dataloader: trim_silence,enable_chunking
+[NeMo W 2026-09-25 15:14:19 dataloader:349] You are using a non-tarred dataset and requested tokenization during data sampling (pretokenize=True). This will cause the tokenization to happen in the main (GPU) process,possibly impacting the training speed if your tokenizer is very large.If the impact is noticable, set pretokenize=False in dataloader config.(note: that will disable token-per-second filtering and 2D bucketing features)
+Transcribing: 0it [00:00, ?it/s]Transcribing: 1it [00:01,  1.15s/it]Transcribing: 1it [00:01,  1.15s/it]
+[NeMo W 2026-09-25 15:14:20 _contextlib:124] Chunking is disabled. Please pass a single audio file or set batch_size to 1
+[NeMo W 2026-09-25 15:14:20 dataloader:343] The following configuration keys are ignored by Lhotse dataloader: trim_silence,enable_chunking
+[NeMo W 2026-09-25 15:14:20 dataloader:349] You are using a non-tarred dataset and requested tokenization during data sampling (pretokenize=True). This will cause the tokenization to happen in the main (GPU) process,possibly impacting the training speed if your tokenizer is very large.If the impact is noticable, set pretokenize=False in dataloader config.(note: that will disable token-per-second filtering and 2D bucketing features)
+Transcribing: 0it [00:00, ?it/s]Transcribing: 1it [00:01,  1.18s/it]Transcribing: 1it [00:01,  1.19s/it]
+[NeMo W 2026-09-25 15:14:21 _contextlib:124] Chunking is disabled. Please pass a single audio file or set batch_size to 1
+[NeMo W 2026-09-25 15:14:21 dataloader:343] The following configuration keys are ignored by Lhotse dataloader: trim_silence,enable_chunking
+[NeMo W 2026-09-25 15:14:21 dataloader:349] You are using a non-tarred dataset and requested tokenization during data sampling (pretokenize=True). This will cause the tokenization to happen in the main (GPU) process,possibly impacting the training speed if your tokenizer is very large.If the impact is noticable, set pretokenize=False in dataloader config.(note: that will disable token-per-second filtering and 2D bucketing features)
+Transcribing: 0it [00:00, ?it/s]Transcribing: 1it [00:01,  1.33s/it]Transcribing: 1it [00:01,  1.33s/it]
+[NeMo W 2026-09-25 15:14:22 _contextlib:124] Chunking is disabled. Please pass a single audio file or set batch_size to 1
+[NeMo W 2026-09-25 15:14:22 dataloader:343] The following configuration keys are ignored by Lhotse dataloader: trim_silence,enable_chunking
+[NeMo W 2026-09-25 15:14:22 dataloader:349] You are using a non-tarred dataset and requested tokenization during data sampling (pretokenize=True). This will cause the tokenization to happen in the main (GPU) process,possibly impacting the training speed if your tokenizer is very large.If the impact is noticable, set pretokenize=False in dataloader config.(note: that will disable token-per-second filtering and 2D bucketing features)
+Transcribing: 0it [00:00, ?it/s]Transcribing: 1it [00:01,  1.68s/it]Transcribing: 1it [00:01,  1.68s/it]
+{"model": "fine-tuned decoder-only (600 steps)", "clips": 100, "audio_seconds": 1315.62, "batch_size": 4, "wer": 0.1648, "total_wall_seconds": 33.301, "request_p50_seconds": 1.363, "request_p95_seconds": 1.878, "throughput_audio_seconds_per_wall_second": 39.507, "real_time_factor": 0.0253, "model_torch_allocated_gib": 4.602, "peak_torch_allocated_gib": 5.304, "incremental_request_memory_gib": 0.702}
+Benchmarking batch_size=8 on 100 clips...
+[NeMo W 2026-09-25 15:14:24 _contextlib:124] Chunking is disabled. Please pass a single audio file or set batch_size to 1
+[NeMo W 2026-09-25 15:14:24 dataloader:343] The following configuration keys are ignored by Lhotse dataloader: trim_silence,enable_chunking
+[NeMo W 2026-09-25 15:14:24 dataloader:349] You are using a non-tarred dataset and requested tokenization during data sampling (pretokenize=True). This will cause the tokenization to happen in the main (GPU) process,possibly impacting the training speed if your tokenizer is very large.If the impact is noticable, set pretokenize=False in dataloader config.(note: that will disable token-per-second filtering and 2D bucketing features)
+Transcribing: 0it [00:00, ?it/s]Transcribing: 1it [00:00,  1.05it/s]Transcribing: 1it [00:00,  1.05it/s]
+[NeMo W 2026-09-25 15:14:25 _contextlib:124] Chunking is disabled. Please pass a single audio file or set batch_size to 1
+[NeMo W 2026-09-25 15:14:25 dataloader:343] The following configuration keys are ignored by Lhotse dataloader: trim_silence,enable_chunking
+[NeMo W 2026-09-25 15:14:25 dataloader:349] You are using a non-tarred dataset and requested tokenization during data sampling (pretokenize=True). This will cause the tokenization to happen in the main (GPU) process,possibly impacting the training speed if your tokenizer is very large.If the impact is noticable, set pretokenize=False in dataloader config.(note: that will disable token-per-second filtering and 2D bucketing features)
+Transcribing: 0it [00:00, ?it/s]Transcribing: 1it [00:01,  1.95s/it]Transcribing: 1it [00:01,  1.95s/it]
+[NeMo W 2026-09-25 15:14:27 _contextlib:124] Chunking is disabled. Please pass a single audio file or set batch_size to 1
+[NeMo W 2026-09-25 15:14:27 dataloader:343] The following configuration keys are ignored by Lhotse dataloader: trim_silence,enable_chunking
+[NeMo W 2026-09-25 15:14:27 dataloader:349] You are using a non-tarred dataset and requested tokenization during data sampling (pretokenize=True). This will cause the tokenization to happen in the main (GPU) process,possibly impacting the training speed if your tokenizer is very large.If the impact is noticable, set pretokenize=False in dataloader config.(note: that will disable token-per-second filtering and 2D bucketing features)
+Transcribing: 0it [00:00, ?it/s]Transcribing: 1it [00:02,  2.88s/it]Transcribing: 1it [00:02,  2.88s/it]
+[NeMo W 2026-09-25 15:14:30 _contextlib:124] Chunking is disabled. Please pass a single audio file or set batch_size to 1
+[NeMo W 2026-09-25 15:14:30 dataloader:343] The following configuration keys are ignored by Lhotse dataloader: trim_silence,enable_chunking
+[NeMo W 2026-09-25 15:14:30 dataloader:349] You are using a non-tarred dataset and requested tokenization during data sampling (pretokenize=True). This will cause the tokenization to happen in the main (GPU) process,possibly impacting the training speed if your tokenizer is very large.If the impact is noticable, set pretokenize=False in dataloader config.(note: that will disable token-per-second filtering and 2D bucketing features)
+Transcribing: 0it [00:00, ?it/s]Transcribing: 1it [00:02,  2.15s/it]Transcribing: 1it [00:02,  2.15s/it]
+[NeMo W 2026-09-25 15:14:32 _contextlib:124] Chunking is disabled. Please pass a single audio file or set batch_size to 1
+[NeMo W 2026-09-25 15:14:32 dataloader:343] The following configuration keys are ignored by Lhotse dataloader: trim_silence,enable_chunking
+[NeMo W 2026-09-25 15:14:32 dataloader:349] You are using a non-tarred dataset and requested tokenization during data sampling (pretokenize=True). This will cause the tokenization to happen in the main (GPU) process,possibly impacting the training speed if your tokenizer is very large.If the impact is noticable, set pretokenize=False in dataloader config.(note: that will disable token-per-second filtering and 2D bucketing features)
+Transcribing: 0it [00:00, ?it/s]Transcribing: 1it [00:02,  2.50s/it]Transcribing: 1it [00:02,  2.50s/it]
+[NeMo W 2026-09-25 15:14:35 _contextlib:124] Chunking is disabled. Please pass a single audio file or set batch_size to 1
+[NeMo W 2026-09-25 15:14:35 dataloader:343] The following configuration keys are ignored by Lhotse dataloader: trim_silence,enable_chunking
+[NeMo W 2026-09-25 15:14:35 dataloader:349] You are using a non-tarred dataset and requested tokenization during data sampling (pretokenize=True). This will cause the tokenization to happen in the main (GPU) process,possibly impacting the training speed if your tokenizer is very large.If the impact is noticable, set pretokenize=False in dataloader config.(note: that will disable token-per-second filtering and 2D bucketing features)
+Transcribing: 0it [00:00, ?it/s]Transcribing: 1it [00:02,  2.96s/it]Transcribing: 1it [00:02,  2.96s/it]
+[NeMo W 2026-09-25 15:14:38 _contextlib:124] Chunking is disabled. Please pass a single audio file or set batch_size to 1
+[NeMo W 2026-09-25 15:14:38 dataloader:343] The following configuration keys are ignored by Lhotse dataloader: trim_silence,enable_chunking
+[NeMo W 2026-09-25 15:14:38 dataloader:349] You are using a non-tarred dataset and requested tokenization during data sampling (pretokenize=True). This will cause the tokenization to happen in the main (GPU) process,possibly impacting the training speed if your tokenizer is very large.If the impact is noticable, set pretokenize=False in dataloader config.(note: that will disable token-per-second filtering and 2D bucketing features)
+Transcribing: 0it [00:00, ?it/s]Transcribing: 1it [00:02,  2.63s/it]Transcribing: 1it [00:02,  2.63s/it]
+[NeMo W 2026-09-25 15:14:40 _contextlib:124] Chunking is disabled. Please pass a single audio file or set batch_size to 1
+[NeMo W 2026-09-25 15:14:41 dataloader:343] The following configuration keys are ignored by Lhotse dataloader: trim_silence,enable_chunking
+[NeMo W 2026-09-25 15:14:41 dataloader:349] You are using a non-tarred dataset and requested tokenization during data sampling (pretokenize=True). This will cause the tokenization to happen in the main (GPU) process,possibly impacting the training speed if your tokenizer is very large.If the impact is noticable, set pretokenize=False in dataloader config.(note: that will disable token-per-second filtering and 2D bucketing features)
+Transcribing: 0it [00:00, ?it/s]Transcribing: 1it [00:03,  3.18s/it]Transcribing: 1it [00:03,  3.18s/it]
+[NeMo W 2026-09-25 15:14:44 _contextlib:124] Chunking is disabled. Please pass a single audio file or set batch_size to 1
+[NeMo W 2026-09-25 15:14:44 dataloader:343] The following configuration keys are ignored by Lhotse dataloader: trim_silence,enable_chunking
+[NeMo W 2026-09-25 15:14:44 dataloader:349] You are using a non-tarred dataset and requested tokenization during data sampling (pretokenize=True). This will cause the tokenization to happen in the main (GPU) process,possibly impacting the training speed if your tokenizer is very large.If the impact is noticable, set pretokenize=False in dataloader config.(note: that will disable token-per-second filtering and 2D bucketing features)
+Transcribing: 0it [00:00, ?it/s]Transcribing: 1it [00:01,  1.79s/it]Transcribing: 1it [00:01,  1.79s/it]
+[NeMo W 2026-09-25 15:14:46 _contextlib:124] Chunking is disabled. Please pass a single audio file or set batch_size to 1
+[NeMo W 2026-09-25 15:14:46 dataloader:343] The following configuration keys are ignored by Lhotse dataloader: trim_silence,enable_chunking
+[NeMo W 2026-09-25 15:14:46 dataloader:349] You are using a non-tarred dataset and requested tokenization during data sampling (pretokenize=True). This will cause the tokenization to happen in the main (GPU) process,possibly impacting the training speed if your tokenizer is very large.If the impact is noticable, set pretokenize=False in dataloader config.(note: that will disable token-per-second filtering and 2D bucketing features)
+Transcribing: 0it [00:00, ?it/s]Transcribing: 1it [00:02,  2.11s/it]Transcribing: 1it [00:02,  2.12s/it]
+[NeMo W 2026-09-25 15:14:48 _contextlib:124] Chunking is disabled. Please pass a single audio file or set batch_size to 1
+[NeMo W 2026-09-25 15:14:48 dataloader:343] The following configuration keys are ignored by Lhotse dataloader: trim_silence,enable_chunking
+[NeMo W 2026-09-25 15:14:48 dataloader:349] You are using a non-tarred dataset and requested tokenization during data sampling (pretokenize=True). This will cause the tokenization to happen in the main (GPU) process,possibly impacting the training speed if your tokenizer is very large.If the impact is noticable, set pretokenize=False in dataloader config.(note: that will disable token-per-second filtering and 2D bucketing features)
+Transcribing: 0it [00:00, ?it/s]Transcribing: 1it [00:01,  1.17s/it]Transcribing: 1it [00:01,  1.17s/it]
+[NeMo W 2026-09-25 15:14:49 _contextlib:124] Chunking is disabled. Please pass a single audio file or set batch_size to 1
+[NeMo W 2026-09-25 15:14:49 dataloader:343] The following configuration keys are ignored by Lhotse dataloader: trim_silence,enable_chunking
+[NeMo W 2026-09-25 15:14:49 dataloader:349] You are using a non-tarred dataset and requested tokenization during data sampling (pretokenize=True). This will cause the tokenization to happen in the main (GPU) process,possibly impacting the training speed if your tokenizer is very large.If the impact is noticable, set pretokenize=False in dataloader config.(note: that will disable token-per-second filtering and 2D bucketing features)
+Transcribing: 0it [00:00, ?it/s]Transcribing: 1it [00:01,  1.92s/it]Transcribing: 1it [00:01,  1.92s/it]
+[NeMo W 2026-09-25 15:14:51 _contextlib:124] Chunking is disabled. Please pass a single audio file or set batch_size to 1
+[NeMo W 2026-09-25 15:14:51 dataloader:343] The following configuration keys are ignored by Lhotse dataloader: trim_silence,enable_chunking
+[NeMo W 2026-09-25 15:14:51 dataloader:349] You are using a non-tarred dataset and requested tokenization during data sampling (pretokenize=True). This will cause the tokenization to happen in the main (GPU) process,possibly impacting the training speed if your tokenizer is very large.If the impact is noticable, set pretokenize=False in dataloader config.(note: that will disable token-per-second filtering and 2D bucketing features)
+Transcribing: 0it [00:00, ?it/s]Transcribing: 1it [00:02,  2.09s/it]Transcribing: 1it [00:02,  2.09s/it]
+[NeMo W 2026-09-25 15:14:53 _contextlib:124] Chunking is disabled. Please pass a single audio file or set batch_size to 1
+[NeMo W 2026-09-25 15:14:53 dataloader:343] The following configuration keys are ignored by Lhotse dataloader: trim_silence,enable_chunking
+[NeMo W 2026-09-25 15:14:53 dataloader:349] You are using a non-tarred dataset and requested tokenization during data sampling (pretokenize=True). This will cause the tokenization to happen in the main (GPU) process,possibly impacting the training speed if your tokenizer is very large.If the impact is noticable, set pretokenize=False in dataloader config.(note: that will disable token-per-second filtering and 2D bucketing features)
+Transcribing: 0it [00:00, ?it/s]Transcribing: 1it [00:01,  1.73s/it]Transcribing: 1it [00:01,  1.73s/it]
+{"model": "fine-tuned decoder-only (600 steps)", "clips": 100, "audio_seconds": 1315.62, "batch_size": 8, "wer": 0.1648, "total_wall_seconds": 29.602, "request_p50_seconds": 2.157, "request_p95_seconds": 3.09, "throughput_audio_seconds_per_wall_second": 44.444, "real_time_factor": 0.0225, "model_torch_allocated_gib": 4.602, "peak_torch_allocated_gib": 6.006, "incremental_request_memory_gib": 1.405}
+Wrote artifacts/benchmark.csv
