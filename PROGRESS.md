@@ -3,7 +3,7 @@
 Running log of the assignment. Newest phase appended at the bottom. Each entry:
 what I'm about to do, why, then the result. Kept terse on purpose.
 
-## Assignment (from `brief/`)
+## Assignment
 - Fine-tune ONE Bodhan AI model (MT / ASR / TTS) on Marathi/Bhili, end-to-end.
 - Not scored on metrics — scored on a working pipeline, code quality, judgement.
 - Deliverables: GitHub repo, Google Drive artifacts, approach docs.
@@ -115,7 +115,7 @@ logs). Checkpoint at outputs/indic_transcribe_mr.nemo (4.6GB, for Google Drive).
 
 ## P4 — Deliverables
 - GitHub (private): github.com/vishesh9131/bodhan-marathi-asr-finetune  [DONE]
-- Docs: README.md + docs/APPROACH.md + this PROGRESS.md  [DONE]
+- Docs: README.md + this PROGRESS.md  [DONE]
 - Google Drive: upload outputs/indic_transcribe_mr.nemo + artifacts/  [USER STEP]
 - Email reply with repo link + Drive link + approach  [USER STEP]
 

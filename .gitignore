@@ -9,5 +9,4 @@ outputs/
 __pycache__/
 *.pyc
 .ipynb_checkpoints/
-# keep the brief images/pdf tracked (small, useful context) — do NOT ignore brief/
 .model_api_inspect/
